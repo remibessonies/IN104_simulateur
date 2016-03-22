@@ -10,6 +10,7 @@ class ManualBrain:
         print("Please enter your name")
         self.name = sys.stdin.readline()[0:-1] 
         self.computingTimes = []
+        self.alwaysWhite = False
     
     def play(self, gameState, timeLimit):
         possibleMoves = gameState.getStateMoveDict()
