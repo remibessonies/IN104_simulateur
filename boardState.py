@@ -1,5 +1,5 @@
-from .cell import *
-from .move import *    
+from cell import *
+from move import *    
     
 class BoardState:
     ''' Represents a board state
