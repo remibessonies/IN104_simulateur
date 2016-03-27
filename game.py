@@ -1,7 +1,6 @@
 import time
 import gc
 
-from .cell import Color
 from .gameState import *
 from .player import *
 
@@ -20,7 +19,7 @@ class Game:
     
     defaultConfig = {   'nRows': 8,
                         'nPieces': 12,
-                        'startingColor':Color.White,
+                        'whiteStarts':True,
                         'noCaptureMax': 25,
                         'timeLimit1': 1.5,
                         'timeLimit2': 1.5   }
@@ -30,11 +29,11 @@ class Game:
             if key not in config: config[key] = Game.defaultConfig[key]
             
         self.gameState = GameState(config)
-        self.startingColor = config['startingColor']
+        self.whiteStarts = config['whiteStarts']
         self.noCaptureMax = config['noCaptureMax']
         self.Nlimit = Nlimit
-        self.player1 = Player(self.startingColor, ia1, timeLimit1)
-        self.player2 = Player(~self.startingColor, ia2, timeLimit2)
+        self.player1 = Player(self.whiteStarts, ia1, timeLimit1)
+        self.player2 = Player(not self.whiteStarts, ia2, timeLimit2)
         
         self.displayLevel = 0
         self.pause = 0
@@ -52,11 +51,11 @@ class Game:
         t = time.time() + self.pause
         
         # shortcut variables to acces faster white and black players    
-        whitePlayer = self.player1 if self.player1.color is Color.White else self.player2
-        blackPlayer = self.player1 if self.player1.color is Color.Black else self.player2
+        whitePlayer = self.player1 if self.player1.isWhite else self.player2
+        blackPlayer = self.player2 if self.player1.isWhite else self.player1
         
         for n in range(self.Nlimit):         
-            player = whitePlayer if self.gameState.nextColor is Color.White else blackPlayer
+            player = whitePlayer if self.gameState.isWhiteTurn else blackPlayer
             
             # Check whether the game is ended
             possibleStates = self.gameState.getStateMoveDict()
@@ -143,16 +142,16 @@ class Game:
 
     def makePDN(self, startTime, pdnMoves, result):
         # shortcut variables to acces faster white and black players    
-        whitePlayer = self.player1 if self.player1.color is Color.White else self.player2
-        blackPlayer = self.player1 if self.player1.color is Color.Black else self.player2
+        whitePlayer = self.player1 if self.player1.isWhite else self.player2
+        blackPlayer = self.player2 if self.player1.isWhite else self.player1
         
         pdn  = '[Event "IN104 CS Project"]\n'
         pdn += '[Site "ENSTA ParisTech, Palaiseau, FRA"]\n'
         
         gameType  = '[GameType “21,'
-        gameType += 'B' if self.startingColor is Color.Black else 'W'
+        gameType += 'W' if self.whiteStarts else 'B'
         gameType += (','+str(self.gameState.boardState.nRows))*2+','
-        gameType += 'N1,0”] {Blacks begin}\n' if self.startingColor is Color.Black else 'N2,0”] {Whites begin}\n' 
+        gameType += 'N2,0”] {Whites begin}\n' if self.whiteStarts else 'N1,0”] {Blacks begin}\n'
         pdn += gameType
         pdn += '[Date "'+startTime+'"]\n'
         pdn += '[Round "?"]\n'                

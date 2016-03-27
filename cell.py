@@ -1,29 +1,13 @@
 from enum import Enum
-
-class Color(Enum):
-    ''' This enumeration represents the possible colors of pieces and by extensions the two players '''
-    Black = False
-    White = True
-    
-    def __invert__(self): # overload the ~ unary operator
-        return Color(not self.value)
-    
-    def __str__(self):
-        return self.name
-
    
 class Cell(Enum):
     ''' This enumeration represents the possible states of a cell on the board '''
-    empty = (None,False)
-    w = (Color.White,False)
-    W = (Color.White,True)
-    b = (Color.Black,False)
-    B = (Color.Black,True)
-            
-            
-    def color(self):
-        return self.value[0]  
-        
+    empty = (None,None)
+    w = (True,False)
+    W = (True,True)
+    b = (False,False)
+    B = (False,True)
+     
     def isWhite(self):
         return self is Cell.w or self is Cell.W          
         
@@ -46,6 +30,4 @@ class Cell(Enum):
         if self is Cell.empty: 
             return '.'
         else:
-            r = self.name
-        return r
-        
+            return self.name        
