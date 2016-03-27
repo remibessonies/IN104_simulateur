@@ -1,8 +1,8 @@
 from multiprocessing import Pool
 import itertools
-from cell import *
-from boardState import *
-from move import *
+from .cell import *
+from .boardState import *
+from .move import *
 
 class GameState:
     ''' The GameState gathers the state of the board plus some auxilliary info like whose turn to play and info to know if it is a draw '''
