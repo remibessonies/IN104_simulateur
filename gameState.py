@@ -1,6 +1,3 @@
-from multiprocessing import Pool
-import itertools
-from .cell import *
 from .boardState import *
 from .move import *
 
@@ -10,19 +7,19 @@ class GameState:
     def __init__(self, config = None):
         if config:
             self.boardState = BoardState(config['nRows'], config['nPieces'])
-            self.nextColor = config['startingColor']
+            self.isWhiteTurn = config['whiteStarts']
             self.noCaptureCounter = 0
    
     def copy(self):
         copy = GameState()
         copy.boardState = self.boardState.copy()
-        copy.nextColor = self.nextColor
+        copy.isWhiteTurn = self.isWhiteTurn
         copy.noCaptureCounter = self.noCaptureCounter
         return copy
    
                 
     def findPossibleMoves(self):
-        return self.boardState.findPossibleMoves(self.nextColor) 
+        return self.boardState.findPossibleMoves(self.isWhiteTurn) 
            
     def doMove(self, move, inplace = False):
         if inplace:
@@ -32,7 +29,7 @@ class GameState:
             gs.boardState = self.boardState.copy() 
         gs.boardState.doMove(move) # boardState's doMove is always in-place
         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
-        gs.nextColor = ~self.nextColor
+        gs.isWhiteTurn = not self.isWhiteTurn
         return gs
       
     def findNextStates(self):
@@ -53,16 +50,16 @@ class GameState:
                   
     def reverse(self):
         self.boardState.reverse()
-        self.nextColor = ~self.nextColor
+        self.isWhiteTurn = not self.isWhiteTurn
       
     def __str__(self):
-        s = 'W' if self.nextColor is Color.White else 'B'
+        s = 'W' if self.isWhiteTurn else 'B'
         s+= str(self.boardState)
         s+= str(self.noCaptureCounter)
         return s
 
     def toDisplay(self, showBoard = False):
-        return self.boardState.toDisplay(showBoard)+'\n'+str(self.nextColor)+"'s turn to play."
+        return self.boardState.toDisplay(showBoard)+'\n'+str(self.isWhiteTurn)+"'s turn to play."
         
     def display(self, showBoard = False):
         print(self.toDisplay(showBoard))

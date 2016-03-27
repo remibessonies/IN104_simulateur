@@ -18,24 +18,24 @@ class Player:
         - brain: the artificial intelligence. It must implement 
                 * a method "play" taking a gameState and returning one of the reachable gameState
                 * the method __str__ defining the name of the ai
-        - color: the color attributed to the ai by the game    
+        - isWhite: true if the player is the white one  
     '''
 
-    def __init__(self, color, brain, timeLimit):
-        self.color = color
+    def __init__(self, isWhite, brain, timeLimit):
+        self.isWhite = isWhite
         assert brain, "Player needs a brain !"
         self.brain = brain
         self.timeLimit = timeLimit
         self.computingTimes = [] # store the computing time for each move
         self.showTime = False
         try:
-            self.alwaysWhite = self.brain.alwaysWhite
+            self.alwaysSeeAsWhite = self.brain.alwaysSeeAsWhite
         except:
-            self.alwaysWhite = True
+            self.alwaysSeeAsWhite = True
         
     
     def play(self, gameState):
-        reverse = self.color is Color.Black and self.alwaysWhite        
+        reverse = (not self.isWhite) and self.alwaysSeeAsWhite        
         if reverse: gameState.reverse()
         
         if self.timeLimit and self.timeLimit>0:  
@@ -65,7 +65,7 @@ class Player:
         return str(self.brain)
      
     def __str__(self):
-        return self.color.name+' ('+self.name()+')'
+        return ("White" if self.isWhite else "Black")+' ('+self.name()+')'
         
           
 # Unhandled exception leading to the game interuption    
