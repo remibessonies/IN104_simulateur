@@ -113,13 +113,13 @@ class Game:
 ### End of runGame
  
     
-    stateDisplayLevel = 0
-    choiceDisplayLevel = 1
-    decisionDisplayLevel = 1
+    stateDisplayLevel = 1
+    choiceDisplayLevel = 2
+    decisionDisplayLevel = 2
 
     def addToLog(self, txt, displayLevel = 2):
         self.log += txt+'\n'
-        if self.displayLevel > displayLevel:
+        if self.displayLevel >= displayLevel:
             print(txt)       
     
     def logState(self):
