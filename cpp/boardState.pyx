@@ -1,29 +1,11 @@
 # distutils: language = c++
 # distutils: sources = cpp/CBoardState.cpp cpp/Pieces.cpp cpp/CMove.cpp
 from libcpp cimport bool
-from libcpp.vector cimport vector
-from libcpp.list cimport list
 from libcpp.string cimport string
 from libcpp.pair cimport pair
+from libcpp.vector cimport vector
+from libcpp.list cimport list
 from cython.operator cimport dereference as deref, preincrement as inc
-
-
-cdef extern from "CMove.h" namespace "game":
-    cdef cppclass CMove:  
-        list[int] getCells()
-        int len()  
-        bool isCapture()
-        string toPDN()
-        
-    cdef cppclass CCaptureMove(CMove):
-        CCaptureMove() except +   
-        CCaptureMove(int) except +
-        void push_back(int) 
-        
-    cdef cppclass CSimpleMove(CMove):
-        CSimpleMove() except +  
-        CSimpleMove(int, int) except + 
-        
         
 cdef extern from "CBoardState.h" namespace "game":
     cdef cppclass CBoardState:
@@ -49,6 +31,116 @@ cdef extern from "CBoardState.h" namespace "game":
         vector[CMove*] findPossibleMoves(bool)
         void doMove(CMove& m) except +
 
+
+cdef extern from "CMove.h" namespace "game":
+    cdef cppclass CMove:  
+        list[int] getCells()
+        int len()  
+        bool isCapture()
+        string toPDN()
+        
+    cdef cppclass CCaptureMove(CMove):
+        CCaptureMove() except +   
+        CCaptureMove(int) except +
+        void push_back(int) 
+        
+    cdef cppclass CSimpleMove(CMove):
+        CSimpleMove() except +  
+        CSimpleMove(int, int) except + 
+
+
+
+cdef class GameState:
+    ''' The GameState gathers the state of the board plus some auxilliary info like whose turn to play and info to know if it is a draw '''
+    
+    cdef BoardState boardState 
+    cdef bool nextColor
+    cdef int noCaptureCounter 
+    
+    property nextColor:
+        def __get__(self): return self.nextColor        
+        
+    property noCaptureCounter:
+        def __get__(self): return self.noCaptureCounter
+        
+    property boardState:
+        def __get__(self): return self.boardState
+        
+    
+    def __cinit__(self, config = None):
+        if config:
+            self.boardState = BoardState(config['nRows'], config['nPieces'])
+            self.nextColor = config['startingColor']
+            self.noCaptureCounter = 0
+          
+    def copy(self):
+        copy = GameState()
+        copy.boardState = self.boardState.copy()
+        copy.noCaptureCounter = self.noCaptureCounter
+        copy.nextColor = self.nextColor
+        return copy   
+                            
+    def findPossibleMoves(self):
+        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.nextColor)
+        return [Move.wrap(m) for m in cMoves]
+           
+    def doMove(self, Move move, inplace = False):   
+        cdef CMove* cMove = move.cMove       
+        if inplace:
+            gs = self
+        else:
+            gs = GameState()
+            gs.boardState = self.boardState.copy()    
+        gs.boardState.cBoardState.doMove(deref(cMove)) 
+        gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+        gs.nextColor = not self.nextColor
+        return gs    
+        
+    cdef GameState doCMove(self, CMove& cMove):
+        gs = GameState()
+        gs.boardState = self.boardState.copy()     
+        gs.boardState.cBoardState.doMove(cMove)       
+        gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+        gs.nextColor = not self.nextColor
+        return gs
+        
+      
+    def findNextStates(self):
+        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.nextColor)      
+        nextStates = {}
+        for cMove in cMoves:
+            gs = self.doCMove(deref(cMove))
+            nextStates[ str(gs) ] = gs
+            del cMove 
+        return nextStates     
+
+    def getStateMoveDict(self):
+        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.nextColor)      
+        nextStates = {}
+        for cMove in cMoves:
+            gs = self.doCMove(deref(cMove))
+            nextStates[ str(gs) ] = Move.wrap(cMove)
+        return nextStates  
+
+                  
+    def reverse(self):
+        self.cGameState.reverse()
+        return self
+      
+    def __str__(self):
+        return self.cGameState.toString().decode('UTF-8')
+        
+
+    def toDisplay(self, showBoard = False):
+        s = self.boardState.toDisplay(showBoard)+'\n'
+        if self.nextColor:
+            s += "White's turn to play."
+        else:
+            s += "Black's turn to play."        
+        return s
+        
+    def display(self, showBoard = False):
+        print(self.toDisplay(showBoard)) 
 
 
 cdef class BoardState:
@@ -124,21 +216,22 @@ cdef class BoardState:
              
     def tryMoveFrom(self, int cellIndex):
         cdef vector[CSimpleMove*] cmoves = self.cBoardState.tryMoveFrom(cellIndex)
-        return [Move.Move_Init(m) for m in cmoves]    
+        return [Move.wrap(m) for m in cmoves]    
     
     def tryJumpFrom(self, int cellIndex):
         cdef vector[CCaptureMove*] cmoves = self.cBoardState.tryJumpFrom(cellIndex)
-        return [Move.Move_Init(m) for m in cmoves]
+        return [Move.wrap(m) for m in cmoves]
         
     def findPossibleMoves(self, bool white):
         cdef vector[CMove*] cmoves = self.cBoardState.findPossibleMoves(white)
-        return [Move.Move_Init(m) for m in cmoves]
+        return [Move.wrap(m) for m in cmoves]
     
     def doMove(self, Move move):
         cdef CMove* c = move.cMove
         self.cBoardState.doMove( deref(c) )
-        return self
-        
+        return self        
+            
+       
     def findNextStates(self, bool white):
         moves = self.findPossibleMoves(white)
         nextStates = []
@@ -222,7 +315,7 @@ cdef class Move:
         del self.cMove
     
     @staticmethod
-    cdef Move_Init(CMove* m):
+    cdef wrap(CMove* m):
         result = Move()
         result.cMove = m
         return result         
