@@ -1,5 +1,3 @@
-from multiprocessing import Pool
-import itertools
 from .cell import *
 from .boardState import *
 from .move import *
@@ -22,14 +20,14 @@ class GameState:
    
                 
     def findPossibleMoves(self):
-        return self.boardState.findPossibleMoves(self.nextColor) 
+        return self.boardState.findPossibleMoves(self.nextColor is Color.White) 
            
     def doMove(self, move, inplace = False):
         if inplace:
             gs = self
         else:
             gs = GameState()
-            gs.boardState = self.boardState.copy() 
+            gs.boardState = self.boardState.copy()            
         gs.boardState.doMove(move) # boardState's doMove is always in-place
         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
         gs.nextColor = ~self.nextColor
