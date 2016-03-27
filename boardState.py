@@ -158,7 +158,7 @@ class BoardState:
     def getPositions(self, color):
         '''Return an iterator over men and kings position of the given color'''
         for i in range(self.nCells):
-            if self.cells[i].color() is color: yield i
+            if self.cells[i].color() == color: yield i
 
         
     def tryJumpFrom(self, cellIndex, piece = None, previousCaptures = []):
@@ -196,11 +196,11 @@ class BoardState:
                 newPos = self.RCtoIndex(r2,c2)                  
                 if jumpPos in previousCaptures: continue
                 
-                color = piece.color()
+                isWhite = piece.isWhite()
                 jumpedCell = self.getCell(r1,c1)                   
-                if jumpedCell.color() == ~color and self.cells[newPos] == Cell.empty: 
+                if jumpedCell.color() == (not isWhite) and (self.cells[newPos] == Cell.empty): 
                     # if this is a valid jump
-                    if not piece.isKing() and (r2==0 and color == Color.White or r2==self.nRows-1): 
+                    if not piece.isKing() and (r2==0 and isWhite or r2==self.nRows-1): 
                         # if a man has reached the last row, it has to stop and be crowned
                         possibleVariations.append( CaptureMove([newPos]) )
                     else:
@@ -250,7 +250,7 @@ class BoardState:
         
         (r0,c0) = self.indexToRC(cellIndex)
         # trs store valid row movements (downward for blacks, upward for whites, an both for kings)   
-        trs = [-1,1] if piece.isKing() else [1 if piece.color() is Color.Black else -1] 
+        trs = [-1,1] if piece.isKing() else [-1 if piece.isWhite() else 1] 
              
         possibleMoves = []        
         for tr in trs:
@@ -322,7 +322,7 @@ class BoardState:
         else:
             raise Exception('Invalid argument, CaptureMove or SimpleMove expected')
                 
-        if (piece.color() is Color.White) and nextR==0 or (piece.color() is Color.Black) and nextR==self.nRows-1:
+        if (piece.isWhite() and nextR==0) or (piece.isBlack() and nextR==self.nRows-1):
             self.cells[end] = piece.promoted()
     
         return self    
