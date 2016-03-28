@@ -106,7 +106,8 @@ cdef class GameState:
         
       
     def findNextStates(self):
-        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)      
+        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn) 
+        cdef GameState gs          
         nextStates = {}
         for cMove in cMoves:
             gs = self.doCMove(deref(cMove))
@@ -115,7 +116,8 @@ cdef class GameState:
         return nextStates     
 
     def getStateMoveDict(self):
-        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)      
+        cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn) 
+        cdef GameState gs     
         nextStates = {}
         for cMove in cMoves:
             gs = self.doCMove(deref(cMove))
@@ -131,8 +133,7 @@ cdef class GameState:
         cdef string s
         s = string(b"W") if self.isWhiteTurn else string(b"B")
         s.append(self.boardState.cBoardState.toString())
-        #s.append(self.noCaptureCounter).encode('utf-8')
-        return s.decode('UTF-8')
+        return s.decode('UTF-8')+str(self.noCaptureCounter)
         
 
     def toDisplay(self, showBoard = False):
@@ -208,11 +209,12 @@ cdef class BoardState:
         return self.cBoardState.indexToRC(i)
         
     def getCell(self, int r,int c):
-        return chr(self.cBoardState.getCell(r, c))
+        return self.cBoardState.getCell(r, c)
                 
-    def setCell(self, i, cell):
-        cdef char c = ord(str(cell)) # convert the Cell to string, then get the asci code (char value)
-        self.cBoardState.setCell(i, c)        
+    def setCell(self, int i, cell):
+        cdef char c = cell.value # convert the Cell to string, then get the asci code (char value)
+        self.cBoardState.setCell(i, c)   
+          
         
     ''' 
     Core methods 
@@ -263,7 +265,7 @@ cdef class BoardState:
             s+='|'
             for c in range(nRows):
                 if c%2 != r%2:
-                    s+=' '+str(self.getCell(r,c))+' '
+                    s+=' '+str(chr(self.getCell(r,c)))+' '
                 else:
                     s+='   '
             s+='|'
