@@ -307,7 +307,7 @@ Convertissors, checkers and getters
         cells[end] = piece;  
         std::pair<int,int> endRC = indexToRC(end);
                 
-        if( Cell::isMan(piece) && (endRC.first==0  || endRC.first==nRows-1) ){
+        if( (piece == Cell::w && endRC.first==0)  || (piece == Cell::b && endRC.first==nRows-1) ){
             cells[end] = Cell::promote(piece);
         }
     }
