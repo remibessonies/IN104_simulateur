@@ -98,7 +98,7 @@ class BoardState:
         
     def __str__(self):
         '''Return a string representation of the state suitable for state recording'''
-        return '['+ ''.join(map(lambda x:x.name,self.cells)) +']'
+        return ''.join(map(str,self.cells))
     
     
     def display(self, showBoard = False):
@@ -155,10 +155,11 @@ class BoardState:
         print(s)
                        
         
-    def getPositions(self, color):
+    def getPositions(self, white):
         '''Return an iterator over men and kings position of the given color'''
+        function = Cell.isWhite if white else Cell.isBlack
         for i in range(self.nCells):
-            if self.cells[i].color() == color: yield i
+            if function(self.cells[i]): yield i
 
         
     def tryJumpFrom(self, cellIndex, piece = None, previousCaptures = []):
@@ -198,7 +199,7 @@ class BoardState:
                 
                 isWhite = piece.isWhite()
                 jumpedCell = self.getCell(r1,c1)                   
-                if jumpedCell.color() == (not isWhite) and (self.cells[newPos] == Cell.empty): 
+                if jumpedCell.value[0] == (not isWhite) and (self.cells[newPos] == Cell.empty): 
                     # if this is a valid jump
                     if not piece.isKing() and (r2==0 and isWhite or r2==self.nRows-1): 
                         # if a man has reached the last row, it has to stop and be crowned
