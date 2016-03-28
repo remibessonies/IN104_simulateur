@@ -7,6 +7,9 @@ class Cell(Enum):
     W = (True,True)
     b = (False,False)
     B = (False,True)
+    
+    def color(self):
+        return self.value[0]
      
     def isWhite(self):
         return self is Cell.w or self is Cell.W          
@@ -21,7 +24,7 @@ class Cell(Enum):
         return self.value[1]        
     
     def invertColor(self):
-        return Cell.empty if self is Cell.empty else Cell( (~self.color(), self.isKing() ) )
+        return Cell.empty if self is Cell.empty else Cell( (not self.color(), self.isKing() ) )
         
     def promoted(self):
         return Cell.empty if self is Cell.empty else Cell( (self.color(), True) )
