@@ -59,7 +59,10 @@ class GameState:
         return s
 
     def toDisplay(self, showBoard = False):
-        return self.boardState.toDisplay(showBoard)+'\n'+str(self.isWhiteTurn)+"'s turn to play."
+        s = self.boardState.toDisplay(showBoard)+'\n'
+        s += 'White' if self.isWhiteTurn else 'Black'
+        s += "'s turn to play."
+        return s
         
     def display(self, showBoard = False):
         print(self.toDisplay(showBoard))
