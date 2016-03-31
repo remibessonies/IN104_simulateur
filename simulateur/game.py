@@ -1,8 +1,9 @@
 import time
 import gc
 
-from .gameState import *
-from .player import *
+from .move import Move
+from .gameState import GameState
+from .player import Player, TimeOutException
 
 class Game:
     '''A Game instance runs a game between two ias. It manages the game's progress and checks players actions.

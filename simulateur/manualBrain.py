@@ -1,7 +1,7 @@
 import sys
 import time
-from .gameState import *
-from .move import *
+from .gameState import GameState
+from .move import Move
 from .player import TimeOutException
 
 class ManualBrain:
