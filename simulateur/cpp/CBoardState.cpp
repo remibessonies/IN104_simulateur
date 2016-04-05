@@ -143,7 +143,7 @@ Convertissors, checkers and getters
                 jumpedCell = getCell(jumpPos);             
                 if ((getCell(newPos)==Cell::empty || newPos==initPos) && Cell::isWhite(jumpedCell) != isWhite){ 
                     // if this is a valid jump
-                    if( !Cell::isKing(piece) && ((r2==0 && isWhite) || r2==nRows-1) ){ 
+                    if( !Cell::isKing(piece) && ((r2==0 && isWhite) || (r2==nRows-1 && !isWhite)) ){ 
                         // if a man has reached the last row, it has to stop and be crowned
                         possibleVariations.push_back( new CCaptureMove(newPos) );
                     }else{
