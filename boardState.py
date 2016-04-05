@@ -201,7 +201,7 @@ class BoardState:
                 jumpedCell = self.getCell(r1,c1)                   
                 if jumpedCell.value[0] == (not isWhite) and (self.cells[newPos] == Cell.empty): 
                     # if this is a valid jump
-                    if not piece.isKing() and (r2==0 and isWhite or r2==self.nRows-1): 
+                    if not piece.isKing() and ((r2==0 and isWhite) or (r2==self.nRows-1 and not isWhite)): 
                         # if a man has reached the last row, it has to stop and be crowned
                         possibleVariations.append( CaptureMove([newPos]) )
                     else:
