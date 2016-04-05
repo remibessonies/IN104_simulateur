@@ -3,7 +3,7 @@ from libcpp.string cimport string
 from libcpp.vector cimport vector
 from libcpp.pair cimport pair
 
-from IN104_simulateur.simulateur.cpp.move cimport *
+from .move cimport *
         
 cdef extern from "CBoardState.h" namespace "game":
     cdef cppclass CBoardState:

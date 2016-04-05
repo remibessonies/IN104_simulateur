@@ -1,41 +1,41 @@
+#!/usr/bin/env python
+import os
+import sys
+from distutils.core import setup
+from distutils.extension import Extension
 
-from distutils.core import setup, Extension
-from Cython.Build import cythonize
+USE_CYTHON = bool(os.getenv('USE_CYTHON'))
+ext = '.pyx' if USE_CYTHON else '.cpp'
 
 extensions = [
     Extension(
         name="simulateur.cpp.gameState",
-        sources=["simulateur/cpp/gameState.pyx"],
-        include_dirs = ["."], 
-        #extra_compile_args=["-std=c++11"],
-        #extra_link_args=["-std=c++11"]
+        sources=["simulateur/cpp/gameState"+ext],
+        include_dirs = ["."]
     ),
     Extension(
         name="simulateur.cpp.boardState",
-        sources=["simulateur/cpp/boardState.pyx"],
-        include_dirs = ["."], 
-        #extra_compile_args=["-std=c++11"],
-        #extra_link_args=["-std=c++11"]
+        sources=["simulateur/cpp/boardState"+ext],
+        include_dirs = ["."]
     ),
     Extension(
         name="simulateur.cpp.move",
-        sources=["simulateur/cpp/move.pyx"],
-        include_dirs = ["."], 
-        #extra_compile_args=["-std=c++11"],
-        #extra_link_args=["-std=c++11"]
+        sources=["simulateur/cpp/move"+ext],
+        include_dirs = ["."]
     )
 ]
 
-setup(
-    ext_modules = cythonize(extensions)
+if USE_CYTHON:
+    from Cython.Build import cythonize
+    extensions = cythonize(extensions)
+    print("Running setup using Cython")
+    
+setup(name='IN104_simulateur',
+    version='1.0',
+    description='Game simulator for checkers and checkers-like games',
+    author='Clément Masson',
+    author_email='masson.cle@gmail.com',
+    url='https://github.com/clement-masson/IN104_simulateur',
+    ext_modules = extensions
 )
 
-'''
-from distutils.core import setup
-from Cython.Build import cythonize
-
-setup(
-    name = "IN104_simulateur",
-    ext_modules = cythonize('code/cpp/*.pyx'),
-)
-'''

@@ -5,8 +5,8 @@ from libcpp cimport bool
 from libcpp.string cimport string
 from libcpp.vector cimport vector
 
-from IN104_simulateur.simulateur.cpp.move cimport *
-from IN104_simulateur.simulateur.cpp.boardState cimport *
+from .move cimport *
+from .boardState cimport *
 
 cdef class GameState:
     ''' The GameState gathers the state of the board plus some auxilliary info like whose turn to play and info to know if it is a draw '''

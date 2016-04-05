@@ -1,7 +1,8 @@
 # distutils: language = c++
 # distutils: sources = simulateur/cpp/CBoardState.cpp simulateur/cpp/Pieces.cpp simulateur/cpp/CMove.cpp
 from cython.operator cimport dereference as deref, preincrement as inc
-from IN104_simulateur.simulateur.cpp.move cimport *
+
+from .move cimport *
 
 cdef class Move:
     ''' A move is simply a list of cells which a piece passes by. 

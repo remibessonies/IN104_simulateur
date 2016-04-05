@@ -1,7 +1,8 @@
 # distutils: language = c++
 # distutils: sources = simulateur/cpp/CBoardState.cpp simulateur/cpp/Pieces.cpp simulateur/cpp/CMove.cpp
 from cython.operator cimport dereference as deref, preincrement as inc
-from IN104_simulateur.simulateur.cpp.boardState cimport CBoardState
+
+from .boardState cimport *
 
 cdef class BoardState:
     '''
