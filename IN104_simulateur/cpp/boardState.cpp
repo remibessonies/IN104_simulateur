@@ -4,16 +4,17 @@
 {
     "distutils": {
         "depends": [
-            "simulateur/cpp/CBoardState.h"
+            "IN104_simulateur/cpp/CBoardState.h",
+            "IN104_simulateur/cpp/CMove.h"
         ],
         "include_dirs": [
             "."
         ],
         "language": "c++",
         "sources": [
-            "simulateur/cpp/CBoardState.cpp",
-            "simulateur/cpp/Pieces.cpp",
-            "simulateur/cpp/CMove.cpp"
+            "IN104_simulateur/cpp/CBoardState.cpp",
+            "IN104_simulateur/cpp/CCell.cpp",
+            "IN104_simulateur/cpp/CMove.cpp"
         ]
     }
 }
@@ -262,8 +263,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__IN104_simulateur__simulateur__cpp__boardState
-#define __PYX_HAVE_API__IN104_simulateur__simulateur__cpp__boardState
+#define __PYX_HAVE__IN104_simulateur__cpp__boardState
+#define __PYX_HAVE_API__IN104_simulateur__cpp__boardState
 #include "string.h"
 #include <string>
 #include "ios"
@@ -483,14 +484,14 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "IN104_simulateur/simulateur/cpp/boardState.pyx",
-  "IN104_simulateur/stringsource",
-  "IN104_simulateur/simulateur/cpp/move.pxd",
+  "IN104_simulateur/cpp/boardState.pyx",
+  "stringsource",
+  "IN104_simulateur/cpp/move.pxd",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move;
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState;
+struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move;
+struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState;
 
 /* "move.pxd":23
  * 
@@ -499,21 +500,21 @@ struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState;
  *     cdef CMove* cMove
  * 
  */
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move {
+struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move {
   PyObject_HEAD
-  struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_vtab;
+  struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move *__pyx_vtab;
   game::CMove *cMove;
 };
 
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pxd":33
+/* "IN104_simulateur/cpp/boardState.pxd":33
  * 
  * 
  * cdef class BoardState:             # <<<<<<<<<<<<<<
  *     cdef CBoardState* cBoardState      # hold a C++ instance which we're wrapping
  *     cdef debug
  */
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState {
+struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState {
   PyObject_HEAD
   game::CBoardState *cBoardState;
   PyObject *debug;
@@ -529,10 +530,10 @@ struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState {
  * 
  */
 
-struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move {
+struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move {
   PyObject *(*wrap)(game::CMove *);
 };
-static struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move;
+static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move *__pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move;
 
 /* --- Runtime support code (head) --- */
 #ifndef CYTHON_REFNANNY
@@ -809,11 +810,11 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libcpp.list' */
 
-/* Module declarations from 'IN104_simulateur.simulateur.cpp.move' */
-static PyTypeObject *__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move = 0;
+/* Module declarations from 'IN104_simulateur.cpp.move' */
+static PyTypeObject *__pyx_ptype_16IN104_simulateur_3cpp_4move_Move = 0;
 
-/* Module declarations from 'IN104_simulateur.simulateur.cpp.boardState' */
-static PyTypeObject *__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState = 0;
+/* Module declarations from 'IN104_simulateur.cpp.boardState' */
+static PyTypeObject *__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState = 0;
 static PyObject *__pyx_convert_vector_to_py_char(const std::vector<char>  &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyObject_string_to_py_std__in_string(std::string const &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyUnicode_string_to_py_std__in_string(std::string const &); /*proto*/
@@ -821,10 +822,10 @@ static CYTHON_INLINE PyObject *__pyx_convert_PyStr_string_to_py_std__in_string(s
 static CYTHON_INLINE PyObject *__pyx_convert_PyBytes_string_to_py_std__in_string(std::string const &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyByteArray_string_to_py_std__in_string(std::string const &); /*proto*/
 static PyObject *__pyx_convert_pair_to_py_int____int(std::pair<int,int>  const &); /*proto*/
-#define __Pyx_MODULE_NAME "IN104_simulateur.simulateur.cpp.boardState"
-int __pyx_module_is_main_IN104_simulateur__simulateur__cpp__boardState = 0;
+#define __Pyx_MODULE_NAME "IN104_simulateur.cpp.boardState"
+int __pyx_module_is_main_IN104_simulateur__cpp__boardState = 0;
 
-/* Implementation of 'IN104_simulateur.simulateur.cpp.boardState' */
+/* Implementation of 'IN104_simulateur.cpp.boardState' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_chr;
 static char __pyx_k_[] = ",";
@@ -854,7 +855,6 @@ static char __pyx_k_test[] = "__test__";
 static char __pyx_k_nRows[] = "nRows";
 static char __pyx_k_print[] = "print";
 static char __pyx_k_range[] = "range";
-static char __pyx_k_value[] = "value";
 static char __pyx_k_doMove[] = "doMove";
 static char __pyx_k_format[] = "format";
 static char __pyx_k_getCell[] = "getCell";
@@ -900,36 +900,35 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_showBoard;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_toDisplay;
-static PyObject *__pyx_n_s_value;
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_b); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState___cinit__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_nRows, PyObject *__pyx_v_nPieces); /* proto */
-static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_2__dealloc__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_4copy(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6reverse(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_8__str__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_10isValidIndex(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_12isValidRC(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_16indexToRC(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_18getCell(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_20setCell(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i, PyObject *__pyx_v_cell); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_28doMove(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_move); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_30findNextStates(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_32toDisplay(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_34display(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_36viewBoard(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
-static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_b); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_nRows, PyObject *__pyx_v_nPieces); /* proto */
+static void __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__dealloc__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4copy(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6reverse(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__str__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10isValidIndex(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12isValidRC(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16indexToRC(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18getCell(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20setCell(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i, PyObject *__pyx_v_cell); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28doMove(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_move); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30findNextStates(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34display(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36viewBoard(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self); /* proto */
+static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_10boardState_BoardState(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_2;
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":14
+/* "IN104_simulateur/cpp/boardState.pyx":14
  * 
  *     property debug:
  *         def __get__(self): return self.debug             # <<<<<<<<<<<<<<
@@ -938,19 +937,19 @@ static PyObject *__pyx_int_2;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug___get__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug___get__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 0);
@@ -966,7 +965,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":15
+/* "IN104_simulateur/cpp/boardState.pyx":15
  *     property debug:
  *         def __get__(self): return self.debug
  *         def __set__(self, bool b): self.debug = b             # <<<<<<<<<<<<<<
@@ -975,8 +974,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_b); /*proto*/
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_b) {
+static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_b); /*proto*/
+static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_b) {
   bool __pyx_v_b;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -989,18 +988,18 @@ static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.debug.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.debug.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_b));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_b));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_b) {
+static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_2__set__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_b) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1021,14 +1020,14 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.debug.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.debug.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":18
+/* "IN104_simulateur/cpp/boardState.pyx":18
  * 
  *     property nRows:
  *         def __get__(self): return self.cBoardState.nRows             # <<<<<<<<<<<<<<
@@ -1037,19 +1036,19 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows___get__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows___get__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1067,7 +1066,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.nRows.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.nRows.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1075,7 +1074,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":21
+/* "IN104_simulateur/cpp/boardState.pyx":21
  * 
  *     property nCells:
  *         def __get__(self): return self.cBoardState.nCells             # <<<<<<<<<<<<<<
@@ -1084,19 +1083,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells___get__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells___get__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1114,7 +1113,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.nCells.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.nCells.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1122,7 +1121,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":24
+/* "IN104_simulateur/cpp/boardState.pyx":24
  * 
  *     property nPieces:
  *         def __get__(self): return self.cBoardState.nPieces             # <<<<<<<<<<<<<<
@@ -1131,19 +1130,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1161,7 +1160,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.nPieces.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.nPieces.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1169,7 +1168,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":27
+/* "IN104_simulateur/cpp/boardState.pyx":27
  * 
  *     property cells:
  *         def __get__(self): return self.cBoardState.getCells()             # <<<<<<<<<<<<<<
@@ -1178,19 +1177,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells___get__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells___get__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells___get__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells___get__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1208,7 +1207,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.cells.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.cells.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1216,7 +1215,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":30
+/* "IN104_simulateur/cpp/boardState.pyx":30
  * 
  * 
  *     def __cinit__(self, nRows=None, nPieces=None):             # <<<<<<<<<<<<<<
@@ -1225,8 +1224,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_nRows = 0;
   PyObject *__pyx_v_nPieces = 0;
   int __pyx_lineno = 0;
@@ -1280,18 +1279,18 @@ static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState___cinit__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_nRows, __pyx_v_nPieces);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_nRows, __pyx_v_nPieces);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState___cinit__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_nRows, PyObject *__pyx_v_nPieces) {
+static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_nRows, PyObject *__pyx_v_nPieces) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -1303,7 +1302,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":31
+  /* "IN104_simulateur/cpp/boardState.pyx":31
  * 
  *     def __cinit__(self, nRows=None, nPieces=None):
  *         self.debug = False             # <<<<<<<<<<<<<<
@@ -1316,7 +1315,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   __Pyx_DECREF(__pyx_v_self->debug);
   __pyx_v_self->debug = Py_False;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":32
+  /* "IN104_simulateur/cpp/boardState.pyx":32
  *     def __cinit__(self, nRows=None, nPieces=None):
  *         self.debug = False
  *         if nPieces:             # <<<<<<<<<<<<<<
@@ -1326,7 +1325,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_nPieces); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_1) {
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":33
+    /* "IN104_simulateur/cpp/boardState.pyx":33
  *         self.debug = False
  *         if nPieces:
  *             self.cBoardState = new CBoardState(nRows, nPieces)             # <<<<<<<<<<<<<<
@@ -1343,7 +1342,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
     }
     __pyx_v_self->cBoardState = __pyx_t_4;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":32
+    /* "IN104_simulateur/cpp/boardState.pyx":32
  *     def __cinit__(self, nRows=None, nPieces=None):
  *         self.debug = False
  *         if nPieces:             # <<<<<<<<<<<<<<
@@ -1352,7 +1351,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
  */
   }
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":30
+  /* "IN104_simulateur/cpp/boardState.pyx":30
  * 
  * 
  *     def __cinit__(self, nRows=None, nPieces=None):             # <<<<<<<<<<<<<<
@@ -1364,14 +1363,14 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":35
+/* "IN104_simulateur/cpp/boardState.pyx":35
  *             self.cBoardState = new CBoardState(nRows, nPieces)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1380,21 +1379,21 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSta
  */
 
 /* Python wrapper */
-static void __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_2__dealloc__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__dealloc__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_2__dealloc__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static void __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__dealloc__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":36
+  /* "IN104_simulateur/cpp/boardState.pyx":36
  * 
  *     def __dealloc__(self):
  *         del self.cBoardState             # <<<<<<<<<<<<<<
@@ -1403,7 +1402,7 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSt
  */
   delete __pyx_v_self->cBoardState;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":35
+  /* "IN104_simulateur/cpp/boardState.pyx":35
  *             self.cBoardState = new CBoardState(nRows, nPieces)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1415,7 +1414,7 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSt
   __Pyx_RefNannyFinishContext();
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":38
+/* "IN104_simulateur/cpp/boardState.pyx":38
  *         del self.cBoardState
  * 
  *     def copy(self):             # <<<<<<<<<<<<<<
@@ -1424,20 +1423,20 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardSt
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("copy (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_4copy(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4copy(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_4copy(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_copy = NULL;
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4copy(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+  struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_copy = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1447,19 +1446,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("copy", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":39
+  /* "IN104_simulateur/cpp/boardState.pyx":39
  * 
  *     def copy(self):
  *         copy = BoardState()             # <<<<<<<<<<<<<<
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )
  *         return copy
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_copy = ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_t_1);
+  __pyx_v_copy = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":40
+  /* "IN104_simulateur/cpp/boardState.pyx":40
  *     def copy(self):
  *         copy = BoardState()
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )             # <<<<<<<<<<<<<<
@@ -1474,7 +1473,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   __pyx_v_copy->cBoardState = __pyx_t_2;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":41
+  /* "IN104_simulateur/cpp/boardState.pyx":41
  *         copy = BoardState()
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )
  *         return copy             # <<<<<<<<<<<<<<
@@ -1486,7 +1485,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = ((PyObject *)__pyx_v_copy);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":38
+  /* "IN104_simulateur/cpp/boardState.pyx":38
  *         del self.cBoardState
  * 
  *     def copy(self):             # <<<<<<<<<<<<<<
@@ -1497,7 +1496,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.copy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.copy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_copy);
@@ -1506,7 +1505,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":43
+/* "IN104_simulateur/cpp/boardState.pyx":43
  *         return copy
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -1515,24 +1514,24 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reverse (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6reverse(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6reverse(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6reverse(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6reverse(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reverse", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":44
+  /* "IN104_simulateur/cpp/boardState.pyx":44
  * 
  *     def reverse(self):
  *         self.cBoardState.reverse()             # <<<<<<<<<<<<<<
@@ -1541,7 +1540,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   __pyx_v_self->cBoardState->reverse();
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":45
+  /* "IN104_simulateur/cpp/boardState.pyx":45
  *     def reverse(self):
  *         self.cBoardState.reverse()
  *         return self             # <<<<<<<<<<<<<<
@@ -1553,7 +1552,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":43
+  /* "IN104_simulateur/cpp/boardState.pyx":43
  *         return copy
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -1568,7 +1567,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":47
+/* "IN104_simulateur/cpp/boardState.pyx":47
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -1577,19 +1576,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_9__str__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_9__str__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_9__str__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_9__str__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__str__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_8__str__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__str__(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_8__str__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__str__(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1598,7 +1597,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":48
+  /* "IN104_simulateur/cpp/boardState.pyx":48
  * 
  *     def __str__(self):
  *         return self.cBoardState.toString().decode('UTF-8')             # <<<<<<<<<<<<<<
@@ -1612,7 +1611,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":47
+  /* "IN104_simulateur/cpp/boardState.pyx":47
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -1623,7 +1622,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.__str__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.__str__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1631,7 +1630,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":53
+/* "IN104_simulateur/cpp/boardState.pyx":53
  *     Checkers, converters, getters and setter
  *     '''
  *     def isValidIndex(self, int i):             # <<<<<<<<<<<<<<
@@ -1640,8 +1639,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_11isValidIndex(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_11isValidIndex(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_11isValidIndex(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_11isValidIndex(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -1654,18 +1653,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.isValidIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.isValidIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_10isValidIndex(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10isValidIndex(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_10isValidIndex(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10isValidIndex(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1674,7 +1673,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isValidIndex", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":54
+  /* "IN104_simulateur/cpp/boardState.pyx":54
  *     '''
  *     def isValidIndex(self, int i):
  *         return self.cBoardState.isValidIndex(i)             # <<<<<<<<<<<<<<
@@ -1688,7 +1687,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":53
+  /* "IN104_simulateur/cpp/boardState.pyx":53
  *     Checkers, converters, getters and setter
  *     '''
  *     def isValidIndex(self, int i):             # <<<<<<<<<<<<<<
@@ -1699,7 +1698,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.isValidIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.isValidIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1707,7 +1706,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":56
+/* "IN104_simulateur/cpp/boardState.pyx":56
  *         return self.cBoardState.isValidIndex(i)
  * 
  *     def isValidRC(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1716,8 +1715,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_13isValidRC(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_13isValidRC(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_13isValidRC(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_13isValidRC(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_r;
   int __pyx_v_c;
   int __pyx_lineno = 0;
@@ -1765,18 +1764,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("isValidRC", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.isValidRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.isValidRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_12isValidRC(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12isValidRC(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_12isValidRC(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12isValidRC(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1785,7 +1784,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isValidRC", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":57
+  /* "IN104_simulateur/cpp/boardState.pyx":57
  * 
  *     def isValidRC(self, int r, int c):
  *         return self.cBoardState.isValidRC(r,c)             # <<<<<<<<<<<<<<
@@ -1799,7 +1798,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":56
+  /* "IN104_simulateur/cpp/boardState.pyx":56
  *         return self.cBoardState.isValidIndex(i)
  * 
  *     def isValidRC(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1810,7 +1809,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.isValidRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.isValidRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1818,7 +1817,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":59
+/* "IN104_simulateur/cpp/boardState.pyx":59
  *         return self.cBoardState.isValidRC(r,c)
  * 
  *     def RCtoIndex(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1827,8 +1826,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_15RCtoIndex(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_15RCtoIndex(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_15RCtoIndex(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_15RCtoIndex(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_r;
   int __pyx_v_c;
   int __pyx_lineno = 0;
@@ -1876,18 +1875,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("RCtoIndex", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.RCtoIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.RCtoIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RCtoIndex(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1896,7 +1895,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("RCtoIndex", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":60
+  /* "IN104_simulateur/cpp/boardState.pyx":60
  * 
  *     def RCtoIndex(self, int r, int c):
  *         return self.cBoardState.RCtoIndex(r,c)             # <<<<<<<<<<<<<<
@@ -1910,7 +1909,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":59
+  /* "IN104_simulateur/cpp/boardState.pyx":59
  *         return self.cBoardState.isValidRC(r,c)
  * 
  *     def RCtoIndex(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1921,7 +1920,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.RCtoIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.RCtoIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1929,7 +1928,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":62
+/* "IN104_simulateur/cpp/boardState.pyx":62
  *         return self.cBoardState.RCtoIndex(r,c)
  * 
  *     def indexToRC(self, int i):             # <<<<<<<<<<<<<<
@@ -1938,8 +1937,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_17indexToRC(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_17indexToRC(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_17indexToRC(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_17indexToRC(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -1952,18 +1951,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.indexToRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.indexToRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_16indexToRC(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16indexToRC(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_16indexToRC(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16indexToRC(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1972,7 +1971,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("indexToRC", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":63
+  /* "IN104_simulateur/cpp/boardState.pyx":63
  * 
  *     def indexToRC(self, int i):
  *         return self.cBoardState.indexToRC(i)             # <<<<<<<<<<<<<<
@@ -1986,7 +1985,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":62
+  /* "IN104_simulateur/cpp/boardState.pyx":62
  *         return self.cBoardState.RCtoIndex(r,c)
  * 
  *     def indexToRC(self, int i):             # <<<<<<<<<<<<<<
@@ -1997,7 +1996,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.indexToRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.indexToRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2005,7 +2004,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":65
+/* "IN104_simulateur/cpp/boardState.pyx":65
  *         return self.cBoardState.indexToRC(i)
  * 
  *     def getCell(self, int r,int c):             # <<<<<<<<<<<<<<
@@ -2014,8 +2013,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_19getCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_19getCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_19getCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_19getCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_r;
   int __pyx_v_c;
   int __pyx_lineno = 0;
@@ -2063,18 +2062,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("getCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.getCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.getCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_18getCell(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18getCell(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_r, __pyx_v_c);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_18getCell(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18getCell(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_r, int __pyx_v_c) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2083,7 +2082,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("getCell", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":66
+  /* "IN104_simulateur/cpp/boardState.pyx":66
  * 
  *     def getCell(self, int r,int c):
  *         return self.cBoardState.getCell(r, c)             # <<<<<<<<<<<<<<
@@ -2097,7 +2096,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":65
+  /* "IN104_simulateur/cpp/boardState.pyx":65
  *         return self.cBoardState.indexToRC(i)
  * 
  *     def getCell(self, int r,int c):             # <<<<<<<<<<<<<<
@@ -2108,7 +2107,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.getCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.getCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2116,17 +2115,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":68
+/* "IN104_simulateur/cpp/boardState.pyx":68
  *         return self.cBoardState.getCell(r, c)
  * 
  *     def setCell(self, int i, cell):             # <<<<<<<<<<<<<<
- *         cdef char c = cell.value # convert the Cell to string, then get the asci code (char value)
+ *         cdef char c = cell
  *         self.cBoardState.setCell(i, c)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_21setCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_21setCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_21setCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_21setCell(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_i;
   PyObject *__pyx_v_cell = 0;
   int __pyx_lineno = 0;
@@ -2174,55 +2173,51 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("setCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.setCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.setCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_20setCell(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_i, __pyx_v_cell);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20setCell(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_i, __pyx_v_cell);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_20setCell(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i, PyObject *__pyx_v_cell) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20setCell(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_i, PyObject *__pyx_v_cell) {
   char __pyx_v_c;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  char __pyx_t_2;
+  char __pyx_t_1;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("setCell", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":69
+  /* "IN104_simulateur/cpp/boardState.pyx":69
  * 
  *     def setCell(self, int i, cell):
- *         cdef char c = cell.value # convert the Cell to string, then get the asci code (char value)             # <<<<<<<<<<<<<<
+ *         cdef char c = cell             # <<<<<<<<<<<<<<
  *         self.cBoardState.setCell(i, c)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cell, __pyx_n_s_value); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_char(__pyx_t_1); if (unlikely((__pyx_t_2 == (char)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_c = __pyx_t_2;
+  __pyx_t_1 = __Pyx_PyInt_As_char(__pyx_v_cell); if (unlikely((__pyx_t_1 == (char)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v_c = __pyx_t_1;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":70
+  /* "IN104_simulateur/cpp/boardState.pyx":70
  *     def setCell(self, int i, cell):
- *         cdef char c = cell.value # convert the Cell to string, then get the asci code (char value)
+ *         cdef char c = cell
  *         self.cBoardState.setCell(i, c)             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __pyx_v_self->cBoardState->setCell(__pyx_v_i, __pyx_v_c);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":68
+  /* "IN104_simulateur/cpp/boardState.pyx":68
  *         return self.cBoardState.getCell(r, c)
  * 
  *     def setCell(self, int i, cell):             # <<<<<<<<<<<<<<
- *         cdef char c = cell.value # convert the Cell to string, then get the asci code (char value)
+ *         cdef char c = cell
  *         self.cBoardState.setCell(i, c)
  */
 
@@ -2230,8 +2225,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.setCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.setCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2239,7 +2233,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":77
+/* "IN104_simulateur/cpp/boardState.pyx":77
  *     '''
  * 
  *     def tryMoveFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2248,8 +2242,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex) {
   int __pyx_v_cellIndex;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2262,18 +2256,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.tryMoveFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.tryMoveFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_cellIndex));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_cellIndex));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tryMoveFrom(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex) {
   std::vector<game::CSimpleMove *>  __pyx_v_cmoves;
   game::CSimpleMove *__pyx_v_m;
   PyObject *__pyx_r = NULL;
@@ -2287,7 +2281,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tryMoveFrom", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":78
+  /* "IN104_simulateur/cpp/boardState.pyx":78
  * 
  *     def tryMoveFrom(self, int cellIndex):
  *         cdef vector[CSimpleMove*] cmoves = self.cBoardState.tryMoveFrom(cellIndex)             # <<<<<<<<<<<<<<
@@ -2296,7 +2290,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->tryMoveFrom(__pyx_v_cellIndex);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":79
+  /* "IN104_simulateur/cpp/boardState.pyx":79
  *     def tryMoveFrom(self, int cellIndex):
  *         cdef vector[CSimpleMove*] cmoves = self.cBoardState.tryMoveFrom(cellIndex)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2312,7 +2306,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2321,7 +2315,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":77
+  /* "IN104_simulateur/cpp/boardState.pyx":77
  *     '''
  * 
  *     def tryMoveFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2333,7 +2327,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.tryMoveFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.tryMoveFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2341,7 +2335,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":81
+/* "IN104_simulateur/cpp/boardState.pyx":81
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def tryJumpFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2350,8 +2344,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom(PyObject *__pyx_v_self, PyObject *__pyx_arg_cellIndex) {
   int __pyx_v_cellIndex;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2364,18 +2358,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.tryJumpFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.tryJumpFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_cellIndex));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((int)__pyx_v_cellIndex));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tryJumpFrom(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, int __pyx_v_cellIndex) {
   std::vector<game::CCaptureMove *>  __pyx_v_cmoves;
   game::CCaptureMove *__pyx_v_m;
   PyObject *__pyx_r = NULL;
@@ -2389,7 +2383,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tryJumpFrom", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":82
+  /* "IN104_simulateur/cpp/boardState.pyx":82
  * 
  *     def tryJumpFrom(self, int cellIndex):
  *         cdef vector[CCaptureMove*] cmoves = self.cBoardState.tryJumpFrom(cellIndex)             # <<<<<<<<<<<<<<
@@ -2398,7 +2392,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->tryJumpFrom(__pyx_v_cellIndex);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":83
+  /* "IN104_simulateur/cpp/boardState.pyx":83
  *     def tryJumpFrom(self, int cellIndex):
  *         cdef vector[CCaptureMove*] cmoves = self.cBoardState.tryJumpFrom(cellIndex)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2414,7 +2408,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2423,7 +2417,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":81
+  /* "IN104_simulateur/cpp/boardState.pyx":81
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def tryJumpFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2435,7 +2429,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.tryJumpFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.tryJumpFrom", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2443,7 +2437,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":85
+/* "IN104_simulateur/cpp/boardState.pyx":85
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def findPossibleMoves(self, bool white):             # <<<<<<<<<<<<<<
@@ -2452,8 +2446,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves(PyObject *__pyx_v_self, PyObject *__pyx_arg_white); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves(PyObject *__pyx_v_self, PyObject *__pyx_arg_white) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves(PyObject *__pyx_v_self, PyObject *__pyx_arg_white); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves(PyObject *__pyx_v_self, PyObject *__pyx_arg_white) {
   bool __pyx_v_white;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2466,18 +2460,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.findPossibleMoves", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.findPossibleMoves", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_white));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_white));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26findPossibleMoves(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white) {
   std::vector<game::CMove *>  __pyx_v_cmoves;
   game::CMove *__pyx_v_m;
   PyObject *__pyx_r = NULL;
@@ -2491,7 +2485,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("findPossibleMoves", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":86
+  /* "IN104_simulateur/cpp/boardState.pyx":86
  * 
  *     def findPossibleMoves(self, bool white):
  *         cdef vector[CMove*] cmoves = self.cBoardState.findPossibleMoves(white)             # <<<<<<<<<<<<<<
@@ -2500,7 +2494,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->findPossibleMoves(__pyx_v_white);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":87
+  /* "IN104_simulateur/cpp/boardState.pyx":87
  *     def findPossibleMoves(self, bool white):
  *         cdef vector[CMove*] cmoves = self.cBoardState.findPossibleMoves(white)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2516,7 +2510,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2525,7 +2519,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":85
+  /* "IN104_simulateur/cpp/boardState.pyx":85
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def findPossibleMoves(self, bool white):             # <<<<<<<<<<<<<<
@@ -2537,7 +2531,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.findPossibleMoves", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.findPossibleMoves", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2545,7 +2539,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":89
+/* "IN104_simulateur/cpp/boardState.pyx":89
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def doMove(self, Move move):             # <<<<<<<<<<<<<<
@@ -2554,16 +2548,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_29doMove(PyObject *__pyx_v_self, PyObject *__pyx_v_move); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_29doMove(PyObject *__pyx_v_self, PyObject *__pyx_v_move) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_29doMove(PyObject *__pyx_v_self, PyObject *__pyx_v_move); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_29doMove(PyObject *__pyx_v_self, PyObject *__pyx_v_move) {
   CYTHON_UNUSED int __pyx_lineno = 0;
   CYTHON_UNUSED const char *__pyx_filename = NULL;
   CYTHON_UNUSED int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("doMove (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_28doMove(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_move));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28doMove(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_move));
 
   /* function exit code */
   goto __pyx_L0;
@@ -2574,7 +2568,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_28doMove(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_move) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28doMove(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_move) {
   game::CMove *__pyx_v_c;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2584,7 +2578,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("doMove", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":90
+  /* "IN104_simulateur/cpp/boardState.pyx":90
  * 
  *     def doMove(self, Move move):
  *         cdef CMove* c = move.cMove             # <<<<<<<<<<<<<<
@@ -2594,7 +2588,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_1 = __pyx_v_move->cMove;
   __pyx_v_c = __pyx_t_1;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":91
+  /* "IN104_simulateur/cpp/boardState.pyx":91
  *     def doMove(self, Move move):
  *         cdef CMove* c = move.cMove
  *         self.cBoardState.doMove( deref(c) )             # <<<<<<<<<<<<<<
@@ -2608,7 +2602,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":92
+  /* "IN104_simulateur/cpp/boardState.pyx":92
  *         cdef CMove* c = move.cMove
  *         self.cBoardState.doMove( deref(c) )
  *         return self             # <<<<<<<<<<<<<<
@@ -2620,7 +2614,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":89
+  /* "IN104_simulateur/cpp/boardState.pyx":89
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def doMove(self, Move move):             # <<<<<<<<<<<<<<
@@ -2630,7 +2624,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.doMove", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.doMove", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2638,7 +2632,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":95
+/* "IN104_simulateur/cpp/boardState.pyx":95
  * 
  * 
  *     def findNextStates(self, bool white):             # <<<<<<<<<<<<<<
@@ -2647,8 +2641,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_31findNextStates(PyObject *__pyx_v_self, PyObject *__pyx_arg_white); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_31findNextStates(PyObject *__pyx_v_self, PyObject *__pyx_arg_white) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_31findNextStates(PyObject *__pyx_v_self, PyObject *__pyx_arg_white); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_31findNextStates(PyObject *__pyx_v_self, PyObject *__pyx_arg_white) {
   bool __pyx_v_white;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2661,18 +2655,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_30findNextStates(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_white));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30findNextStates(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((bool)__pyx_v_white));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_30findNextStates(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30findNextStates(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, bool __pyx_v_white) {
   PyObject *__pyx_v_moves = NULL;
   PyObject *__pyx_v_nextStates = NULL;
   PyObject *__pyx_v_m = NULL;
@@ -2691,7 +2685,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("findNextStates", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":96
+  /* "IN104_simulateur/cpp/boardState.pyx":96
  * 
  *     def findNextStates(self, bool white):
  *         moves = self.findPossibleMoves(white)             # <<<<<<<<<<<<<<
@@ -2731,7 +2725,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_moves = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":97
+  /* "IN104_simulateur/cpp/boardState.pyx":97
  *     def findNextStates(self, bool white):
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []             # <<<<<<<<<<<<<<
@@ -2743,7 +2737,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_nextStates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":98
+  /* "IN104_simulateur/cpp/boardState.pyx":98
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []
  *         for m in moves:             # <<<<<<<<<<<<<<
@@ -2792,7 +2786,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":99
+    /* "IN104_simulateur/cpp/boardState.pyx":99
  *         nextStates = []
  *         for m in moves:
  *             nextStates.append( self.copy().doMove(m) )             # <<<<<<<<<<<<<<
@@ -2850,7 +2844,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_nextStates, __pyx_t_2); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":98
+    /* "IN104_simulateur/cpp/boardState.pyx":98
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []
  *         for m in moves:             # <<<<<<<<<<<<<<
@@ -2860,7 +2854,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":100
+  /* "IN104_simulateur/cpp/boardState.pyx":100
  *         for m in moves:
  *             nextStates.append( self.copy().doMove(m) )
  *         return nextStates             # <<<<<<<<<<<<<<
@@ -2872,7 +2866,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = __pyx_v_nextStates;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":95
+  /* "IN104_simulateur/cpp/boardState.pyx":95
  * 
  * 
  *     def findNextStates(self, bool white):             # <<<<<<<<<<<<<<
@@ -2887,7 +2881,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_moves);
@@ -2898,7 +2892,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":107
+/* "IN104_simulateur/cpp/boardState.pyx":107
  *     Visualization methods
  *     '''
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -2907,9 +2901,9 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_32toDisplay[] = " Return a string suitable for state visualization in text mode (like the one at the top of this file) \n        If showBard is True, then a board with cell indices is shown next to the state";
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay[] = " Return a string suitable for state visualization in text mode (like the one at the top of this file) \n        If showBard is True, then a board with cell indices is shown next to the state";
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_showBoard = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2953,18 +2947,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("toDisplay", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_32toDisplay(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_showBoard);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_showBoard);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_32toDisplay(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
   PyObject *__pyx_v_formater = NULL;
   PyObject *__pyx_v_nRows = NULL;
   PyObject *__pyx_v_s = NULL;
@@ -2991,7 +2985,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("toDisplay", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":111
+  /* "IN104_simulateur/cpp/boardState.pyx":111
  *         If showBard is True, then a board with cell indices is shown next to the state'''
  * 
  *         formater = '{0:3d}'             # <<<<<<<<<<<<<<
@@ -3001,7 +2995,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_INCREF(__pyx_kp_s_0_3d);
   __pyx_v_formater = __pyx_kp_s_0_3d;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":112
+  /* "IN104_simulateur/cpp/boardState.pyx":112
  * 
  *         formater = '{0:3d}'
  *         nRows = self.cBoardState.nRows             # <<<<<<<<<<<<<<
@@ -3013,7 +3007,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_nRows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":114
+  /* "IN104_simulateur/cpp/boardState.pyx":114
  *         nRows = self.cBoardState.nRows
  * 
  *         s = ","+('---'*nRows)+","             # <<<<<<<<<<<<<<
@@ -3031,7 +3025,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":115
+  /* "IN104_simulateur/cpp/boardState.pyx":115
  * 
  *         s = ","+('---'*nRows)+","
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3041,7 +3035,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_3) {
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":116
+    /* "IN104_simulateur/cpp/boardState.pyx":116
  *         s = ","+('---'*nRows)+","
  *         if showBoard:
  *             s+= "    ,"+('---'*nRows)+","             # <<<<<<<<<<<<<<
@@ -3062,7 +3056,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":115
+    /* "IN104_simulateur/cpp/boardState.pyx":115
  * 
  *         s = ","+('---'*nRows)+","
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3071,7 +3065,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   }
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":117
+  /* "IN104_simulateur/cpp/boardState.pyx":117
  *         if showBoard:
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"             # <<<<<<<<<<<<<<
@@ -3083,7 +3077,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":118
+  /* "IN104_simulateur/cpp/boardState.pyx":118
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -3141,7 +3135,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":119
+    /* "IN104_simulateur/cpp/boardState.pyx":119
  *         s +="\n"
  *         for r in range(nRows):
  *             s+='|'             # <<<<<<<<<<<<<<
@@ -3153,7 +3147,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":120
+    /* "IN104_simulateur/cpp/boardState.pyx":120
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3211,7 +3205,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":121
+      /* "IN104_simulateur/cpp/boardState.pyx":121
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3229,7 +3223,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       if (__pyx_t_3) {
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":122
+        /* "IN104_simulateur/cpp/boardState.pyx":122
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '             # <<<<<<<<<<<<<<
@@ -3293,7 +3287,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":121
+        /* "IN104_simulateur/cpp/boardState.pyx":121
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3303,7 +3297,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         goto __pyx_L8;
       }
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":124
+      /* "IN104_simulateur/cpp/boardState.pyx":124
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '
  *                 else:
  *                     s+='   '             # <<<<<<<<<<<<<<
@@ -3318,7 +3312,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       }
       __pyx_L8:;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":120
+      /* "IN104_simulateur/cpp/boardState.pyx":120
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3328,7 +3322,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":125
+    /* "IN104_simulateur/cpp/boardState.pyx":125
  *                 else:
  *                     s+='   '
  *             s+='|'             # <<<<<<<<<<<<<<
@@ -3340,7 +3334,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":126
+    /* "IN104_simulateur/cpp/boardState.pyx":126
  *                     s+='   '
  *             s+='|'
  *             if showBoard:             # <<<<<<<<<<<<<<
@@ -3350,7 +3344,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     if (__pyx_t_3) {
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":127
+      /* "IN104_simulateur/cpp/boardState.pyx":127
  *             s+='|'
  *             if showBoard:
  *                 s+='    |'             # <<<<<<<<<<<<<<
@@ -3362,7 +3356,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":128
+      /* "IN104_simulateur/cpp/boardState.pyx":128
  *             if showBoard:
  *                 s+='    |'
  *                 for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3420,7 +3414,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":129
+        /* "IN104_simulateur/cpp/boardState.pyx":129
  *                 s+='    |'
  *                 for c in range(nRows):
  *                     if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3438,7 +3432,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         if (__pyx_t_3) {
 
-          /* "IN104_simulateur/simulateur/cpp/boardState.pyx":130
+          /* "IN104_simulateur/cpp/boardState.pyx":130
  *                 for c in range(nRows):
  *                     if c%2 != r%2:
  *                         s+=formater.format(self.RCtoIndex(r,c))             # <<<<<<<<<<<<<<
@@ -3508,7 +3502,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
           __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_10);
           __pyx_t_10 = 0;
 
-          /* "IN104_simulateur/simulateur/cpp/boardState.pyx":129
+          /* "IN104_simulateur/cpp/boardState.pyx":129
  *                 s+='    |'
  *                 for c in range(nRows):
  *                     if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3518,7 +3512,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
           goto __pyx_L12;
         }
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":132
+        /* "IN104_simulateur/cpp/boardState.pyx":132
  *                         s+=formater.format(self.RCtoIndex(r,c))
  *                     else:
  *                         s+='   '             # <<<<<<<<<<<<<<
@@ -3533,7 +3527,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         }
         __pyx_L12:;
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":128
+        /* "IN104_simulateur/cpp/boardState.pyx":128
  *             if showBoard:
  *                 s+='    |'
  *                 for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3543,7 +3537,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":133
+      /* "IN104_simulateur/cpp/boardState.pyx":133
  *                     else:
  *                         s+='   '
  *                 s+='|'             # <<<<<<<<<<<<<<
@@ -3555,7 +3549,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":126
+      /* "IN104_simulateur/cpp/boardState.pyx":126
  *                     s+='   '
  *             s+='|'
  *             if showBoard:             # <<<<<<<<<<<<<<
@@ -3564,7 +3558,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
     }
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":135
+    /* "IN104_simulateur/cpp/boardState.pyx":135
  *                 s+='|'
  * 
  *             s+='\n'             # <<<<<<<<<<<<<<
@@ -3576,7 +3570,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":118
+    /* "IN104_simulateur/cpp/boardState.pyx":118
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -3586,7 +3580,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":136
+  /* "IN104_simulateur/cpp/boardState.pyx":136
  * 
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"             # <<<<<<<<<<<<<<
@@ -3607,7 +3601,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":137
+  /* "IN104_simulateur/cpp/boardState.pyx":137
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3617,7 +3611,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_3) {
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":138
+    /* "IN104_simulateur/cpp/boardState.pyx":138
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:
  *             s+= "    '"+('---'*nRows)+"'"             # <<<<<<<<<<<<<<
@@ -3638,7 +3632,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":137
+    /* "IN104_simulateur/cpp/boardState.pyx":137
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3647,7 +3641,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
   }
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":139
+  /* "IN104_simulateur/cpp/boardState.pyx":139
  *         if showBoard:
  *             s+= "    '"+('---'*nRows)+"'"
  *         return s             # <<<<<<<<<<<<<<
@@ -3659,7 +3653,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = __pyx_v_s;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":107
+  /* "IN104_simulateur/cpp/boardState.pyx":107
  *     Visualization methods
  *     '''
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3677,7 +3671,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_formater);
@@ -3690,7 +3684,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":141
+/* "IN104_simulateur/cpp/boardState.pyx":141
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3699,8 +3693,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_35display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_35display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_35display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_35display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_showBoard = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -3744,18 +3738,18 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("display", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_34display(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_showBoard);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34display(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), __pyx_v_showBoard);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_34display(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34display(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3767,7 +3761,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("display", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":142
+  /* "IN104_simulateur/cpp/boardState.pyx":142
  * 
  *     def display(self, showBoard = False):
  *         print(self.toDisplay(showBoard))             # <<<<<<<<<<<<<<
@@ -3804,7 +3798,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 142; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":141
+  /* "IN104_simulateur/cpp/boardState.pyx":141
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3820,7 +3814,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3828,7 +3822,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/boardState.pyx":145
+/* "IN104_simulateur/cpp/boardState.pyx":145
  * 
  * 
  *     def viewBoard(self):             # <<<<<<<<<<<<<<
@@ -3837,19 +3831,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_37viewBoard(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_37viewBoard(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_37viewBoard(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_37viewBoard(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("viewBoard (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_36viewBoard(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36viewBoard(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_36viewBoard(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36viewBoard(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *__pyx_v_self) {
   PyObject *__pyx_v_formater = NULL;
   PyObject *__pyx_v_nRows = NULL;
   PyObject *__pyx_v_s = NULL;
@@ -3876,7 +3870,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("viewBoard", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":146
+  /* "IN104_simulateur/cpp/boardState.pyx":146
  * 
  *     def viewBoard(self):
  *         formater = '{0:3d}'             # <<<<<<<<<<<<<<
@@ -3886,7 +3880,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_INCREF(__pyx_kp_s_0_3d);
   __pyx_v_formater = __pyx_kp_s_0_3d;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":147
+  /* "IN104_simulateur/cpp/boardState.pyx":147
  *     def viewBoard(self):
  *         formater = '{0:3d}'
  *         nRows = self.cBoardState.nRows             # <<<<<<<<<<<<<<
@@ -3898,7 +3892,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_nRows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":149
+  /* "IN104_simulateur/cpp/boardState.pyx":149
  *         nRows = self.cBoardState.nRows
  * 
  *         s = ","+('---'*nRows)+",\n"             # <<<<<<<<<<<<<<
@@ -3916,7 +3910,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":150
+  /* "IN104_simulateur/cpp/boardState.pyx":150
  * 
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -3974,7 +3968,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":151
+    /* "IN104_simulateur/cpp/boardState.pyx":151
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):
  *             s+='|'             # <<<<<<<<<<<<<<
@@ -3986,7 +3980,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":152
+    /* "IN104_simulateur/cpp/boardState.pyx":152
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -4044,7 +4038,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":153
+      /* "IN104_simulateur/cpp/boardState.pyx":153
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -4062,7 +4056,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_10) {
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":154
+        /* "IN104_simulateur/cpp/boardState.pyx":154
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  *                     s+=formater.format(self.RCtoIndex(r,c))             # <<<<<<<<<<<<<<
@@ -4132,7 +4126,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "IN104_simulateur/simulateur/cpp/boardState.pyx":153
+        /* "IN104_simulateur/cpp/boardState.pyx":153
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -4142,7 +4136,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
         goto __pyx_L7;
       }
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":156
+      /* "IN104_simulateur/cpp/boardState.pyx":156
  *                     s+=formater.format(self.RCtoIndex(r,c))
  *                 else:
  *                     s+='   '             # <<<<<<<<<<<<<<
@@ -4157,7 +4151,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
       }
       __pyx_L7:;
 
-      /* "IN104_simulateur/simulateur/cpp/boardState.pyx":152
+      /* "IN104_simulateur/cpp/boardState.pyx":152
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -4167,7 +4161,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":157
+    /* "IN104_simulateur/cpp/boardState.pyx":157
  *                 else:
  *                     s+='   '
  *             s+='|\n'             # <<<<<<<<<<<<<<
@@ -4179,7 +4173,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/simulateur/cpp/boardState.pyx":150
+    /* "IN104_simulateur/cpp/boardState.pyx":150
  * 
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -4189,7 +4183,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":158
+  /* "IN104_simulateur/cpp/boardState.pyx":158
  *                     s+='   '
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"             # <<<<<<<<<<<<<<
@@ -4210,7 +4204,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":159
+  /* "IN104_simulateur/cpp/boardState.pyx":159
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"
  *         return s             # <<<<<<<<<<<<<<
@@ -4222,7 +4216,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __pyx_r = __pyx_v_s;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":145
+  /* "IN104_simulateur/cpp/boardState.pyx":145
  * 
  * 
  *     def viewBoard(self):             # <<<<<<<<<<<<<<
@@ -4240,7 +4234,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_10boardState_10Bo
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.boardState.BoardState.viewBoard", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.viewBoard", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_formater);
@@ -4629,8 +4623,8 @@ static PyObject *__pyx_convert_pair_to_py_int____int(std::pair<int,int>  const &
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *p;
+static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_10boardState_BoardState(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -4638,16 +4632,16 @@ static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_10boardState_
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)o);
+  p = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)o);
   p->debug = Py_None; Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_1__cinit__(o, a, k) < 0)) {
+  if (unlikely(__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_1__cinit__(o, a, k) < 0)) {
     Py_DECREF(o); o = 0;
   }
   return o;
 }
 
-static void __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState(PyObject *o) {
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)o;
+static void __pyx_tp_dealloc_16IN104_simulateur_3cpp_10boardState_BoardState(PyObject *o) {
+  struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)o;
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && !_PyGC_FINALIZED(o)) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -4658,7 +4652,7 @@ static void __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_10boardState_B
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_3__dealloc__(o);
+    __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
@@ -4666,31 +4660,31 @@ static void __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_10boardState_B
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static int __pyx_tp_traverse_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_16IN104_simulateur_3cpp_10boardState_BoardState(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)o;
+  struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)o;
   if (p->debug) {
     e = (*v)(p->debug, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState(PyObject *o) {
+static int __pyx_tp_clear_16IN104_simulateur_3cpp_10boardState_BoardState(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState *)o;
+  struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *p = (struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)o;
   tmp = ((PyObject*)p->debug);
   p->debug = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyObject *__pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_debug(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(o);
+static PyObject *__pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_debug(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_1__get__(o);
 }
 
-static int __pyx_setprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_debug(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_16IN104_simulateur_3cpp_10boardState_10BoardState_debug(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(o, v);
+    return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -4698,57 +4692,57 @@ static int __pyx_setprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10Boa
   }
 }
 
-static PyObject *__pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nRows(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(o);
+static PyObject *__pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nRows(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRows_1__get__(o);
 }
 
-static PyObject *__pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nCells(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(o);
+static PyObject *__pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nCells(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCells_1__get__(o);
 }
 
-static PyObject *__pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nPieces(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(o);
+static PyObject *__pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nPieces(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPieces_1__get__(o);
 }
 
-static PyObject *__pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_cells(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(o);
+static PyObject *__pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_cells(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5cells_1__get__(o);
 }
 
-static PyMethodDef __pyx_methods_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState[] = {
-  {"copy", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_5copy, METH_NOARGS, 0},
-  {"reverse", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_7reverse, METH_NOARGS, 0},
-  {"isValidIndex", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_11isValidIndex, METH_O, 0},
-  {"isValidRC", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_13isValidRC, METH_VARARGS|METH_KEYWORDS, 0},
-  {"RCtoIndex", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_15RCtoIndex, METH_VARARGS|METH_KEYWORDS, 0},
-  {"indexToRC", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_17indexToRC, METH_O, 0},
-  {"getCell", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_19getCell, METH_VARARGS|METH_KEYWORDS, 0},
-  {"setCell", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_21setCell, METH_VARARGS|METH_KEYWORDS, 0},
-  {"tryMoveFrom", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom, METH_O, 0},
-  {"tryJumpFrom", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom, METH_O, 0},
-  {"findPossibleMoves", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves, METH_O, 0},
-  {"doMove", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_29doMove, METH_O, 0},
-  {"findNextStates", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_31findNextStates, METH_O, 0},
-  {"toDisplay", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_33toDisplay, METH_VARARGS|METH_KEYWORDS, __pyx_doc_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_32toDisplay},
-  {"display", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_35display, METH_VARARGS|METH_KEYWORDS, 0},
-  {"viewBoard", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_37viewBoard, METH_NOARGS, 0},
+static PyMethodDef __pyx_methods_16IN104_simulateur_3cpp_10boardState_BoardState[] = {
+  {"copy", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5copy, METH_NOARGS, 0},
+  {"reverse", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_7reverse, METH_NOARGS, 0},
+  {"isValidIndex", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_11isValidIndex, METH_O, 0},
+  {"isValidRC", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_13isValidRC, METH_VARARGS|METH_KEYWORDS, 0},
+  {"RCtoIndex", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_15RCtoIndex, METH_VARARGS|METH_KEYWORDS, 0},
+  {"indexToRC", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_17indexToRC, METH_O, 0},
+  {"getCell", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_19getCell, METH_VARARGS|METH_KEYWORDS, 0},
+  {"setCell", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_21setCell, METH_VARARGS|METH_KEYWORDS, 0},
+  {"tryMoveFrom", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_23tryMoveFrom, METH_O, 0},
+  {"tryJumpFrom", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_25tryJumpFrom, METH_O, 0},
+  {"findPossibleMoves", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_27findPossibleMoves, METH_O, 0},
+  {"doMove", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_29doMove, METH_O, 0},
+  {"findNextStates", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_31findNextStates, METH_O, 0},
+  {"toDisplay", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33toDisplay, METH_VARARGS|METH_KEYWORDS, __pyx_doc_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay},
+  {"display", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_35display, METH_VARARGS|METH_KEYWORDS, 0},
+  {"viewBoard", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_37viewBoard, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState[] = {
-  {(char *)"debug", __pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_debug, __pyx_setprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_debug, 0, 0},
-  {(char *)"nRows", __pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nRows, 0, 0, 0},
-  {(char *)"nCells", __pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nCells, 0, 0, 0},
-  {(char *)"nPieces", __pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_nPieces, 0, 0, 0},
-  {(char *)"cells", __pyx_getprop_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_cells, 0, 0, 0},
+static struct PyGetSetDef __pyx_getsets_16IN104_simulateur_3cpp_10boardState_BoardState[] = {
+  {(char *)"debug", __pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_debug, __pyx_setprop_16IN104_simulateur_3cpp_10boardState_10BoardState_debug, 0, 0},
+  {(char *)"nRows", __pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nRows, 0, 0, 0},
+  {(char *)"nCells", __pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nCells, 0, 0, 0},
+  {(char *)"nPieces", __pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_nPieces, 0, 0, 0},
+  {(char *)"cells", __pyx_getprop_16IN104_simulateur_3cpp_10boardState_10BoardState_cells, 0, 0, 0},
   {0, 0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState = {
+static PyTypeObject __pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState = {
   PyVarObject_HEAD_INIT(0, 0)
-  "IN104_simulateur.simulateur.cpp.boardState.BoardState", /*tp_name*/
-  sizeof(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState), /*tp_basicsize*/
+  "IN104_simulateur.cpp.boardState.BoardState", /*tp_name*/
+  sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_dealloc*/
+  __pyx_tp_dealloc_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -4764,21 +4758,21 @@ static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
   0, /*tp_call*/
-  __pyx_pw_16IN104_simulateur_10simulateur_3cpp_10boardState_10BoardState_9__str__, /*tp_str*/
+  __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_9__str__, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   "\n    This class is a Pyhton interface (front-end) for the C++ backend of CBoardState.\n    It also contains some non-critic functions (whose performance is not critical) like displaying the board\n    ", /*tp_doc*/
-  __pyx_tp_traverse_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_traverse*/
-  __pyx_tp_clear_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_clear*/
+  __pyx_tp_traverse_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_traverse*/
+  __pyx_tp_clear_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_methods*/
+  __pyx_methods_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_getset*/
+  __pyx_getsets_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -4786,7 +4780,7 @@ static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState, /*tp_new*/
+  __pyx_tp_new_16IN104_simulateur_3cpp_10boardState_BoardState, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4860,7 +4854,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_showBoard, __pyx_k_showBoard, sizeof(__pyx_k_showBoard), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_toDisplay, __pyx_k_toDisplay, sizeof(__pyx_k_toDisplay), 0, 0, 1, 1},
-  {&__pyx_n_s_value, __pyx_k_value, sizeof(__pyx_k_value), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
@@ -4953,14 +4946,14 @@ PyMODINIT_FUNC PyInit_boardState(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
-  if (__pyx_module_is_main_IN104_simulateur__simulateur__cpp__boardState) {
+  if (__pyx_module_is_main_IN104_simulateur__cpp__boardState) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    if (!PyDict_GetItemString(modules, "IN104_simulateur.simulateur.cpp.boardState")) {
-      if (unlikely(PyDict_SetItemString(modules, "IN104_simulateur.simulateur.cpp.boardState", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!PyDict_GetItemString(modules, "IN104_simulateur.cpp.boardState")) {
+      if (unlikely(PyDict_SetItemString(modules, "IN104_simulateur.cpp.boardState", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
   }
   #endif
@@ -4972,13 +4965,13 @@ PyMODINIT_FUNC PyInit_boardState(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "BoardState", (PyObject *)&__pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState = &__pyx_type_16IN104_simulateur_10simulateur_3cpp_10boardState_BoardState;
+  if (PyType_Ready(&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "BoardState", (PyObject *)&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState = &__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState;
   /*--- Type import code ---*/
-  __pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move = __Pyx_ImportType("IN104_simulateur.simulateur.cpp.move", "Move", sizeof(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move = (struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move*)__Pyx_GetVtable(__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move->tp_dict); if (unlikely(!__pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_16IN104_simulateur_3cpp_4move_Move = __Pyx_ImportType("IN104_simulateur.cpp.move", "Move", sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move = (struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move*)__Pyx_GetVtable(__pyx_ptype_16IN104_simulateur_3cpp_4move_Move->tp_dict); if (unlikely(!__pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
   /*--- Execution code ---*/
@@ -4986,9 +4979,9 @@ PyMODINIT_FUNC PyInit_boardState(void)
   if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
 
-  /* "IN104_simulateur/simulateur/cpp/boardState.pyx":1
+  /* "IN104_simulateur/cpp/boardState.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
- * # distutils: sources = simulateur/cpp/CBoardState.cpp simulateur/cpp/Pieces.cpp simulateur/cpp/CMove.cpp
+ * # distutils: sources = IN104_simulateur/cpp/CBoardState.cpp IN104_simulateur/cpp/CCell.cpp IN104_simulateur/cpp/CMove.cpp
  * from cython.operator cimport dereference as deref, preincrement as inc
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -5011,11 +5004,11 @@ PyMODINIT_FUNC PyInit_boardState(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init IN104_simulateur.simulateur.cpp.boardState", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init IN104_simulateur.cpp.boardState", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init IN104_simulateur.simulateur.cpp.boardState");
+    PyErr_SetString(PyExc_ImportError, "init IN104_simulateur.cpp.boardState");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

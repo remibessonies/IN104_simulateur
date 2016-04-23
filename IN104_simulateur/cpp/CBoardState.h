@@ -4,7 +4,7 @@
 #include <string>
 #include <utility> // include std::pair
 #include <set>
-#include "Pieces.h"
+#include "CCell.h"
 #include "CMove.h"
 
 namespace game {

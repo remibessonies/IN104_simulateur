@@ -5,7 +5,7 @@ class Cell():
     W = 87
     b = 98
     B = 66  
-                        
+                            
     def isWhite(c):
         return c == Cell.w or c == Cell.W          
         
@@ -27,5 +27,4 @@ class Cell():
         return c-32
         
     def toString(c):
-        return chr(c)
-        
+        return chr(c)   

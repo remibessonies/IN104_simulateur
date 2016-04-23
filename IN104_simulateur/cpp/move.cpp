@@ -4,16 +4,16 @@
 {
     "distutils": {
         "depends": [
-            "simulateur/cpp/CMove.h"
+            "IN104_simulateur/cpp/CMove.h"
         ],
         "include_dirs": [
             "."
         ],
         "language": "c++",
         "sources": [
-            "simulateur/cpp/CBoardState.cpp",
-            "simulateur/cpp/Pieces.cpp",
-            "simulateur/cpp/CMove.cpp"
+            "IN104_simulateur/cpp/CBoardState.cpp",
+            "IN104_simulateur/cpp/CCell.cpp",
+            "IN104_simulateur/cpp/CMove.cpp"
         ]
     }
 }
@@ -262,8 +262,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__IN104_simulateur__simulateur__cpp__move
-#define __PYX_HAVE_API__IN104_simulateur__simulateur__cpp__move
+#define __PYX_HAVE__IN104_simulateur__cpp__move
+#define __PYX_HAVE_API__IN104_simulateur__cpp__move
 #include "string.h"
 #include <string>
 #include "ios"
@@ -481,29 +481,29 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "IN104_simulateur/simulateur/cpp/move.pyx",
-  "IN104_simulateur/stringsource",
+  "IN104_simulateur/cpp/move.pyx",
+  "stringsource",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move;
+struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move;
 
-/* "IN104_simulateur/simulateur/cpp/move.pxd":23
+/* "IN104_simulateur/cpp/move.pxd":23
  * 
  * 
  * cdef class Move:             # <<<<<<<<<<<<<<
  *     cdef CMove* cMove
  * 
  */
-struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move {
+struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move {
   PyObject_HEAD
-  struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_vtab;
+  struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move *__pyx_vtab;
   game::CMove *cMove;
 };
 
 
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":7
+/* "IN104_simulateur/cpp/move.pyx":7
  * from .move cimport *
  * 
  * cdef class Move:             # <<<<<<<<<<<<<<
@@ -511,10 +511,10 @@ struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move {
  * 
  */
 
-struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move {
+struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move {
   PyObject *(*wrap)(game::CMove *);
 };
-static struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move;
+static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move *__pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move;
 
 /* --- Runtime support code (head) --- */
 #ifndef CYTHON_REFNANNY
@@ -738,7 +738,7 @@ static int __Pyx_check_binary_version(void);
 
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(game::CMove *__pyx_v_m); /* proto*/
+static PyObject *__pyx_f_16IN104_simulateur_3cpp_4move_4Move_wrap(game::CMove *__pyx_v_m); /* proto*/
 
 /* Module declarations from 'libcpp' */
 
@@ -750,8 +750,8 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
 
 /* Module declarations from 'libcpp.list' */
 
-/* Module declarations from 'IN104_simulateur.simulateur.cpp.move' */
-static PyTypeObject *__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move = 0;
+/* Module declarations from 'IN104_simulateur.cpp.move' */
+static PyTypeObject *__pyx_ptype_16IN104_simulateur_3cpp_4move_Move = 0;
 static CYTHON_INLINE PyObject *__pyx_convert_PyObject_string_to_py_std__in_string(std::string const &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyUnicode_string_to_py_std__in_string(std::string const &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyStr_string_to_py_std__in_string(std::string const &); /*proto*/
@@ -759,10 +759,10 @@ static CYTHON_INLINE PyObject *__pyx_convert_PyBytes_string_to_py_std__in_string
 static CYTHON_INLINE PyObject *__pyx_convert_PyByteArray_string_to_py_std__in_string(std::string const &); /*proto*/
 static std::vector<int>  __pyx_convert_vector_from_py_int(PyObject *); /*proto*/
 static PyObject *__pyx_convert_vector_to_py_int(const std::vector<int>  &); /*proto*/
-#define __Pyx_MODULE_NAME "IN104_simulateur.simulateur.cpp.move"
-int __pyx_module_is_main_IN104_simulateur__simulateur__cpp__move = 0;
+#define __Pyx_MODULE_NAME "IN104_simulateur.cpp.move"
+int __pyx_module_is_main_IN104_simulateur__cpp__move = 0;
 
-/* Implementation of 'IN104_simulateur.simulateur.cpp.move' */
+/* Implementation of 'IN104_simulateur.cpp.move' */
 static PyObject *__pyx_builtin_staticmethod;
 static PyObject *__pyx_builtin_range;
 static char __pyx_k_i[] = "i";
@@ -783,10 +783,10 @@ static char __pyx_k_fromPDN[] = "fromPDN";
 static char __pyx_k_separator[] = "separator";
 static char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static char __pyx_k_staticmethod[] = "staticmethod";
-static char __pyx_k_D_Documents_Scolarit_5_PhD_IN10[] = "/D/Documents/Scolarit\303\251/5.PhD/IN104/IN104_simulateur/simulateur/cpp/move.pyx";
-static char __pyx_k_IN104_simulateur_simulateur_cpp[] = "IN104_simulateur.simulateur.cpp.move";
+static char __pyx_k_IN104_simulateur_cpp_move[] = "IN104_simulateur.cpp.move";
+static char __pyx_k_D_Documents_Scolarit_5_PhD_IN10[] = "/D/Documents/Scolarit\303\251/5.PhD/IN104/IN104_simulateur/IN104_simulateur/cpp/move.pyx";
 static PyObject *__pyx_kp_s_D_Documents_Scolarit_5_PhD_IN10;
-static PyObject *__pyx_n_s_IN104_simulateur_simulateur_cpp;
+static PyObject *__pyx_n_s_IN104_simulateur_cpp_move;
 static PyObject *__pyx_kp_s__2;
 static PyObject *__pyx_n_s_ccmove;
 static PyObject *__pyx_n_s_cells;
@@ -805,13 +805,13 @@ static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_staticmethod;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_x;
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move___cinit__(CYTHON_UNUSED struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
-static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
-static Py_ssize_t __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__len__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCapture(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPDN(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fromPDN(PyObject *__pyx_v_s); /* proto */
-static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_4move_Move(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_16IN104_simulateur_3cpp_4move_4Move___cinit__(CYTHON_UNUSED struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
+static void __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_2__dealloc__(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
+static Py_ssize_t __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_4__len__(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_6isCapture(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_8toPDN(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_10fromPDN(PyObject *__pyx_v_s); /* proto */
+static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_4move_Move(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__3;
@@ -819,7 +819,7 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_codeobj__6;
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":13
+/* "IN104_simulateur/cpp/move.pyx":13
  *     These classes do not check whether the list of cells define a valid move'''
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -828,22 +828,22 @@ static PyObject *__pyx_codeobj__6;
  */
 
 /* Python wrapper */
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move___cinit__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_4move_4Move___cinit__(((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move___cinit__(CYTHON_UNUSED struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self) {
+static int __pyx_pf_16IN104_simulateur_3cpp_4move_4Move___cinit__(CYTHON_UNUSED struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
@@ -854,7 +854,7 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move___cinit__(C
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":16
+/* "IN104_simulateur/cpp/move.pyx":16
  *         pass
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -863,21 +863,21 @@ static int __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move___cinit__(C
  */
 
 /* Python wrapper */
-static void __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_self));
+  __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_2__dealloc__(((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self) {
+static void __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_2__dealloc__(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":17
+  /* "IN104_simulateur/cpp/move.pyx":17
  * 
  *     def __dealloc__(self):
  *         del self.cMove             # <<<<<<<<<<<<<<
@@ -886,7 +886,7 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc
  */
   delete __pyx_v_self->cMove;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":16
+  /* "IN104_simulateur/cpp/move.pyx":16
  *         pass
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -898,7 +898,7 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc
   __Pyx_RefNannyFinishContext();
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":20
+/* "IN104_simulateur/cpp/move.pyx":20
  * 
  *     @staticmethod
  *     cdef wrap(CMove* m):             # <<<<<<<<<<<<<<
@@ -906,8 +906,8 @@ static void __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_2__dealloc
  *         result.cMove = m
  */
 
-static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(game::CMove *__pyx_v_m) {
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_result = NULL;
+static PyObject *__pyx_f_16IN104_simulateur_3cpp_4move_4Move_wrap(game::CMove *__pyx_v_m) {
+  struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_result = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -916,19 +916,19 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("wrap", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":21
+  /* "IN104_simulateur/cpp/move.pyx":21
  *     @staticmethod
  *     cdef wrap(CMove* m):
  *         result = Move()             # <<<<<<<<<<<<<<
  *         result.cMove = m
  *         return result
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_4move_Move), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_result = ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_t_1);
+  __pyx_v_result = ((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":22
+  /* "IN104_simulateur/cpp/move.pyx":22
  *     cdef wrap(CMove* m):
  *         result = Move()
  *         result.cMove = m             # <<<<<<<<<<<<<<
@@ -937,7 +937,7 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
  */
   __pyx_v_result->cMove = __pyx_v_m;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":23
+  /* "IN104_simulateur/cpp/move.pyx":23
  *         result = Move()
  *         result.cMove = m
  *         return result             # <<<<<<<<<<<<<<
@@ -949,7 +949,7 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
   __pyx_r = ((PyObject *)__pyx_v_result);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":20
+  /* "IN104_simulateur/cpp/move.pyx":20
  * 
  *     @staticmethod
  *     cdef wrap(CMove* m):             # <<<<<<<<<<<<<<
@@ -960,7 +960,7 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.move.Move.wrap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.move.Move.wrap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_result);
@@ -969,7 +969,7 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":25
+/* "IN104_simulateur/cpp/move.pyx":25
  *         return result
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -978,24 +978,24 @@ static PyObject *__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap(g
  */
 
 /* Python wrapper */
-static Py_ssize_t __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_5__len__(PyObject *__pyx_v_self); /*proto*/
-static Py_ssize_t __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_5__len__(PyObject *__pyx_v_self) {
+static Py_ssize_t __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_5__len__(PyObject *__pyx_v_self); /*proto*/
+static Py_ssize_t __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_5__len__(PyObject *__pyx_v_self) {
   Py_ssize_t __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__len__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__len__(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_4__len__(((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static Py_ssize_t __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__len__(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self) {
+static Py_ssize_t __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_4__len__(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self) {
   Py_ssize_t __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__len__", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":26
+  /* "IN104_simulateur/cpp/move.pyx":26
  * 
  *     def __len__(self):
  *         return self.cMove.len()             # <<<<<<<<<<<<<<
@@ -1005,7 +1005,7 @@ static Py_ssize_t __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__l
   __pyx_r = __pyx_v_self->cMove->len();
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":25
+  /* "IN104_simulateur/cpp/move.pyx":25
  *         return result
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -1019,7 +1019,7 @@ static Py_ssize_t __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__l
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":29
+/* "IN104_simulateur/cpp/move.pyx":29
  * 
  * 
  *     def isCapture(self):             # <<<<<<<<<<<<<<
@@ -1028,19 +1028,19 @@ static Py_ssize_t __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_4__l
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_7isCapture(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_7isCapture(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_7isCapture(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_7isCapture(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("isCapture (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCapture(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_6isCapture(((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCapture(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_6isCapture(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1049,7 +1049,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isCapture", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":30
+  /* "IN104_simulateur/cpp/move.pyx":30
  * 
  *     def isCapture(self):
  *         return self.cMove.isCapture()             # <<<<<<<<<<<<<<
@@ -1063,7 +1063,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCa
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":29
+  /* "IN104_simulateur/cpp/move.pyx":29
  * 
  * 
  *     def isCapture(self):             # <<<<<<<<<<<<<<
@@ -1074,7 +1074,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCa
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.move.Move.isCapture", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.move.Move.isCapture", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1082,7 +1082,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCa
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":32
+/* "IN104_simulateur/cpp/move.pyx":32
  *         return self.cMove.isCapture()
  * 
  *     def toPDN(self):             # <<<<<<<<<<<<<<
@@ -1091,19 +1091,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_6isCa
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_9toPDN(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_9toPDN(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_9toPDN(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_9toPDN(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("toPDN (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPDN(((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_8toPDN(((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPDN(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_8toPDN(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1112,7 +1112,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPD
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("toPDN", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":33
+  /* "IN104_simulateur/cpp/move.pyx":33
  * 
  *     def toPDN(self):
  *         return self.cMove.toPDN().decode('UTF-8')             # <<<<<<<<<<<<<<
@@ -1126,7 +1126,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPD
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":32
+  /* "IN104_simulateur/cpp/move.pyx":32
  *         return self.cMove.isCapture()
  * 
  *     def toPDN(self):             # <<<<<<<<<<<<<<
@@ -1137,7 +1137,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPD
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.move.Move.toPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.move.Move.toPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1145,7 +1145,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPD
   return __pyx_r;
 }
 
-/* "IN104_simulateur/simulateur/cpp/move.pyx":36
+/* "IN104_simulateur/cpp/move.pyx":36
  * 
  *     @staticmethod
  *     def fromPDN(s):             # <<<<<<<<<<<<<<
@@ -1154,9 +1154,9 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_8toPD
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN = {"fromPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_11fromPDN(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_16IN104_simulateur_3cpp_4move_4Move_11fromPDN = {"fromPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_11fromPDN, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_11fromPDN(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_s = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -1195,21 +1195,21 @@ static PyObject *__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fro
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("fromPDN", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.move.Move.fromPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.move.Move.fromPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fromPDN(__pyx_v_s);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_4move_4Move_10fromPDN(__pyx_v_s);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fromPDN(PyObject *__pyx_v_s) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_4move_4Move_10fromPDN(PyObject *__pyx_v_s) {
   PyObject *__pyx_v_separator = NULL;
   std::vector<int>  __pyx_v_cells;
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *__pyx_v_move = NULL;
+  struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_move = NULL;
   game::CSimpleMove *__pyx_v_csmove;
   game::CCaptureMove *__pyx_v_ccmove;
   Py_ssize_t __pyx_v_k;
@@ -1234,7 +1234,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("fromPDN", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":37
+  /* "IN104_simulateur/cpp/move.pyx":37
  *     @staticmethod
  *     def fromPDN(s):
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)             # <<<<<<<<<<<<<<
@@ -1275,7 +1275,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   }
   #endif
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":38
+  /* "IN104_simulateur/cpp/move.pyx":38
  *     def fromPDN(s):
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)
  *         separator = 'x' if s.rfind('x')>-1 else '-'             # <<<<<<<<<<<<<<
@@ -1301,7 +1301,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   __pyx_v_separator = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":39
+  /* "IN104_simulateur/cpp/move.pyx":39
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)
  *         separator = 'x' if s.rfind('x')>-1 else '-'
  *         cdef vector[int] cells = [int(i) for i in s.split(separator)]             # <<<<<<<<<<<<<<
@@ -1389,7 +1389,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_cells = __pyx_t_10;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":40
+  /* "IN104_simulateur/cpp/move.pyx":40
  *         separator = 'x' if s.rfind('x')>-1 else '-'
  *         cdef vector[int] cells = [int(i) for i in s.split(separator)]
  *         assert(separator=='x' and len(cells)>=2 or len(cells)==2)             # <<<<<<<<<<<<<<
@@ -1428,19 +1428,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   }
   #endif
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":42
+  /* "IN104_simulateur/cpp/move.pyx":42
  *         assert(separator=='x' and len(cells)>=2 or len(cells)==2)
  * 
  *         move = Move()             # <<<<<<<<<<<<<<
  *         cdef CSimpleMove* csmove
  *         cdef CCaptureMove* ccmove
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_4move_Move), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_v_move = ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)__pyx_t_2);
+  __pyx_v_move = ((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":45
+  /* "IN104_simulateur/cpp/move.pyx":45
  *         cdef CSimpleMove* csmove
  *         cdef CCaptureMove* ccmove
  *         if separator=='-':             # <<<<<<<<<<<<<<
@@ -1450,7 +1450,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   __pyx_t_1 = (__Pyx_PyString_Equals(__pyx_v_separator, __pyx_kp_s__2, Py_EQ)); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_1) {
 
-    /* "IN104_simulateur/simulateur/cpp/move.pyx":46
+    /* "IN104_simulateur/cpp/move.pyx":46
  *         cdef CCaptureMove* ccmove
  *         if separator=='-':
  *             csmove = new CSimpleMove(cells[0], cells[1])             # <<<<<<<<<<<<<<
@@ -1465,7 +1465,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
     }
     __pyx_v_csmove = __pyx_t_11;
 
-    /* "IN104_simulateur/simulateur/cpp/move.pyx":47
+    /* "IN104_simulateur/cpp/move.pyx":47
  *         if separator=='-':
  *             csmove = new CSimpleMove(cells[0], cells[1])
  *             move.cMove = csmove             # <<<<<<<<<<<<<<
@@ -1474,7 +1474,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
  */
     __pyx_v_move->cMove = __pyx_v_csmove;
 
-    /* "IN104_simulateur/simulateur/cpp/move.pyx":45
+    /* "IN104_simulateur/cpp/move.pyx":45
  *         cdef CSimpleMove* csmove
  *         cdef CCaptureMove* ccmove
  *         if separator=='-':             # <<<<<<<<<<<<<<
@@ -1484,7 +1484,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
     goto __pyx_L10;
   }
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":49
+  /* "IN104_simulateur/cpp/move.pyx":49
  *             move.cMove = csmove
  *         else:
  *             ccmove = new CCaptureMove(cells[0])             # <<<<<<<<<<<<<<
@@ -1500,7 +1500,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
     }
     __pyx_v_ccmove = __pyx_t_12;
 
-    /* "IN104_simulateur/simulateur/cpp/move.pyx":50
+    /* "IN104_simulateur/cpp/move.pyx":50
  *         else:
  *             ccmove = new CCaptureMove(cells[0])
  *             for k in range(1,len(cells)):             # <<<<<<<<<<<<<<
@@ -1514,7 +1514,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
     for (__pyx_t_13 = 1; __pyx_t_13 < __pyx_t_8; __pyx_t_13+=1) {
       __pyx_v_k = __pyx_t_13;
 
-      /* "IN104_simulateur/simulateur/cpp/move.pyx":51
+      /* "IN104_simulateur/cpp/move.pyx":51
  *             ccmove = new CCaptureMove(cells[0])
  *             for k in range(1,len(cells)):
  *                 ccmove.push_back(cells[k])             # <<<<<<<<<<<<<<
@@ -1524,7 +1524,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
       __pyx_v_ccmove->push_back((__pyx_v_cells[__pyx_v_k]));
     }
 
-    /* "IN104_simulateur/simulateur/cpp/move.pyx":52
+    /* "IN104_simulateur/cpp/move.pyx":52
  *             for k in range(1,len(cells)):
  *                 ccmove.push_back(cells[k])
  *             move.cMove = ccmove             # <<<<<<<<<<<<<<
@@ -1535,7 +1535,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   }
   __pyx_L10:;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":54
+  /* "IN104_simulateur/cpp/move.pyx":54
  *             move.cMove = ccmove
  * 
  *         return move             # <<<<<<<<<<<<<<
@@ -1545,7 +1545,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   __pyx_r = ((PyObject *)__pyx_v_move);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":36
+  /* "IN104_simulateur/cpp/move.pyx":36
  * 
  *     @staticmethod
  *     def fromPDN(s):             # <<<<<<<<<<<<<<
@@ -1560,7 +1560,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_10simulateur_3cpp_4move_4Move_10fro
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("IN104_simulateur.simulateur.cpp.move.Move.fromPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.move.Move.fromPDN", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_separator);
@@ -2003,10 +2003,10 @@ static PyObject *__pyx_convert_vector_to_py_int(const std::vector<int>  &__pyx_v
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static struct __pyx_vtabstruct_16IN104_simulateur_10simulateur_3cpp_4move_Move __pyx_vtable_16IN104_simulateur_10simulateur_3cpp_4move_Move;
+static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move __pyx_vtable_16IN104_simulateur_3cpp_4move_Move;
 
-static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_4move_Move(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
-  struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *p;
+static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_4move_Move(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -2014,15 +2014,15 @@ static PyObject *__pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_4move_Move(Py
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move *)o);
-  p->__pyx_vtab = __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move;
-  if (unlikely(__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) {
+  p = ((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)o);
+  p->__pyx_vtab = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move;
+  if (unlikely(__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) {
     Py_DECREF(o); o = 0;
   }
   return o;
 }
 
-static void __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_4move_Move(PyObject *o) {
+static void __pyx_tp_dealloc_16IN104_simulateur_3cpp_4move_Move(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -2032,22 +2032,22 @@ static void __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_4move_Move(PyO
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_3__dealloc__(o);
+    __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_16IN104_simulateur_10simulateur_3cpp_4move_Move[] = {
-  {"isCapture", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_7isCapture, METH_NOARGS, 0},
-  {"toPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_9toPDN, METH_NOARGS, 0},
-  {"fromPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_16IN104_simulateur_3cpp_4move_Move[] = {
+  {"isCapture", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_7isCapture, METH_NOARGS, 0},
+  {"toPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_9toPDN, METH_NOARGS, 0},
+  {"fromPDN", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_4move_4Move_11fromPDN, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
 static PySequenceMethods __pyx_tp_as_sequence_Move = {
-  __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_5__len__, /*sq_length*/
+  __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_5__len__, /*sq_length*/
   0, /*sq_concat*/
   0, /*sq_repeat*/
   0, /*sq_item*/
@@ -2060,17 +2060,17 @@ static PySequenceMethods __pyx_tp_as_sequence_Move = {
 };
 
 static PyMappingMethods __pyx_tp_as_mapping_Move = {
-  __pyx_pw_16IN104_simulateur_10simulateur_3cpp_4move_4Move_5__len__, /*mp_length*/
+  __pyx_pw_16IN104_simulateur_3cpp_4move_4Move_5__len__, /*mp_length*/
   0, /*mp_subscript*/
   0, /*mp_ass_subscript*/
 };
 
-static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move = {
+static PyTypeObject __pyx_type_16IN104_simulateur_3cpp_4move_Move = {
   PyVarObject_HEAD_INIT(0, 0)
-  "IN104_simulateur.simulateur.cpp.move.Move", /*tp_name*/
-  sizeof(struct __pyx_obj_16IN104_simulateur_10simulateur_3cpp_4move_Move), /*tp_basicsize*/
+  "IN104_simulateur.cpp.move.Move", /*tp_name*/
+  sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_16IN104_simulateur_10simulateur_3cpp_4move_Move, /*tp_dealloc*/
+  __pyx_tp_dealloc_16IN104_simulateur_3cpp_4move_Move, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -2098,7 +2098,7 @@ static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move =
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_16IN104_simulateur_10simulateur_3cpp_4move_Move, /*tp_methods*/
+  __pyx_methods_16IN104_simulateur_3cpp_4move_Move, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -2108,7 +2108,7 @@ static PyTypeObject __pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move =
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_16IN104_simulateur_10simulateur_3cpp_4move_Move, /*tp_new*/
+  __pyx_tp_new_16IN104_simulateur_3cpp_4move_Move, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -2147,7 +2147,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_D_Documents_Scolarit_5_PhD_IN10, __pyx_k_D_Documents_Scolarit_5_PhD_IN10, sizeof(__pyx_k_D_Documents_Scolarit_5_PhD_IN10), 0, 0, 1, 0},
-  {&__pyx_n_s_IN104_simulateur_simulateur_cpp, __pyx_k_IN104_simulateur_simulateur_cpp, sizeof(__pyx_k_IN104_simulateur_simulateur_cpp), 0, 0, 1, 1},
+  {&__pyx_n_s_IN104_simulateur_cpp_move, __pyx_k_IN104_simulateur_cpp_move, sizeof(__pyx_k_IN104_simulateur_cpp_move), 0, 0, 1, 1},
   {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
   {&__pyx_n_s_ccmove, __pyx_k_ccmove, sizeof(__pyx_k_ccmove), 0, 0, 1, 1},
   {&__pyx_n_s_cells, __pyx_k_cells, sizeof(__pyx_k_cells), 0, 0, 1, 1},
@@ -2180,7 +2180,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":37
+  /* "IN104_simulateur/cpp/move.pyx":37
  *     @staticmethod
  *     def fromPDN(s):
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)             # <<<<<<<<<<<<<<
@@ -2194,7 +2194,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":38
+  /* "IN104_simulateur/cpp/move.pyx":38
  *     def fromPDN(s):
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)
  *         separator = 'x' if s.rfind('x')>-1 else '-'             # <<<<<<<<<<<<<<
@@ -2205,7 +2205,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":36
+  /* "IN104_simulateur/cpp/move.pyx":36
  * 
  *     @staticmethod
  *     def fromPDN(s):             # <<<<<<<<<<<<<<
@@ -2299,14 +2299,14 @@ PyMODINIT_FUNC PyInit_move(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
-  if (__pyx_module_is_main_IN104_simulateur__simulateur__cpp__move) {
+  if (__pyx_module_is_main_IN104_simulateur__cpp__move) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    if (!PyDict_GetItemString(modules, "IN104_simulateur.simulateur.cpp.move")) {
-      if (unlikely(PyDict_SetItemString(modules, "IN104_simulateur.simulateur.cpp.move", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!PyDict_GetItemString(modules, "IN104_simulateur.cpp.move")) {
+      if (unlikely(PyDict_SetItemString(modules, "IN104_simulateur.cpp.move", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
   }
   #endif
@@ -2318,13 +2318,13 @@ PyMODINIT_FUNC PyInit_move(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move = &__pyx_vtable_16IN104_simulateur_10simulateur_3cpp_4move_Move;
-  __pyx_vtable_16IN104_simulateur_10simulateur_3cpp_4move_Move.wrap = (PyObject *(*)(game::CMove *))__pyx_f_16IN104_simulateur_10simulateur_3cpp_4move_4Move_wrap;
-  if (PyType_Ready(&__pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move.tp_dict, __pyx_vtabptr_16IN104_simulateur_10simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (PyObject_SetAttrString(__pyx_m, "Move", (PyObject *)&__pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move = &__pyx_type_16IN104_simulateur_10simulateur_3cpp_4move_Move;
+  __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move = &__pyx_vtable_16IN104_simulateur_3cpp_4move_Move;
+  __pyx_vtable_16IN104_simulateur_3cpp_4move_Move.wrap = (PyObject *(*)(game::CMove *))__pyx_f_16IN104_simulateur_3cpp_4move_4Move_wrap;
+  if (PyType_Ready(&__pyx_type_16IN104_simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_type_16IN104_simulateur_3cpp_4move_Move.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_16IN104_simulateur_3cpp_4move_Move.tp_dict, __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyObject_SetAttrString(__pyx_m, "Move", (PyObject *)&__pyx_type_16IN104_simulateur_3cpp_4move_Move) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_16IN104_simulateur_3cpp_4move_Move = &__pyx_type_16IN104_simulateur_3cpp_4move_Move;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
@@ -2333,17 +2333,17 @@ PyMODINIT_FUNC PyInit_move(void)
   if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":36
+  /* "IN104_simulateur/cpp/move.pyx":36
  * 
  *     @staticmethod
  *     def fromPDN(s):             # <<<<<<<<<<<<<<
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)
  *         separator = 'x' if s.rfind('x')>-1 else '-'
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_16IN104_simulateur_10simulateur_3cpp_4move_4Move_11fromPDN, NULL, __pyx_n_s_IN104_simulateur_simulateur_cpp); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_16IN104_simulateur_3cpp_4move_4Move_11fromPDN, NULL, __pyx_n_s_IN104_simulateur_cpp_move); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":35
+  /* "IN104_simulateur/cpp/move.pyx":35
  *         return self.cMove.toPDN().decode('UTF-8')
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -2358,21 +2358,21 @@ PyMODINIT_FUNC PyInit_move(void)
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_staticmethod, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move->tp_dict, __pyx_n_s_fromPDN, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_4move_Move->tp_dict, __pyx_n_s_fromPDN, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  PyType_Modified(__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move);
+  PyType_Modified(__pyx_ptype_16IN104_simulateur_3cpp_4move_Move);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":36
+  /* "IN104_simulateur/cpp/move.pyx":36
  * 
  *     @staticmethod
  *     def fromPDN(s):             # <<<<<<<<<<<<<<
  *         assert(s.rfind('x')>-1 or s.rfind('-')>-1)
  *         separator = 'x' if s.rfind('x')>-1 else '-'
  */
-  __pyx_t_1 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move, __pyx_n_s_fromPDN); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_4move_Move, __pyx_n_s_fromPDN); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":35
+  /* "IN104_simulateur/cpp/move.pyx":35
  *         return self.cMove.toPDN().decode('UTF-8')
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -2387,13 +2387,13 @@ PyMODINIT_FUNC PyInit_move(void)
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_staticmethod, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move->tp_dict, __pyx_n_s_fromPDN, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_4move_Move->tp_dict, __pyx_n_s_fromPDN, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  PyType_Modified(__pyx_ptype_16IN104_simulateur_10simulateur_3cpp_4move_Move);
+  PyType_Modified(__pyx_ptype_16IN104_simulateur_3cpp_4move_Move);
 
-  /* "IN104_simulateur/simulateur/cpp/move.pyx":1
+  /* "IN104_simulateur/cpp/move.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
- * # distutils: sources = simulateur/cpp/CBoardState.cpp simulateur/cpp/Pieces.cpp simulateur/cpp/CMove.cpp
+ * # distutils: sources = IN104_simulateur/cpp/CBoardState.cpp IN104_simulateur/cpp/CCell.cpp IN104_simulateur/cpp/CMove.cpp
  * from cython.operator cimport dereference as deref, preincrement as inc
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -2417,11 +2417,11 @@ PyMODINIT_FUNC PyInit_move(void)
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init IN104_simulateur.simulateur.cpp.move", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init IN104_simulateur.cpp.move", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init IN104_simulateur.simulateur.cpp.move");
+    PyErr_SetString(PyExc_ImportError, "init IN104_simulateur.cpp.move");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

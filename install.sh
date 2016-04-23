@@ -3,13 +3,17 @@
 if test $# -gt 0
 then
     rm -r build
-    rm -r simulateur/cpp/*.so
+    rm -r IN104_simulateur/cpp/*.so
     export USE_CYTHON=1
 fi
 
-python setup.py build_ext --inplace
+python3 setup.py build_ext --inplace
+echo "\nIN104_simulateur successfully built\n"
 
-if test $# -gt 1
+if test $# -gt 0
 then
     unset USE_CYTHON
 fi
+
+python3 setup.py install
+echo "\nIN104_simulateur successfully installed"

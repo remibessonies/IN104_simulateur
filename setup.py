@@ -7,20 +7,22 @@ from distutils.extension import Extension
 USE_CYTHON = bool(os.getenv('USE_CYTHON'))
 ext = '.pyx' if USE_CYTHON else '.cpp'
 
+Csource = ["IN104_simulateur/cpp/CCell.cpp","IN104_simulateur/cpp/CMove.cpp","IN104_simulateur/cpp/CBoardState.cpp"]
+
 extensions = [
     Extension(
-        name="simulateur.cpp.gameState",
-        sources=["simulateur/cpp/gameState"+ext],
+        name="IN104_simulateur.cpp.gameState",
+        sources=["IN104_simulateur/cpp/gameState"+ext]+Csource,
         include_dirs = ["."]
     ),
     Extension(
-        name="simulateur.cpp.boardState",
-        sources=["simulateur/cpp/boardState"+ext],
+        name="IN104_simulateur.cpp.boardState",
+        sources=["IN104_simulateur/cpp/boardState"+ext]+Csource,
         include_dirs = ["."]
     ),
     Extension(
-        name="simulateur.cpp.move",
-        sources=["simulateur/cpp/move"+ext],
+        name="IN104_simulateur.cpp.move",
+        sources=["IN104_simulateur/cpp/move"+ext]+Csource,
         include_dirs = ["."]
     )
 ]
@@ -33,9 +35,11 @@ if USE_CYTHON:
 setup(name='IN104_simulateur',
     version='1.0',
     description='Game simulator for checkers and checkers-like games',
-    author='Clément Masson',
+    author='Clement Masson',
     author_email='masson.cle@gmail.com',
     url='https://github.com/clement-masson/IN104_simulateur',
+    license='MIT',
+    packages = ['IN104_simulateur'],
     ext_modules = extensions
 )
 
