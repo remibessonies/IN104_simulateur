@@ -1,4 +1,15 @@
 #!/bin/bash
 
-python3 setup.py install
-echo "\nIN104_simulateur successfully installed"
+installCommand='python3 setup.py install'
+
+for opt in "$@"; do
+    case $opt in
+        '-u' | '--user' )
+            installCommand=$installCommand' --user'
+            ;;
+        *)
+            echo "Unknown argument : "$opt
+    esac
+done
+
+eval $installCommand
