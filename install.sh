@@ -1,19 +1,26 @@
 #!/bin/bash
 
-if test $# -gt 0
-then
+buildCommand='python3 setup.py build_ext --inplace'
+installCommand='python3 setup.py install'
+
+unset USE_CYTHON
+for opt in "$@"; do
+    case $opt in
+        '-u' | '--user' )
+            installCommand=$installCommand' --user'
+            ;;
+        '-c' | '--cython')
+            export USE_CYTHON=1
+            ;;
+        *)
+            echo "Unknown argument : "$opt
+    esac
+done
+
+if test $USE_CYTHON; then
     rm -r build
-    rm -r IN104_simulateur/cpp/*.so
-    export USE_CYTHON=1
+    rm -r IN104_simulateur/cpp/*.so    
 fi
 
-python3 setup.py build_ext --inplace
-echo "\nIN104_simulateur successfully built\n"
-
-if test $# -gt 0
-then
-    unset USE_CYTHON
-fi
-
-python3 setup.py install
-echo "\nIN104_simulateur successfully installed"
+eval $buildCommand
+eval $installCommand
