@@ -1,6 +1,5 @@
 #!/bin/bash
 
-buildCommand='python3 setup.py build_ext --inplace'
 installCommand='python3 setup.py install'
 
 unset USE_CYTHON
@@ -22,5 +21,4 @@ if test $USE_CYTHON; then
     rm -r IN104_simulateur/cpp/*.so    
 fi
 
-eval $buildCommand
 eval $installCommand
