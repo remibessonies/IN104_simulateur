@@ -22,3 +22,4 @@ if test $USE_CYTHON; then
 fi
 
 eval $installCommand
+unset USE_CYTHON

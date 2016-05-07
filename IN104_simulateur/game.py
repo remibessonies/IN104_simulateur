@@ -62,8 +62,8 @@ class Game:
             possibleStates = self.gameState.getStateMoveDict()
             if not possibleStates:
                 result = '0-1' if player is self.player1 else '1-0'
-                self.status.success = True
-                self.status.winner = 2 - playerNumber
+                self.status['success'] = True
+                self.status['winner'] = 3 - playerNumber
                 self.addToLog('End of Game !',1)
                 break
             self.logChoices(possibleStates)
@@ -75,20 +75,20 @@ class Game:
             try:
                 chosenState = player.play( self.gameState.copy() )
             except TimeOutException as exc:
-                self.status.playerError = playerNumber
-                self.status.errorID = 'T0'
+                self.status['playerError'] = playerNumber
+                self.status['errorID'] = 'T0'
                 self.addToLog(exc.message, 0)
                 return
             except Exception as e:
-                self.status.playerError = playerNumber
-                self.status.errorID = 'Unkown'
+                self.status['playerError'] = playerNumber
+                self.status['errorID'] = 'Unkown'
                 self.addToLog(e.message, 0)
                 return
 
             # check whether the answer is valid
             if not chosenState in possibleStates:
-                self.status.playerError = playerNumber
-                self.status.errorID = 'IM'
+                self.status['playerError'] = playerNumber
+                self.status['errorID'] = 'IM'
                 self.addToLog('Invalid move from '+str(player), 0)
                 self.logDecision(chosenState)
                 return
@@ -106,16 +106,16 @@ class Game:
             # Check if it is a Draw
             if self.gameState.noCaptureCounter >= self.noCaptureMax:
                 result = '1/2-1/2'
-                self.status.success = True
-                self.status.draw = True
+                self.status['success'] = True
+                self.status['draw'] = True
                 self.addToLog('Draw',1)
                 break
 
             gc.collect()
 
         # If the simulation stops before the game ends
-        if not self.status.success:
-            self.status.errorID = 'MAX'
+        if not self.status['success']:
+            self.status['errorID'] = 'MAX'
             self.addToLog('The game could not end within '+str(self.Nlimit)+' steps')
             return
 
