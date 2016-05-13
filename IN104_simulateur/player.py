@@ -1,6 +1,8 @@
 import signal
 import time
 import math
+import sys
+import os
 from .cell import Cell
 from .gameState import GameState
 from .deadline import Deadline
@@ -28,6 +30,7 @@ class Player:
         self.timeLimit = timeLimit
         self.computingTimes = [] # store the computing time for each move
         self.showTime = False
+        self.discard_stdout = False
         try:
             self.alwaysSeeAsWhite = self.brain.alwaysSeeAsWhite
         except:
@@ -42,13 +45,17 @@ class Player:
             # signals only take an integer amount of seconds, so I have to ceil the time limit
             signal.alarm(math.ceil(self.timeLimit+0.01))
         
-        try:
+        try:                      
+            if self.discard_stdout: sys.stdout = open(os.devnull, "w")
             t1 = time.time()    
             deadline = Deadline(t1+self.timeLimit) if self.timeLimit else None 
             chosenState = self.brain.play(gameState, deadline)
             length = time.time()-t1
         except Exception as e:
             raise e
+        finally:
+            sys.stdout = sys.__stdout__
+            
         signal.alarm(0) 
                
         if self.timeLimit and length>(self.timeLimit+0.01):
