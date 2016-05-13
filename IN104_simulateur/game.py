@@ -39,20 +39,25 @@ class Game:
         self.log = ""
         self.status = {'success':False, 'draw':False, 'winner':None, 'playerError':None, 'errorID':None}
 
+    def init_logs(self):
+        self.addToLog("Beginning of the game")
+        self.addToLog(str(self.player1)+ ' (starts)')
+        self.addToLog(str(self.player2))
+        self.logState()
 
     def runGame(self):
         # setup
+        self.init_logs()
         pdnMoves = ""
         startTime = time.ctime()
         result = None
-        self.addToLog("Beginning of the game")
-        self.logState()
         time.sleep(self.pause)
         t = time.time() + self.pause
 
         # shortcut variables to acces faster white and black players
         whitePlayer = self.player1 if self.player1.isWhite else self.player2
         blackPlayer = self.player2 if self.player1.isWhite else self.player1
+	
 
         for n in range(self.Nlimit):
             player = whitePlayer if self.gameState.isWhiteTurn else blackPlayer
@@ -131,7 +136,7 @@ class Game:
     choiceDisplayLevel = 2
     decisionDisplayLevel = 2
 
-    def addToLog(self, txt, displayLevel = 2):
+    def addToLog(self, txt, displayLevel = 1):
         self.log += txt+'\n'
         if self.displayLevel >= displayLevel:
             print(txt)
