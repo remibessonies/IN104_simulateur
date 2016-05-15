@@ -41,16 +41,16 @@ class Game:
 
     def init_logs(self):
         self.addToLog("Beginning of the game")
-        self.addToLog(str(self.player1)+ ' (starts)')
-        self.addToLog(str(self.player2))
+        self.addToLog(str(self.player1)+ ' (starts) has '+str(self.player1.timeLimit)+' secs/turn to play')
+        self.addToLog(str(self.player2)+ ' has '+str(self.player1.timeLimit)+' secs/turn to play')
         self.logState()
 
     def runGame(self):
         # setup
         self.init_logs()
         pdnMoves = ""
-        startTime = time.ctime()
         result = None
+        startTime = time.ctime()
         time.sleep(self.pause)
         t = time.time() + self.pause
 
@@ -86,7 +86,7 @@ class Game:
                 return
             except Exception as e:
                 self.status['playerError'] = playerNumber
-                self.status['errorID'] = 'Unkown'
+                self.status['errorID'] = 'Unknown'
                 self.addToLog(e.message, 0)
                 return
 
@@ -104,6 +104,7 @@ class Game:
 
             # log the game
             self.logDecision(move)
+            self.logCompuTime(player.computingTimes[-1])
             self.logState()
             if player is self.player1: pdnMoves += str(n//2+1)+"."
             pdnMoves += move.toPDN()+" "
@@ -149,6 +150,9 @@ class Game:
         for s in possibleStates:
             recap += possibleStates[s].toPDN()+"\n"
         self.addToLog(recap, Game.choiceDisplayLevel)
+
+    def logCompuTime(self,t):
+        self.addToLog("Computing time : "+str(t)+" sec(s)", Game.choiceDisplayLevel)
 
     def logDecision(self, decision):
         if isinstance(decision,Move):

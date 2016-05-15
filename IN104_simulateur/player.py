@@ -58,9 +58,9 @@ class Player:
             
         signal.alarm(0) 
                
+        self.computingTimes.append(length)
         if self.timeLimit and length>(self.timeLimit+0.01):
             raise TimeOutException(str(self)+' took too much time to make a decision : '+str(length)+' sec')
-        self.computingTimes.append(length)
         if self.showTime:
             print(str(self)+" took "+'{:.3f}'.format(length)+"s to make a decision")
                 
