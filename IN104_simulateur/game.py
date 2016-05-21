@@ -59,14 +59,15 @@ class Game:
             playerNumber = 1 if player is self.player1 else 2
 
             # Check whether the game is ended
-            possibleStates = self.gameState.getStateMoveDict()
-            if not possibleStates:
+            possibleMoves = self.gameState.findPossibleMoves()
+            possibleStates = self.gameState.findNextStates()
+            if not possibleMoves:
                 result = '0-1' if player is self.player1 else '1-0'
                 self.status['success'] = True
                 self.status['winner'] = 3 - playerNumber
                 self.addToLog('End of Game !',1)
                 break
-            self.logChoices(possibleStates)
+            self.logChoices(possibleMoves)
 
             time.sleep(max(0, t-time.time()))
             t = time.time() + self.pause
@@ -86,19 +87,20 @@ class Game:
                 return
 
             # check whether the answer is valid
-            if not chosenState in possibleStates:
+            move = None
+            for m in possibleMoves:
+                state = self.gameState.doMove(m, inplace = False)
+                if chosenState == str(state):
+                    move = m
+                    self.gameState = state
+                    break
+            if not move:
                 self.status['playerError'] = playerNumber
                 self.status['errorID'] = 'IM'
                 self.addToLog('Invalid move from '+str(player), 0)
-                self.logDecision(chosenState)
                 return
 
-            # if yes, do the chosen move (makes the gameState go one step further)
-            move = possibleStates[chosenState]
-            self.gameState.doMove(move, inplace = True)
-
             # log the game
-            self.logDecision(move)
             self.logState()
             if player is self.player1: pdnMoves += str(n//2+1)+"."
             pdnMoves += move.toPDN()+" "
@@ -139,20 +141,11 @@ class Game:
     def logState(self):
         self.addToLog(self.gameState.toDisplay(True), Game.stateDisplayLevel)
 
-    def logChoices(self, possibleStates):
+    def logChoices(self, possibleMoves):
         recap = "Possible moves :\n"
-        for s in possibleStates:
-            recap += possibleStates[s].toPDN()+"\n"
+        for m in possibleMoves:
+            recap += m.toPDN()+"\n"
         self.addToLog(recap, Game.choiceDisplayLevel)
-
-    def logDecision(self, decision):
-        if isinstance(decision,Move):
-            recap = "Chosen move : \n"
-            recap += decision.toPDN()
-        else:
-            recap = "Non valid decision !\n Chosen next state : \n"
-            recap += decision
-        self.addToLog(recap, Game.decisionDisplayLevel)
 
 
     def makePDN(self, startTime, pdnMoves, result):

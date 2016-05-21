@@ -2902,7 +2902,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
 
 /* Python wrapper */
 static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay[] = " Return a string suitable for state visualization in text mode (like the one at the top of this file) \n        If showBard is True, then a board with cell indices is shown next to the state";
+static char __pyx_doc_16IN104_simulateur_3cpp_10boardState_10BoardState_32toDisplay[] = " Return a string suitable for state visualization in text mode (like the one at the top of this file)\n        If showBard is True, then a board with cell indices is shown next to the state";
 static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_showBoard = 0;
   int __pyx_lineno = 0;
@@ -4188,7 +4188,6 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"             # <<<<<<<<<<<<<<
  *         return s
- * 
  */
   __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__2, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
@@ -4208,8 +4207,6 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"
  *         return s             # <<<<<<<<<<<<<<
- * 
- * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_s);

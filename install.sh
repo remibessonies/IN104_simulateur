@@ -17,8 +17,7 @@ for opt in "$@"; do
 done
 
 if test $USE_CYTHON; then
-    rm -r build
-    rm -r IN104_simulateur/cpp/*.so    
+    rm -r build    
 fi
 
 eval $installCommand

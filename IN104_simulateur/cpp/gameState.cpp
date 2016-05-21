@@ -532,7 +532,6 @@ struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState {
  */
 struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState {
   PyObject_HEAD
-  struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_vtab;
   struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *boardState;
   bool isWhiteTurn;
   int noCaptureCounter;
@@ -552,20 +551,6 @@ struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move {
   PyObject *(*wrap)(game::CMove *);
 };
 static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move *__pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move;
-
-
-/* "IN104_simulateur/cpp/gameState.pyx":11
- * from .boardState cimport *
- * 
- * cdef class GameState:             # <<<<<<<<<<<<<<
- *     ''' The GameState gathers the state of the board plus some auxilliary info like whose turn to play and info to know if it is a draw '''
- * 
- */
-
-struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState {
-  struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *(*doCMove)(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *, game::CMove &);
-};
-static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_vtabptr_16IN104_simulateur_3cpp_9gameState_GameState;
 
 /* --- Runtime support code (head) --- */
 #ifndef CYTHON_REFNANNY
@@ -674,11 +659,14 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
 
+static CYTHON_INLINE int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, int none_allowed,
+    const char *name, int exact);
+
 #if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE int __Pyx_ListComp_Append(PyObject* list, PyObject* x) {
+static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
     PyListObject* L = (PyListObject*) list;
     Py_ssize_t len = Py_SIZE(list);
-    if (likely(L->allocated > len)) {
+    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
         Py_INCREF(x);
         PyList_SET_ITEM(list, len, x);
         Py_SIZE(list) = len+1;
@@ -687,11 +675,8 @@ static CYTHON_INLINE int __Pyx_ListComp_Append(PyObject* list, PyObject* x) {
     return PyList_Append(list, x);
 }
 #else
-#define __Pyx_ListComp_Append(L,x) PyList_Append(L,x)
+#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
 #endif
-
-static CYTHON_INLINE int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, int none_allowed,
-    const char *name, int exact);
 
 #include <string>
 
@@ -707,8 +692,6 @@ static CYTHON_INLINE PyObject* __Pyx_decode_cpp_string(
     return __Pyx_decode_c_bytes(
         cppstring.data(), cppstring.size(), start, stop, encoding, errors, decode_func);
 }
-
-static int __Pyx_SetVtable(PyObject *dict, void *vtable);
 
 static void* __Pyx_GetVtable(PyObject *dict);
 
@@ -800,7 +783,6 @@ static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class
 
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_f_16IN104_simulateur_3cpp_9gameState_9GameState_doCMove(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, game::CMove &__pyx_v_cMove); /* proto*/
 
 /* Module declarations from 'libcpp' */
 
@@ -845,12 +827,15 @@ static char __pyx_k_test[] = "__test__";
 static char __pyx_k_nRows[] = "nRows";
 static char __pyx_k_print[] = "print";
 static char __pyx_k_config[] = "config";
+static char __pyx_k_doMove[] = "doMove";
 static char __pyx_k_inplace[] = "inplace";
 static char __pyx_k_nPieces[] = "nPieces";
+static char __pyx_k_isCapture[] = "isCapture";
 static char __pyx_k_showBoard[] = "showBoard";
 static char __pyx_k_toDisplay[] = "toDisplay";
 static char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static char __pyx_k_whiteStarts[] = "whiteStarts";
+static char __pyx_k_findPossibleMoves[] = "findPossibleMoves";
 static char __pyx_k_Black_s_turn_to_play[] = "Black's turn to play.";
 static char __pyx_k_White_s_turn_to_play[] = "White's turn to play.";
 static PyObject *__pyx_kp_s_;
@@ -858,9 +843,12 @@ static PyObject *__pyx_kp_s_Black_s_turn_to_play;
 static PyObject *__pyx_kp_s_White_s_turn_to_play;
 static PyObject *__pyx_n_s_config;
 static PyObject *__pyx_n_s_copy;
+static PyObject *__pyx_n_s_doMove;
 static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_file;
+static PyObject *__pyx_n_s_findPossibleMoves;
 static PyObject *__pyx_n_s_inplace;
+static PyObject *__pyx_n_s_isCapture;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_move;
 static PyObject *__pyx_n_s_nPieces;
@@ -879,11 +867,10 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_2copy(st
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_4findPossibleMoves(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_move, PyObject *__pyx_v_inplace); /* proto */
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_8findNextStates(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10getStateMoveDict(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12reverse(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str__(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_18display(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10reverse(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12__str__(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16display(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard); /* proto */
 static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_9gameState_GameState(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 
 /* "IN104_simulateur/cpp/gameState.pyx":19
@@ -1325,8 +1312,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_2copy(st
  *         return copy
  * 
  *     def findPossibleMoves(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         return [Move.wrap(m) for m in cMoves]
+ *         return self.boardState.findPossibleMoves(self.isWhiteTurn)
+ * 
  */
 
 /* Python wrapper */
@@ -1343,14 +1330,13 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_5findPos
 }
 
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_4findPossibleMoves(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
-  std::vector<game::CMove *>  __pyx_v_cMoves;
-  game::CMove *__pyx_v_m;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  std::vector<game::CMove *> ::iterator __pyx_t_2;
-  game::CMove *__pyx_t_3;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -1359,33 +1345,41 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_4findPos
   /* "IN104_simulateur/cpp/gameState.pyx":42
  * 
  *     def findPossibleMoves(self):
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)             # <<<<<<<<<<<<<<
- *         return [Move.wrap(m) for m in cMoves]
- * 
- */
-  __pyx_v_cMoves = __pyx_v_self->boardState->cBoardState->findPossibleMoves(__pyx_v_self->isWhiteTurn);
-
-  /* "IN104_simulateur/cpp/gameState.pyx":43
- *     def findPossibleMoves(self):
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         return [Move.wrap(m) for m in cMoves]             # <<<<<<<<<<<<<<
+ *         return self.boardState.findPossibleMoves(self.isWhiteTurn)             # <<<<<<<<<<<<<<
  * 
  *     def doMove(self, Move move, inplace = False):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 43; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_v_cMoves.begin();
-  for (;;) {
-    if (!(__pyx_t_2 != __pyx_v_cMoves.end())) break;
-    __pyx_t_3 = *__pyx_t_2;
-    ++__pyx_t_2;
-    __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 43; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 43; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_findPossibleMoves); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->isWhiteTurn); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
   }
+  if (!__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+  } else {
+    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+    __Pyx_GIVEREF(__pyx_t_3);
+    PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_3);
+    __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
@@ -1394,14 +1388,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_4findPos
  *         return copy
  * 
  *     def findPossibleMoves(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         return [Move.wrap(m) for m in cMoves]
+ *         return self.boardState.findPossibleMoves(self.isWhiteTurn)
+ * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.findPossibleMoves", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -1410,12 +1407,12 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_4findPos
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":45
- *         return [Move.wrap(m) for m in cMoves]
+/* "IN104_simulateur/cpp/gameState.pyx":44
+ *         return self.boardState.findPossibleMoves(self.isWhiteTurn)
  * 
  *     def doMove(self, Move move, inplace = False):             # <<<<<<<<<<<<<<
- *         cdef CMove* cMove = move.cMove
  *         if inplace:
+ *             gs = self
  */
 
 /* Python wrapper */
@@ -1454,7 +1451,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_7doMove(
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "doMove") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "doMove") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 44; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1469,13 +1466,13 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_7doMove(
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("doMove", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("doMove", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 44; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.doMove", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 44; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self), __pyx_v_move, __pyx_v_inplace);
 
   /* function exit code */
@@ -1488,12 +1485,11 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_7doMove(
 }
 
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *__pyx_v_move, PyObject *__pyx_v_inplace) {
-  game::CMove *__pyx_v_cMove;
   struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_gs = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  game::CMove *__pyx_t_1;
-  int __pyx_t_2;
+  int __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
@@ -1503,28 +1499,18 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("doMove", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":46
+  /* "IN104_simulateur/cpp/gameState.pyx":45
  * 
  *     def doMove(self, Move move, inplace = False):
- *         cdef CMove* cMove = move.cMove             # <<<<<<<<<<<<<<
- *         if inplace:
- *             gs = self
- */
-  __pyx_t_1 = __pyx_v_move->cMove;
-  __pyx_v_cMove = __pyx_t_1;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":47
- *     def doMove(self, Move move, inplace = False):
- *         cdef CMove* cMove = move.cMove
  *         if inplace:             # <<<<<<<<<<<<<<
  *             gs = self
  *         else:
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_inplace); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 47; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__pyx_t_2) {
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_inplace); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_t_1) {
 
-    /* "IN104_simulateur/cpp/gameState.pyx":48
- *         cdef CMove* cMove = move.cMove
+    /* "IN104_simulateur/cpp/gameState.pyx":46
+ *     def doMove(self, Move move, inplace = False):
  *         if inplace:
  *             gs = self             # <<<<<<<<<<<<<<
  *         else:
@@ -1533,9 +1519,9 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(
     __Pyx_INCREF(((PyObject *)__pyx_v_self));
     __pyx_v_gs = __pyx_v_self;
 
-    /* "IN104_simulateur/cpp/gameState.pyx":47
+    /* "IN104_simulateur/cpp/gameState.pyx":45
+ * 
  *     def doMove(self, Move move, inplace = False):
- *         cdef CMove* cMove = move.cMove
  *         if inplace:             # <<<<<<<<<<<<<<
  *             gs = self
  *         else:
@@ -1543,114 +1529,159 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(
     goto __pyx_L3;
   }
 
-  /* "IN104_simulateur/cpp/gameState.pyx":50
+  /* "IN104_simulateur/cpp/gameState.pyx":48
  *             gs = self
  *         else:
  *             gs = GameState()             # <<<<<<<<<<<<<<
  *             gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(deref(cMove))
+ *         gs.boardState.doMove(move)
  */
   /*else*/ {
-    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_9gameState_GameState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_v_gs = ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_t_3);
-    __pyx_t_3 = 0;
+    __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_9gameState_GameState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_v_gs = ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_t_2);
+    __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/gameState.pyx":51
+    /* "IN104_simulateur/cpp/gameState.pyx":49
  *         else:
  *             gs = GameState()
  *             gs.boardState = self.boardState.copy()             # <<<<<<<<<<<<<<
- *         gs.boardState.cBoardState.doMove(deref(cMove))
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+ *         gs.boardState.doMove(move)
+ *         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_copy); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+      if (likely(__pyx_t_4)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+        __Pyx_INCREF(__pyx_t_4);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
       }
     }
-    if (__pyx_t_5) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (__pyx_t_4) {
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
-      __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GIVEREF(__pyx_t_3);
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GIVEREF(__pyx_t_2);
     __Pyx_GOTREF(__pyx_v_gs->boardState);
     __Pyx_DECREF(((PyObject *)__pyx_v_gs->boardState));
-    __pyx_v_gs->boardState = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_t_3);
-    __pyx_t_3 = 0;
+    __pyx_v_gs->boardState = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_t_2);
+    __pyx_t_2 = 0;
   }
   __pyx_L3:;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":52
+  /* "IN104_simulateur/cpp/gameState.pyx":50
  *             gs = GameState()
  *             gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(deref(cMove))             # <<<<<<<<<<<<<<
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+ *         gs.boardState.doMove(move)             # <<<<<<<<<<<<<<
+ *         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
  *         gs.isWhiteTurn = not self.isWhiteTurn
  */
-  try {
-    __pyx_v_gs->boardState->cBoardState->doMove((*__pyx_v_cMove));
-  } catch(...) {
-    __Pyx_CppExn2PyErr();
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_gs->boardState), __pyx_n_s_doMove); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
   }
+  if (!__pyx_t_4) {
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_move)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+  } else {
+    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+    __Pyx_INCREF(((PyObject *)__pyx_v_move));
+    __Pyx_GIVEREF(((PyObject *)__pyx_v_move));
+    PyTuple_SET_ITEM(__pyx_t_5, 0+1, ((PyObject *)__pyx_v_move));
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":53
+  /* "IN104_simulateur/cpp/gameState.pyx":51
  *             gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(deref(cMove))
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1             # <<<<<<<<<<<<<<
+ *         gs.boardState.doMove(move)
+ *         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1             # <<<<<<<<<<<<<<
  *         gs.isWhiteTurn = not self.isWhiteTurn
  *         return gs
  */
-  if ((__pyx_v_cMove->isCapture() != 0)) {
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_move), __pyx_n_s_isCapture); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (__pyx_t_5) {
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  } else {
+    __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__pyx_t_1) {
     __pyx_t_6 = 0;
   } else {
     __pyx_t_6 = (__pyx_v_self->noCaptureCounter + 1);
   }
   __pyx_v_gs->noCaptureCounter = __pyx_t_6;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":54
- *         gs.boardState.cBoardState.doMove(deref(cMove))
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+  /* "IN104_simulateur/cpp/gameState.pyx":52
+ *         gs.boardState.doMove(move)
+ *         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
  *         gs.isWhiteTurn = not self.isWhiteTurn             # <<<<<<<<<<<<<<
  *         return gs
  * 
  */
   __pyx_v_gs->isWhiteTurn = (!(__pyx_v_self->isWhiteTurn != 0));
 
-  /* "IN104_simulateur/cpp/gameState.pyx":55
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
+  /* "IN104_simulateur/cpp/gameState.pyx":53
+ *         gs.noCaptureCounter = 0 if move.isCapture() else self.noCaptureCounter+1
  *         gs.isWhiteTurn = not self.isWhiteTurn
  *         return gs             # <<<<<<<<<<<<<<
  * 
- *     cdef GameState doCMove(self, CMove& cMove):
+ *     def findNextStates(self):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(((PyObject *)__pyx_v_gs));
   __pyx_r = ((PyObject *)__pyx_v_gs);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":45
- *         return [Move.wrap(m) for m in cMoves]
+  /* "IN104_simulateur/cpp/gameState.pyx":44
+ *         return self.boardState.findPossibleMoves(self.isWhiteTurn)
  * 
  *     def doMove(self, Move move, inplace = False):             # <<<<<<<<<<<<<<
- *         cdef CMove* cMove = move.cMove
  *         if inplace:
+ *             gs = self
  */
 
   /* function exit code */
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
@@ -1663,150 +1694,12 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_6doMove(
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":57
+/* "IN104_simulateur/cpp/gameState.pyx":55
  *         return gs
- * 
- *     cdef GameState doCMove(self, CMove& cMove):             # <<<<<<<<<<<<<<
- *         gs = GameState()
- *         gs.boardState = self.boardState.copy()
- */
-
-static struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_f_16IN104_simulateur_3cpp_9gameState_9GameState_doCMove(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, game::CMove &__pyx_v_cMove) {
-  struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_gs = NULL;
-  struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  long __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("doCMove", 0);
-
-  /* "IN104_simulateur/cpp/gameState.pyx":58
- * 
- *     cdef GameState doCMove(self, CMove& cMove):
- *         gs = GameState()             # <<<<<<<<<<<<<<
- *         gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(cMove)
- */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_9gameState_GameState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_gs = ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":59
- *     cdef GameState doCMove(self, CMove& cMove):
- *         gs = GameState()
- *         gs.boardState = self.boardState.copy()             # <<<<<<<<<<<<<<
- *         gs.boardState.cBoardState.doMove(cMove)
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GIVEREF(__pyx_t_1);
-  __Pyx_GOTREF(__pyx_v_gs->boardState);
-  __Pyx_DECREF(((PyObject *)__pyx_v_gs->boardState));
-  __pyx_v_gs->boardState = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":60
- *         gs = GameState()
- *         gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(cMove)             # <<<<<<<<<<<<<<
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
- *         gs.isWhiteTurn = not self.isWhiteTurn
- */
-  try {
-    __pyx_v_gs->boardState->cBoardState->doMove(__pyx_v_cMove);
-  } catch(...) {
-    __Pyx_CppExn2PyErr();
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "IN104_simulateur/cpp/gameState.pyx":61
- *         gs.boardState = self.boardState.copy()
- *         gs.boardState.cBoardState.doMove(cMove)
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1             # <<<<<<<<<<<<<<
- *         gs.isWhiteTurn = not self.isWhiteTurn
- *         return gs
- */
-  if ((__pyx_v_cMove.isCapture() != 0)) {
-    __pyx_t_4 = 0;
-  } else {
-    __pyx_t_4 = (__pyx_v_self->noCaptureCounter + 1);
-  }
-  __pyx_v_gs->noCaptureCounter = __pyx_t_4;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":62
- *         gs.boardState.cBoardState.doMove(cMove)
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
- *         gs.isWhiteTurn = not self.isWhiteTurn             # <<<<<<<<<<<<<<
- *         return gs
- * 
- */
-  __pyx_v_gs->isWhiteTurn = (!(__pyx_v_self->isWhiteTurn != 0));
-
-  /* "IN104_simulateur/cpp/gameState.pyx":63
- *         gs.noCaptureCounter = 0 if cMove.isCapture() else self.noCaptureCounter+1
- *         gs.isWhiteTurn = not self.isWhiteTurn
- *         return gs             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_gs));
-  __pyx_r = __pyx_v_gs;
-  goto __pyx_L0;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":57
- *         return gs
- * 
- *     cdef GameState doCMove(self, CMove& cMove):             # <<<<<<<<<<<<<<
- *         gs = GameState()
- *         gs.boardState = self.boardState.copy()
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.doCMove", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_gs);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "IN104_simulateur/cpp/gameState.pyx":66
- * 
  * 
  *     def findNextStates(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
+ *         moves = self.findPossibleMoves()
+ *         nextStates = []
  */
 
 /* Python wrapper */
@@ -1823,256 +1716,153 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_9findNex
 }
 
 static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_8findNextStates(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
-  std::vector<game::CMove *>  __pyx_v_cMoves;
-  struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_gs = 0;
+  PyObject *__pyx_v_moves = NULL;
   PyObject *__pyx_v_nextStates = NULL;
-  game::CMove *__pyx_v_cMove;
+  PyObject *__pyx_v_move = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  std::vector<game::CMove *> ::iterator __pyx_t_2;
-  game::CMove *__pyx_t_3;
-  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  Py_ssize_t __pyx_t_4;
+  PyObject *(*__pyx_t_5)(PyObject *);
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  int __pyx_t_8;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("findNextStates", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":67
+  /* "IN104_simulateur/cpp/gameState.pyx":56
  * 
  *     def findNextStates(self):
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)             # <<<<<<<<<<<<<<
- *         cdef GameState gs
- *         nextStates = {}
+ *         moves = self.findPossibleMoves()             # <<<<<<<<<<<<<<
+ *         nextStates = []
+ *         for move in moves:
  */
-  __pyx_v_cMoves = __pyx_v_self->boardState->cBoardState->findPossibleMoves(__pyx_v_self->isWhiteTurn);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_findPossibleMoves); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  if (__pyx_t_3) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_moves = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":69
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
- *         nextStates = {}             # <<<<<<<<<<<<<<
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))
+  /* "IN104_simulateur/cpp/gameState.pyx":57
+ *     def findNextStates(self):
+ *         moves = self.findPossibleMoves()
+ *         nextStates = []             # <<<<<<<<<<<<<<
+ *         for move in moves:
+ *             nextStates.append( self.doMove(move, inplace = False) )
  */
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_nextStates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":70
- *         cdef GameState gs
- *         nextStates = {}
- *         for cMove in cMoves:             # <<<<<<<<<<<<<<
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = gs
- */
-  __pyx_t_2 = __pyx_v_cMoves.begin();
-  for (;;) {
-    if (!(__pyx_t_2 != __pyx_v_cMoves.end())) break;
-    __pyx_t_3 = *__pyx_t_2;
-    ++__pyx_t_2;
-    __pyx_v_cMove = __pyx_t_3;
-
-    /* "IN104_simulateur/cpp/gameState.pyx":71
- *         nextStates = {}
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))             # <<<<<<<<<<<<<<
- *             nextStates[ str(gs) ] = gs
- *             del cMove
- */
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self->__pyx_vtab)->doCMove(__pyx_v_self, (*__pyx_v_cMove))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_XDECREF_SET(__pyx_v_gs, ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_t_1));
-    __pyx_t_1 = 0;
-
-    /* "IN104_simulateur/cpp/gameState.pyx":72
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = gs             # <<<<<<<<<<<<<<
- *             del cMove
+  /* "IN104_simulateur/cpp/gameState.pyx":58
+ *         moves = self.findPossibleMoves()
+ *         nextStates = []
+ *         for move in moves:             # <<<<<<<<<<<<<<
+ *             nextStates.append( self.doMove(move, inplace = False) )
  *         return nextStates
  */
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (likely(PyList_CheckExact(__pyx_v_moves)) || PyTuple_CheckExact(__pyx_v_moves)) {
+    __pyx_t_1 = __pyx_v_moves; __Pyx_INCREF(__pyx_t_1); __pyx_t_4 = 0;
+    __pyx_t_5 = NULL;
+  } else {
+    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_moves); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_INCREF(((PyObject *)__pyx_v_gs));
-    __Pyx_GIVEREF(((PyObject *)__pyx_v_gs));
-    PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_v_gs));
-    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(PyDict_SetItem(__pyx_v_nextStates, __pyx_t_4, ((PyObject *)__pyx_v_gs)) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  for (;;) {
+    if (likely(!__pyx_t_5)) {
+      if (likely(PyList_CheckExact(__pyx_t_1))) {
+        if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_COMPILING_IN_CPYTHON
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        #else
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        #endif
+      } else {
+        if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_COMPILING_IN_CPYTHON
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_4); __Pyx_INCREF(__pyx_t_2); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        #else
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        #endif
+      }
+    } else {
+      __pyx_t_2 = __pyx_t_5(__pyx_t_1);
+      if (unlikely(!__pyx_t_2)) {
+        PyObject* exc_type = PyErr_Occurred();
+        if (exc_type) {
+          if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        }
+        break;
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+    }
+    __Pyx_XDECREF_SET(__pyx_v_move, __pyx_t_2);
+    __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/gameState.pyx":73
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = gs
- *             del cMove             # <<<<<<<<<<<<<<
+    /* "IN104_simulateur/cpp/gameState.pyx":59
+ *         nextStates = []
+ *         for move in moves:
+ *             nextStates.append( self.doMove(move, inplace = False) )             # <<<<<<<<<<<<<<
  *         return nextStates
  * 
  */
-    delete __pyx_v_cMove;
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_doMove); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_INCREF(__pyx_v_move);
+    __Pyx_GIVEREF(__pyx_v_move);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_move);
+    __pyx_t_6 = PyDict_New(); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_6);
+    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_inplace, Py_False) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_nextStates, __pyx_t_7); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "IN104_simulateur/cpp/gameState.pyx":70
- *         cdef GameState gs
- *         nextStates = {}
- *         for cMove in cMoves:             # <<<<<<<<<<<<<<
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = gs
+    /* "IN104_simulateur/cpp/gameState.pyx":58
+ *         moves = self.findPossibleMoves()
+ *         nextStates = []
+ *         for move in moves:             # <<<<<<<<<<<<<<
+ *             nextStates.append( self.doMove(move, inplace = False) )
+ *         return nextStates
  */
   }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":74
- *             nextStates[ str(gs) ] = gs
- *             del cMove
- *         return nextStates             # <<<<<<<<<<<<<<
- * 
- *     def getStateMoveDict(self):
- */
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_nextStates);
-  __pyx_r = __pyx_v_nextStates;
-  goto __pyx_L0;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":66
- * 
- * 
- *     def findNextStates(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_gs);
-  __Pyx_XDECREF(__pyx_v_nextStates);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "IN104_simulateur/cpp/gameState.pyx":76
- *         return nextStates
- * 
- *     def getStateMoveDict(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11getStateMoveDict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11getStateMoveDict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("getStateMoveDict (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10getStateMoveDict(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10getStateMoveDict(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
-  std::vector<game::CMove *>  __pyx_v_cMoves;
-  struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_gs = 0;
-  PyObject *__pyx_v_nextStates = NULL;
-  game::CMove *__pyx_v_cMove;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  std::vector<game::CMove *> ::iterator __pyx_t_2;
-  game::CMove *__pyx_t_3;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("getStateMoveDict", 0);
-
-  /* "IN104_simulateur/cpp/gameState.pyx":77
- * 
- *     def getStateMoveDict(self):
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)             # <<<<<<<<<<<<<<
- *         cdef GameState gs
- *         nextStates = {}
- */
-  __pyx_v_cMoves = __pyx_v_self->boardState->cBoardState->findPossibleMoves(__pyx_v_self->isWhiteTurn);
-
-  /* "IN104_simulateur/cpp/gameState.pyx":79
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
- *         nextStates = {}             # <<<<<<<<<<<<<<
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))
- */
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_nextStates = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "IN104_simulateur/cpp/gameState.pyx":80
- *         cdef GameState gs
- *         nextStates = {}
- *         for cMove in cMoves:             # <<<<<<<<<<<<<<
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = Move.wrap(cMove)
- */
-  __pyx_t_2 = __pyx_v_cMoves.begin();
-  for (;;) {
-    if (!(__pyx_t_2 != __pyx_v_cMoves.end())) break;
-    __pyx_t_3 = *__pyx_t_2;
-    ++__pyx_t_2;
-    __pyx_v_cMove = __pyx_t_3;
-
-    /* "IN104_simulateur/cpp/gameState.pyx":81
- *         nextStates = {}
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))             # <<<<<<<<<<<<<<
- *             nextStates[ str(gs) ] = Move.wrap(cMove)
- *         return nextStates
- */
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self->__pyx_vtab)->doCMove(__pyx_v_self, (*__pyx_v_cMove))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_XDECREF_SET(__pyx_v_gs, ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_t_1));
-    __pyx_t_1 = 0;
-
-    /* "IN104_simulateur/cpp/gameState.pyx":82
- *         for cMove in cMoves:
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = Move.wrap(cMove)             # <<<<<<<<<<<<<<
- *         return nextStates
- * 
- */
-    __pyx_t_1 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_cMove); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_INCREF(((PyObject *)__pyx_v_gs));
-    __Pyx_GIVEREF(((PyObject *)__pyx_v_gs));
-    PyTuple_SET_ITEM(__pyx_t_4, 0, ((PyObject *)__pyx_v_gs));
-    __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(PyDict_SetItem(__pyx_v_nextStates, __pyx_t_5, __pyx_t_1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "IN104_simulateur/cpp/gameState.pyx":80
- *         cdef GameState gs
- *         nextStates = {}
- *         for cMove in cMoves:             # <<<<<<<<<<<<<<
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = Move.wrap(cMove)
- */
-  }
-
-  /* "IN104_simulateur/cpp/gameState.pyx":83
- *             gs = self.doCMove(deref(cMove))
- *             nextStates[ str(gs) ] = Move.wrap(cMove)
+  /* "IN104_simulateur/cpp/gameState.pyx":60
+ *         for move in moves:
+ *             nextStates.append( self.doMove(move, inplace = False) )
  *         return nextStates             # <<<<<<<<<<<<<<
  * 
  *     def reverse(self):
@@ -2082,30 +1872,33 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10getSta
   __pyx_r = __pyx_v_nextStates;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":76
- *         return nextStates
+  /* "IN104_simulateur/cpp/gameState.pyx":55
+ *         return gs
  * 
- *     def getStateMoveDict(self):             # <<<<<<<<<<<<<<
- *         cdef vector[CMove*] cMoves = self.boardState.cBoardState.findPossibleMoves(self.isWhiteTurn)
- *         cdef GameState gs
+ *     def findNextStates(self):             # <<<<<<<<<<<<<<
+ *         moves = self.findPossibleMoves()
+ *         nextStates = []
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.getStateMoveDict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.findNextStates", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_gs);
+  __Pyx_XDECREF(__pyx_v_moves);
   __Pyx_XDECREF(__pyx_v_nextStates);
+  __Pyx_XDECREF(__pyx_v_move);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":85
+/* "IN104_simulateur/cpp/gameState.pyx":62
  *         return nextStates
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -2114,24 +1907,24 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10getSta
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11reverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reverse (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12reverse(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10reverse(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12reverse(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_10reverse(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reverse", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":86
+  /* "IN104_simulateur/cpp/gameState.pyx":63
  * 
  *     def reverse(self):
  *         self.boardState.cBoardState.reverse()             # <<<<<<<<<<<<<<
@@ -2140,7 +1933,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12revers
  */
   __pyx_v_self->boardState->cBoardState->reverse();
 
-  /* "IN104_simulateur/cpp/gameState.pyx":87
+  /* "IN104_simulateur/cpp/gameState.pyx":64
  *     def reverse(self):
  *         self.boardState.cBoardState.reverse()
  *         self.isWhiteTurn = not self.isWhiteTurn             # <<<<<<<<<<<<<<
@@ -2149,7 +1942,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12revers
  */
   __pyx_v_self->isWhiteTurn = (!(__pyx_v_self->isWhiteTurn != 0));
 
-  /* "IN104_simulateur/cpp/gameState.pyx":88
+  /* "IN104_simulateur/cpp/gameState.pyx":65
  *         self.boardState.cBoardState.reverse()
  *         self.isWhiteTurn = not self.isWhiteTurn
  *         return self             # <<<<<<<<<<<<<<
@@ -2161,7 +1954,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12revers
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":85
+  /* "IN104_simulateur/cpp/gameState.pyx":62
  *         return nextStates
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -2176,7 +1969,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12revers
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":90
+/* "IN104_simulateur/cpp/gameState.pyx":67
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -2185,19 +1978,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12revers
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15__str__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15__str__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13__str__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13__str__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__str__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str__(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12__str__(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str__(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_12__str__(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self) {
   std::string __pyx_v_s;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2211,7 +2004,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":92
+  /* "IN104_simulateur/cpp/gameState.pyx":69
  *     def __str__(self):
  *         cdef string s
  *         s = string(b"W") if self.isWhiteTurn else string(b"B")             # <<<<<<<<<<<<<<
@@ -2223,7 +2016,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
       __pyx_t_2 = std::string(__pyx_k_W);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __pyx_t_1 = __pyx_t_2;
   } else {
@@ -2231,13 +2024,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
       __pyx_t_2 = std::string(__pyx_k_B);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __pyx_t_1 = __pyx_t_2;
   }
   __pyx_v_s = __pyx_t_1;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":93
+  /* "IN104_simulateur/cpp/gameState.pyx":70
  *         cdef string s
  *         s = string(b"W") if self.isWhiteTurn else string(b"B")
  *         s.append(self.boardState.cBoardState.toString())             # <<<<<<<<<<<<<<
@@ -2246,7 +2039,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
  */
   __pyx_v_s.append(__pyx_v_self->boardState->cBoardState->toString());
 
-  /* "IN104_simulateur/cpp/gameState.pyx":94
+  /* "IN104_simulateur/cpp/gameState.pyx":71
  *         s = string(b"W") if self.isWhiteTurn else string(b"B")
  *         s.append(self.boardState.cBoardState.toString())
  *         return s.decode('UTF-8')+str(self.noCaptureCounter)             # <<<<<<<<<<<<<<
@@ -2254,19 +2047,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_decode_cpp_string(__pyx_v_s, 0, PY_SSIZE_T_MAX, NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_decode_cpp_string(__pyx_v_s, 0, PY_SSIZE_T_MAX, NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->noCaptureCounter); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->noCaptureCounter); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyNumber_Add(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = PyNumber_Add(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2274,7 +2067,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":90
+  /* "IN104_simulateur/cpp/gameState.pyx":67
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -2295,7 +2088,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":97
+/* "IN104_simulateur/cpp/gameState.pyx":74
  * 
  * 
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -2304,8 +2097,8 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14__str_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15toDisplay(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_showBoard = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2334,7 +2127,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17toDisp
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toDisplay") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toDisplay") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2347,20 +2140,20 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17toDisp
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("toDisplay", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("toDisplay", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisplay(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self), __pyx_v_showBoard);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14toDisplay(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self), __pyx_v_showBoard);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_14toDisplay(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
   PyObject *__pyx_v_s = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2374,14 +2167,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("toDisplay", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":98
+  /* "IN104_simulateur/cpp/gameState.pyx":75
  * 
  *     def toDisplay(self, showBoard = False):
  *         s = self.boardState.toDisplay(showBoard)+'\n'             # <<<<<<<<<<<<<<
  *         if self.isWhiteTurn:
  *             s += "White's turn to play."
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->boardState), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2394,27 +2187,27 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_v_showBoard);
     __Pyx_GIVEREF(__pyx_v_showBoard);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_showBoard);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s_); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s_); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_s = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":99
+  /* "IN104_simulateur/cpp/gameState.pyx":76
  *     def toDisplay(self, showBoard = False):
  *         s = self.boardState.toDisplay(showBoard)+'\n'
  *         if self.isWhiteTurn:             # <<<<<<<<<<<<<<
@@ -2424,19 +2217,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
   __pyx_t_5 = (__pyx_v_self->isWhiteTurn != 0);
   if (__pyx_t_5) {
 
-    /* "IN104_simulateur/cpp/gameState.pyx":100
+    /* "IN104_simulateur/cpp/gameState.pyx":77
  *         s = self.boardState.toDisplay(showBoard)+'\n'
  *         if self.isWhiteTurn:
  *             s += "White's turn to play."             # <<<<<<<<<<<<<<
  *         else:
  *             s += "Black's turn to play."
  */
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s_White_s_turn_to_play); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s_White_s_turn_to_play); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/gameState.pyx":99
+    /* "IN104_simulateur/cpp/gameState.pyx":76
  *     def toDisplay(self, showBoard = False):
  *         s = self.boardState.toDisplay(showBoard)+'\n'
  *         if self.isWhiteTurn:             # <<<<<<<<<<<<<<
@@ -2446,7 +2239,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
     goto __pyx_L3;
   }
 
-  /* "IN104_simulateur/cpp/gameState.pyx":102
+  /* "IN104_simulateur/cpp/gameState.pyx":79
  *             s += "White's turn to play."
  *         else:
  *             s += "Black's turn to play."             # <<<<<<<<<<<<<<
@@ -2454,14 +2247,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
  * 
  */
   /*else*/ {
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s_Black_s_turn_to_play); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s_Black_s_turn_to_play); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
   }
   __pyx_L3:;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":103
+  /* "IN104_simulateur/cpp/gameState.pyx":80
  *         else:
  *             s += "Black's turn to play."
  *         return s             # <<<<<<<<<<<<<<
@@ -2473,7 +2266,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
   __pyx_r = __pyx_v_s;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":97
+  /* "IN104_simulateur/cpp/gameState.pyx":74
  * 
  * 
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -2496,17 +2289,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16toDisp
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/gameState.pyx":105
+/* "IN104_simulateur/cpp/gameState.pyx":82
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
  *         print(self.toDisplay(showBoard))
- * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_19display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_19display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17display(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_showBoard = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2535,7 +2327,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_19displa
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "display") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "display") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2548,20 +2340,20 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_19displa
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("display", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("display", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.gameState.GameState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_18display(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self), __pyx_v_showBoard);
+  __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16display(((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)__pyx_v_self), __pyx_v_showBoard);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_18display(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
+static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_16display(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *__pyx_v_self, PyObject *__pyx_v_showBoard) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2573,14 +2365,12 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_18displa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("display", 0);
 
-  /* "IN104_simulateur/cpp/gameState.pyx":106
+  /* "IN104_simulateur/cpp/gameState.pyx":83
  * 
  *     def display(self, showBoard = False):
  *         print(self.toDisplay(showBoard))             # <<<<<<<<<<<<<<
- * 
- * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2593,29 +2383,28 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_9gameState_9GameState_18displa
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_v_showBoard);
     __Pyx_GIVEREF(__pyx_v_showBoard);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_showBoard);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/gameState.pyx":105
+  /* "IN104_simulateur/cpp/gameState.pyx":82
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
  *         print(self.toDisplay(showBoard))
- * 
  */
 
   /* function exit code */
@@ -2882,7 +2671,6 @@ static CYTHON_INLINE PyObject *__pyx_convert_PyByteArray_string_to_py_std__in_st
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static struct __pyx_vtabstruct_16IN104_simulateur_3cpp_9gameState_GameState __pyx_vtable_16IN104_simulateur_3cpp_9gameState_GameState;
 
 static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_9gameState_GameState(PyTypeObject *t, PyObject *a, PyObject *k) {
   struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *p;
@@ -2894,7 +2682,6 @@ static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_9gameState_GameState(PyTyp
   }
   if (unlikely(!o)) return 0;
   p = ((struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *)o);
-  p->__pyx_vtab = __pyx_vtabptr_16IN104_simulateur_3cpp_9gameState_GameState;
   p->boardState = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)Py_None); Py_INCREF(Py_None);
   if (unlikely(__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_1__cinit__(o, a, k) < 0)) {
     Py_DECREF(o); o = 0;
@@ -2949,10 +2736,9 @@ static PyMethodDef __pyx_methods_16IN104_simulateur_3cpp_9gameState_GameState[] 
   {"findPossibleMoves", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_5findPossibleMoves, METH_NOARGS, 0},
   {"doMove", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_7doMove, METH_VARARGS|METH_KEYWORDS, 0},
   {"findNextStates", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_9findNextStates, METH_NOARGS, 0},
-  {"getStateMoveDict", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11getStateMoveDict, METH_NOARGS, 0},
-  {"reverse", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13reverse, METH_NOARGS, 0},
-  {"toDisplay", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17toDisplay, METH_VARARGS|METH_KEYWORDS, 0},
-  {"display", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_19display, METH_VARARGS|METH_KEYWORDS, 0},
+  {"reverse", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_11reverse, METH_NOARGS, 0},
+  {"toDisplay", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15toDisplay, METH_VARARGS|METH_KEYWORDS, 0},
+  {"display", (PyCFunction)__pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_17display, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -2984,7 +2770,7 @@ static PyTypeObject __pyx_type_16IN104_simulateur_3cpp_9gameState_GameState = {
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
   0, /*tp_call*/
-  __pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_15__str__, /*tp_str*/
+  __pyx_pw_16IN104_simulateur_3cpp_9gameState_9GameState_13__str__, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
@@ -3049,9 +2835,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_White_s_turn_to_play, __pyx_k_White_s_turn_to_play, sizeof(__pyx_k_White_s_turn_to_play), 0, 0, 1, 0},
   {&__pyx_n_s_config, __pyx_k_config, sizeof(__pyx_k_config), 0, 0, 1, 1},
   {&__pyx_n_s_copy, __pyx_k_copy, sizeof(__pyx_k_copy), 0, 0, 1, 1},
+  {&__pyx_n_s_doMove, __pyx_k_doMove, sizeof(__pyx_k_doMove), 0, 0, 1, 1},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
+  {&__pyx_n_s_findPossibleMoves, __pyx_k_findPossibleMoves, sizeof(__pyx_k_findPossibleMoves), 0, 0, 1, 1},
   {&__pyx_n_s_inplace, __pyx_k_inplace, sizeof(__pyx_k_inplace), 0, 0, 1, 1},
+  {&__pyx_n_s_isCapture, __pyx_k_isCapture, sizeof(__pyx_k_isCapture), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_move, __pyx_k_move, sizeof(__pyx_k_move), 0, 0, 1, 1},
   {&__pyx_n_s_nPieces, __pyx_k_nPieces, sizeof(__pyx_k_nPieces), 0, 0, 1, 1},
@@ -3168,11 +2957,8 @@ PyMODINIT_FUNC PyInit_gameState(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  __pyx_vtabptr_16IN104_simulateur_3cpp_9gameState_GameState = &__pyx_vtable_16IN104_simulateur_3cpp_9gameState_GameState;
-  __pyx_vtable_16IN104_simulateur_3cpp_9gameState_GameState.doCMove = (struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *(*)(struct __pyx_obj_16IN104_simulateur_3cpp_9gameState_GameState *, game::CMove &))__pyx_f_16IN104_simulateur_3cpp_9gameState_9GameState_doCMove;
   if (PyType_Ready(&__pyx_type_16IN104_simulateur_3cpp_9gameState_GameState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_type_16IN104_simulateur_3cpp_9gameState_GameState.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_16IN104_simulateur_3cpp_9gameState_GameState.tp_dict, __pyx_vtabptr_16IN104_simulateur_3cpp_9gameState_GameState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (PyObject_SetAttrString(__pyx_m, "GameState", (PyObject *)&__pyx_type_16IN104_simulateur_3cpp_9gameState_GameState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_ptype_16IN104_simulateur_3cpp_9gameState_GameState = &__pyx_type_16IN104_simulateur_3cpp_9gameState_GameState;
   /*--- Type import code ---*/
@@ -3531,23 +3317,6 @@ static CYTHON_INLINE PyObject* __Pyx_decode_c_bytes(
     } else {
         return PyUnicode_Decode(cstring, length, encoding, errors);
     }
-}
-
-static int __Pyx_SetVtable(PyObject *dict, void *vtable) {
-#if PY_VERSION_HEX >= 0x02070000
-    PyObject *ob = PyCapsule_New(vtable, 0, 0);
-#else
-    PyObject *ob = PyCObject_FromVoidPtr(vtable, 0);
-#endif
-    if (!ob)
-        goto bad;
-    if (PyDict_SetItem(dict, __pyx_n_s_pyx_vtable, ob) < 0)
-        goto bad;
-    Py_DECREF(ob);
-    return 0;
-bad:
-    Py_XDECREF(ob);
-    return -1;
 }
 
 static void* __Pyx_GetVtable(PyObject *dict) {

@@ -11,8 +11,6 @@
         ],
         "language": "c++",
         "sources": [
-            "IN104_simulateur/cpp/CBoardState.cpp",
-            "IN104_simulateur/cpp/CCell.cpp",
             "IN104_simulateur/cpp/CMove.cpp"
         ]
     }
@@ -2091,7 +2089,7 @@ static PyTypeObject __pyx_type_16IN104_simulateur_3cpp_4move_Move = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
-  " A move is simply a list of cells which a piece passes by. \n    \n    It can be either a CaptureMove or a SimpleMove. \n    These classes do not check whether the list of cells define a valid move", /*tp_doc*/
+  " A move is simply a list of cells which a piece passes by.\n\n    It can be either a CaptureMove or a SimpleMove.\n    These classes do not check whether the list of cells define a valid move", /*tp_doc*/
   0, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -2393,7 +2391,7 @@ PyMODINIT_FUNC PyInit_move(void)
 
   /* "IN104_simulateur/cpp/move.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
- * # distutils: sources = IN104_simulateur/cpp/CBoardState.cpp IN104_simulateur/cpp/CCell.cpp IN104_simulateur/cpp/CMove.cpp
+ * # distutils: sources = IN104_simulateur/cpp/CMove.cpp
  * from cython.operator cimport dereference as deref, preincrement as inc
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
