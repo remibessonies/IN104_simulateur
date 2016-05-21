@@ -39,20 +39,25 @@ class Game:
         self.log = ""
         self.status = {'success':False, 'draw':False, 'winner':None, 'playerError':None, 'errorID':None}
 
+    def init_logs(self):
+        self.addToLog("Beginning of the game")
+        self.addToLog(str(self.player1)+ ' (starts) has '+str(self.player1.timeLimit)+' secs/turn to play')
+        self.addToLog(str(self.player2)+ ' has '+str(self.player1.timeLimit)+' secs/turn to play')
+        self.logState()
 
     def runGame(self):
         # setup
+        self.init_logs()
         pdnMoves = ""
-        startTime = time.ctime()
         result = None
-        self.addToLog("Beginning of the game")
-        self.logState()
+        startTime = time.ctime()
         time.sleep(self.pause)
         t = time.time() + self.pause
 
         # shortcut variables to acces faster white and black players
         whitePlayer = self.player1 if self.player1.isWhite else self.player2
         blackPlayer = self.player2 if self.player1.isWhite else self.player1
+
 
         for n in range(self.Nlimit):
             player = whitePlayer if self.gameState.isWhiteTurn else blackPlayer
@@ -82,7 +87,7 @@ class Game:
                 return
             except Exception as e:
                 self.status['playerError'] = playerNumber
-                self.status['errorID'] = 'Unkown'
+                self.status['errorID'] = 'Unknown'
                 self.addToLog(e.message, 0)
                 return
 
@@ -101,6 +106,7 @@ class Game:
                 return
 
             # log the game
+            self.logCompuTime(player.computingTimes[-1])
             self.logState()
             if player is self.player1: pdnMoves += str(n//2+1)+"."
             pdnMoves += move.toPDN()+" "
@@ -133,7 +139,7 @@ class Game:
     choiceDisplayLevel = 2
     decisionDisplayLevel = 2
 
-    def addToLog(self, txt, displayLevel = 2):
+    def addToLog(self, txt, displayLevel = 1):
         self.log += txt+'\n'
         if self.displayLevel >= displayLevel:
             print(txt)
@@ -147,6 +153,8 @@ class Game:
             recap += m.toPDN()+"\n"
         self.addToLog(recap, Game.choiceDisplayLevel)
 
+    def logCompuTime(self,t):
+        self.addToLog("Computing time : "+str(t)+" sec(s)", Game.choiceDisplayLevel)
 
     def makePDN(self, startTime, pdnMoves, result):
         # shortcut variables to acces faster white and black players

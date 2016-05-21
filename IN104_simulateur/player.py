@@ -1,6 +1,8 @@
 import signal
 import time
 import math
+import sys
+import os
 from .cell import Cell
 from .gameState import GameState
 from .deadline import Deadline
@@ -28,6 +30,7 @@ class Player:
         self.timeLimit = timeLimit
         self.computingTimes = [] # store the computing time for each move
         self.showTime = False
+        self.discard_stdout = False
         try:
             self.alwaysSeeAsWhite = self.brain.alwaysSeeAsWhite
         except:
@@ -43,17 +46,22 @@ class Player:
             signal.alarm(math.ceil(self.timeLimit+0.01))
 
         try:
+            if self.discard_stdout: sys.stdout = open(os.devnull, "w")
             t1 = time.time()
             deadline = Deadline(t1+self.timeLimit) if self.timeLimit else None
             chosenState = self.brain.play(gameState, deadline)
             length = time.time()-t1
         except Exception as e:
             raise e
+        finally:
+            sys.stdout = sys.__stdout__
+
         signal.alarm(0)
+
+        self.computingTimes.append(length)
 
         if self.timeLimit and length>(self.timeLimit+0.01):
             raise TimeOutException(str(self)+' took too much time to make a decision : '+str(length)+' sec')
-        self.computingTimes.append(length)
         if self.showTime:
             print(str(self)+" took "+'{:.3f}'.format(length)+"s to make a decision")
 
@@ -66,7 +74,7 @@ class Player:
 
     def __str__(self):
         return ("White" if self.isWhite else "Black")+' ('+self.name()+')'
-        
+
 
 # Unhandled exception leading to the game interuption
 class TimeOutException(Exception):
