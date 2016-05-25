@@ -3,8 +3,6 @@ import time
 import math
 import sys
 import os
-from .cell import Cell
-from .gameState import GameState
 from .deadline import Deadline
 
 # Register an handler for the timeout

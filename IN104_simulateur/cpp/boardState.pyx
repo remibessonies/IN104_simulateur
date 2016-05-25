@@ -27,10 +27,15 @@ cdef class BoardState:
         def __get__(self): return self.cBoardState.getCells()
 
 
-    def __cinit__(self, nRows=None, nPieces=None):
+    def __cinit__(self, config=None, rules=None):
         self.debug = False
-        if nPieces:
-            self.cBoardState = new CBoardState(nRows, nPieces)
+        if config:
+            if not rules: raise Exception('You must rovides configuration AND rules')
+            self.cBoardState = new CBoardState( config['nRows'],
+                                                config['nPieces'],
+                                                rules['menCaptureBackward'],
+                                                rules['kingsCanFly'],
+                                                rules['menMustStop'])
 
     def __dealloc__(self):
         del self.cBoardState

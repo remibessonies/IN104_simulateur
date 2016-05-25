@@ -12,6 +12,7 @@ class Game:
         - ia1: the starting artificial intel
         - ia2: the other artificial intelligence
         - config: configuration dictionary for the game
+        - rules: a dictionary of boolean defining pieces available moves
         - Nlimit: (default 150) the maximum number of simulation iterations
 
     outputs:
@@ -20,17 +21,40 @@ class Game:
 
     defaultConfig = {   'nRows': 8,
                         'nPieces': 12,
-                        'whiteStarts':True,
+                        'whiteStarts':True }
+
+    CheckersRules = {   'menCaptureBackward':False,
+                        'kingsCanFly':False,
+                        'menMustStop':True,
+                        'noCaptureMax': 16 }
+
+    InternatRules = {   'menCaptureBackward':True,
+                        'kingsCanFly':True,
+                        'menMustStop':False,
                         'noCaptureMax': 25 }
 
-    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, Nlimit = 150):
+    defaultRules = CheckersRules
+
+    def checkConfig(self, config, Nlimit, rules):
         for key in Game.defaultConfig:
             if key not in config: config[key] = Game.defaultConfig[key]
+        for key in Game.defaultRules:
+            if key not in rules: rules[key] = Game.defaultRules[key]
 
-        self.gameState = GameState(config)
-        self.whiteStarts = config['whiteStarts']
-        self.noCaptureMax = config['noCaptureMax']
+        assert config['nRows']%2==0, 'The number of rows ust be a multiple of 2'
+        assert config['nPieces']>0, 'The number of pieces must be positive'
+        assert rules['noCaptureMax']>0 , 'The number of maximum successive non-capturing moves before Draw must be positive'
+
+        if not Nlimit: Nlimit = 2*config['nPieces']*config['noCaptureMax']
+        assert Nlimit>0, 'The number of maximum simulation steps must be positive'
         self.Nlimit = Nlimit
+        self.config = config
+
+    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, , rules = {}, Nlimit = None):
+        self.checkConfig(config, Nlimit, rules)
+        self.gameState = GameState(self.config)
+        self.whiteStarts = self.config['whiteStarts']
+        self.noCaptureMax = self.config['noCaptureMax']
         self.player1 = Player(self.whiteStarts, ia1, timeLimit1)
         self.player2 = Player(not self.whiteStarts, ia2, timeLimit2)
 
@@ -128,9 +152,8 @@ class Game:
             return
 
         # create the PDN of the game
-        pdn = self.makePDN(startTime, pdnMoves, result)
-        self.log +="\n#PDN#\n"+pdn
-        return pdn
+        self.pdn = self.makePDN(startTime, pdnMoves, result)
+        self.log +="\n#PDN#\n"+self.pdn
 
 ### End of runGame
 

@@ -5,10 +5,15 @@
 namespace game {
     CBoardState::CBoardState() {}
 
-    CBoardState::CBoardState(const int nR, const int nP) {
+    CBoardState::CBoardState(const int nR, const int nP, const bool menBack, const bool kingsFly, const bool menStop) {
         nRows = nR;
         nPieces = nP;
         nCells = nRows*nRows/2;
+
+        menCaptureBackward = menBack;
+        kingsCanFly = kingsFly;
+        menMustStop = menStop;
+
         cells = std::vector<char>(nCells, '.');
         init();
     }
@@ -71,7 +76,7 @@ Convertissors, checkers and getters
     }
 
     char CBoardState::getCell(const int i){
-        if(not isValidIndex(i)){
+        if(!isValidIndex(i)){
             std::cout << "Non valid index : " << i << "\n";
             throw "Non valid index";
         }
@@ -118,41 +123,53 @@ Convertissors, checkers and getters
         int r0 = rc0.first;
         int c0 = rc0.second;
 
-        // trs stores valid row movements (downward for blacks, upward for whites, an both for kings)
-        std::vector<int> trs, tcs;
-        if (r0<nRows-2)  trs.push_back(1);
-        if (r0>1)  trs.push_back(-1);
-        if (c0<nRows-2)  tcs.push_back(1);
-        if (c0>1)  tcs.push_back(-1);
+        int tr_min = (r0>0  && (piece!=Cell::b || menCaptureBackward) ) ? -1 : 1;
+        int tr_max = (r0<nRows-1 && (piece!=Cell::w || menCaptureBackward) ) ? 1 : -1; //authorize to move in positive row
+        int magnitude = (kingsCanFly && Cell::isKing(piece)) ? nRows : 1;
 
         //a list of Move objects that the piece can perform starting from this place (these moves do not include the starting point)
         std::vector<CCaptureMove*> possibleVariations;
         std::vector<CCaptureMove*> newVariations;
 
         int r2,c2, jumpPos, newPos;
-        bool isWhite;
+        bool isWhite = Cell::isWhite(piece);
         char jumpedCell;
-        for (std::vector<int>::iterator itr = trs.begin(); itr != trs.end(); ++itr){
-            for (std::vector<int>::iterator itc = tcs.begin(); itc != tcs.end(); ++itc){
-                r2 = r0+2*(*itr);
-                c2 = c0+2*(*itc);
-                jumpPos = RCtoIndex(r0+*itr,c0+*itc);
-                newPos = RCtoIndex(r2,c2);
-                if (getCell(jumpPos)==Cell::empty || previousCaptures.find(jumpPos) != previousCaptures.end()) continue;
+        for (int tr=tr_min; tr<=tr_max; tr+=2){
+            for (int tc=-1; tc<=1; tc+=2){
+                for (int k=1; k<=magnitude; ++k){
+                    if( !isValidRC(r0+ k*tr, c0+ k*tc) ) break;
+                    jumpPos = RCtoIndex(r0+ k*tr, c0+ k*tc);
+                    jumpedCell = cells[jumpPos];
+                    if( jumpedCell==Cell::empty ) continue;
+                    if( Cell::isWhite(jumpedCell)==isWhite || previousCaptures.find(jumpPos) != previousCaptures.end() ) break;
 
-                isWhite = Cell::isWhite(piece);
-                jumpedCell = getCell(jumpPos);
-                if ((getCell(newPos)==Cell::empty || newPos==initPos) && Cell::isWhite(jumpedCell) != isWhite){
-                    // if this is a valid jump
-                    if( !Cell::isKing(piece) && ((r2==0 && isWhite) || (r2==nRows-1 && !isWhite)) ){
-                        // if a man has reached the last row, it has to stop and be crowned
-                        possibleVariations.push_back( new CCaptureMove(newPos) );
-                    }else{
-                        std::set<int> newPreviousCaptures = std::set<int>(previousCaptures);
-                        newPreviousCaptures.insert(jumpPos);
-                        newVariations = tryJumpFrom(newPos, initPos, piece, newPreviousCaptures);
-                        possibleVariations.insert(possibleVariations.end(), newVariations.begin(), newVariations.end());
+                    // we have foundthe closest opponent piece to jump above
+                    // we will search now all the landing possibilities (if there are)
+                    for(int k2=1; k2<=magnitude; k2++){
+                        r2 = r0+(k+k2)*tr;
+                        c2 = c0+(k+k2)*tc;
+                        if( !isValidRC(r2, c2) ) break;
+
+                        newPos = RCtoIndex(r2,c2);
+                        if( cells[newPos]==Cell::empty || newPos==initPos ){
+                            // if this is a valid jump
+                            if( menMustStop && !Cell::isKing(piece) && ((r2==0 && isWhite) || (r2==nRows-1 && !isWhite)) ){
+                                // if a man has reached the last row, it has to stop and be crowned if the rules say so
+                                possibleVariations.push_back( new CCaptureMove(newPos) );
+                            }else{
+                                std::set<int> newPreviousCaptures = std::set<int>(previousCaptures);
+                                newPreviousCaptures.insert(jumpPos);
+                                newVariations = tryJumpFrom(newPos, initPos, piece, newPreviousCaptures);
+                                possibleVariations.insert(possibleVariations.end(), newVariations.begin(), newVariations.end());
+                            }
+                        }else{
+                            // if the cell is not empty, then we cannot land here and farther. we stop the search
+                            break;
+                        }
                     }
+                    // now that we have found the closest opponent piece in this direction, we must stop searching
+                    break;
+
                 }
             }
         }
@@ -178,7 +195,7 @@ Convertissors, checkers and getters
                     longestVariations.clear();
                 }
                 if (len >= currentMax){
-                    //Then we insert the starting point to at the beginning of all variations kept
+                    //Then we insert the starting point at the beginning of all variations kept
                     (*variation)->push_front(cellIndex);
                     longestVariations.push_back(*variation);
                 }
@@ -201,31 +218,27 @@ Convertissors, checkers and getters
 
     std::vector<CSimpleMove*> CBoardState::tryMoveFrom(const int cellIndex){
         char piece = cells[cellIndex];
-        if (piece==Cell::empty){
-            std::cout << "Error, the starting position contains no piece";
-            throw "Error, the starting position contains no piece";
-        }
+        std::vector<CSimpleMove*> possibleMoves;
+        if (piece==Cell::empty) throw "Error, the starting position contains no piece";
 
         std::pair<int,int> rc = indexToRC(cellIndex);
         int r = rc.first;
         int c = rc.second;
 
-        // trs stores valid row movements (downward for blacks, upward for whites, an both for kings)
-        std::vector<int> trs, tcs;
-        if (r<nRows-1 && piece!=Cell::w)  trs.push_back(1);
-        if (r>0  && piece!=Cell::b)  trs.push_back(-1);
-        if (c<nRows-1)  tcs.push_back(1);
-        if (c>0)  tcs.push_back(-1);
+        int tr_min = (r>0  && piece!=Cell::b) ? -1 : 1;
+        int tr_max = (r<nRows-1 && piece!=Cell::w) ? 1 : -1; //authorize to move in positive row
+        int magnitude = (kingsCanFly && Cell::isKing(piece)) ? nRows : 1;
 
-        std::vector<CSimpleMove*> possibleMoves;
         int newPos;
-        for (std::vector<int>::iterator itr = trs.begin(); itr != trs.end(); ++itr){
-            for (std::vector<int>::iterator itc = tcs.begin(); itc != tcs.end(); ++itc){
-                newPos = RCtoIndex(r+*itr,c+*itc);
-                if (cells[newPos]==Cell::empty) possibleMoves.push_back( new CSimpleMove(cellIndex, newPos) );
+        for (int tr=tr_min; tr<=tr_max; tr+=2){
+            for (int tc=-1; tc<=1; tc+=2){
+                for (int k=1; k<=magnitude; k++){
+                    newPos = RCtoIndex(r + k*tr, c + k*tc);
+                    if ( !isValidRC(r + k*tr, c + k*tc) || cells[newPos]!=Cell::empty ) break;
+                    possibleMoves.push_back( new CSimpleMove(cellIndex, newPos) );
+                }
             }
         }
-
         return possibleMoves;
     }
 

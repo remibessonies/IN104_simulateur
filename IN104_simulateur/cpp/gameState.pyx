@@ -25,9 +25,10 @@ cdef class GameState:
         def __get__(self): return self.boardState
 
 
-    def __cinit__(self, config = None):
+    def __cinit__(self, config = None, rules = None):
         if config:
-            self.boardState = BoardState(config['nRows'], config['nPieces'])
+            if not rules: raise Exception("You must provide a configuration AND rules")
+            self.boardState = BoardState(config, rules)
             self.isWhiteTurn = config['whiteStarts']
             self.noCaptureCounter = 0
 
