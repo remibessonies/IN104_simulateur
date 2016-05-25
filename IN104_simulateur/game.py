@@ -45,16 +45,17 @@ class Game:
         assert config['nPieces']>0, 'The number of pieces must be positive'
         assert rules['noCaptureMax']>0 , 'The number of maximum successive non-capturing moves before Draw must be positive'
 
-        if not Nlimit: Nlimit = 2*config['nPieces']*config['noCaptureMax']
+        if not Nlimit: Nlimit = 2*config['nPieces']*rules['noCaptureMax']
         assert Nlimit>0, 'The number of maximum simulation steps must be positive'
         self.Nlimit = Nlimit
         self.config = config
+        self.rules = rules
 
-    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, , rules = {}, Nlimit = None):
+    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, rules = {}, Nlimit = None):
         self.checkConfig(config, Nlimit, rules)
-        self.gameState = GameState(self.config)
+        self.gameState = GameState(self.config, self.rules)
         self.whiteStarts = self.config['whiteStarts']
-        self.noCaptureMax = self.config['noCaptureMax']
+        self.noCaptureMax = self.rules['noCaptureMax']
         self.player1 = Player(self.whiteStarts, ia1, timeLimit1)
         self.player2 = Player(not self.whiteStarts, ia2, timeLimit2)
 
