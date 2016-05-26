@@ -32,12 +32,13 @@ namespace game {
         char getCell(const int i);
         char getCell(const int r, const int c);
         void setCell(const int i, const char c);
+        void setCell(const int r, const int c, const char cell);
 
         std::vector<CCaptureMove*> tryJumpFrom(const int cellIndex);
         std::vector<CCaptureMove*> tryJumpFrom(const int cellIndex, const int initPos, const char piece, std::set<int>& previousCaptures);
         std::vector<CSimpleMove*> tryMoveFrom(const int cellIndex);
         std::vector<CMove*> findPossibleMoves(const bool white);
         void doMove(const CMove& move);
-        //std::vector<CMove> findPossibleMoves(const bool color);
+        int sign(const int x);
     };
  }

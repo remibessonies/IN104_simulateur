@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>        // abs
 #include <list>
 #include "CBoardState.h"
 
@@ -22,6 +23,9 @@ namespace game {
         nRows = bs.nRows;
         nPieces = bs.nPieces;
         nCells = bs.nCells;
+        menCaptureBackward = bs.menCaptureBackward;
+        kingsCanFly = bs.kingsCanFly;
+        menMustStop = bs.menMustStop;
         cells = std::vector<char>(bs.cells);
     }
 
@@ -96,6 +100,10 @@ Convertissors, checkers and getters
         cells[i] = c;
     }
 
+      void CBoardState::setCell(const int r, const int c, const char cell){
+          if(!isValidRC(r,c)) throw "Non valid coordinates";
+          cells[RCtoIndex(r,c)] = cell;
+      }
 
 
 
@@ -126,6 +134,8 @@ Convertissors, checkers and getters
         int tr_min = (r0>0  && (piece!=Cell::b || menCaptureBackward) ) ? -1 : 1;
         int tr_max = (r0<nRows-1 && (piece!=Cell::w || menCaptureBackward) ) ? 1 : -1; //authorize to move in positive row
         int magnitude = (kingsCanFly && Cell::isKing(piece)) ? nRows : 1;
+        //std::cout << piece << " : trmin/trmax : " << tr_min << " / " << tr_max << std::endl;
+        //std::cout << menCaptureBackward << " !! " << r0 << " / " << c0 << std::endl;
 
         //a list of Move objects that the piece can perform starting from this place (these moves do not include the starting point)
         std::vector<CCaptureMove*> possibleVariations;
@@ -300,20 +310,29 @@ Convertissors, checkers and getters
         if (!isValidIndex(start)) {throw "Invalid Index !";}
         int end = mCells.back();
         char piece = cells[start];
-        int diff1,diff2;
+        int diff1,diff2,tr,tc,current_r,current_c;
 
         if(move.isCapture()){
+            std::cout << "dealing with" << move.toPDN() << std::endl;
             std::pair<int,int> RC = indexToRC(start);
             std::pair<int,int> nextRC;
             for (std::list<int>::iterator it = ++mCells.begin(); it != mCells.end(); ++it){
                 if (!isValidIndex(*it)) {throw "Invalid Index !";}
                 nextRC = indexToRC(*it);
 
-                diff1 = RC.first-nextRC.first;
-                diff2 = RC.second-nextRC.second;
-                if(!( (diff1==2 || diff1==-2) && (diff2==2 || diff2==-2) )) {throw "Invalid Move !";}
+                diff1 = nextRC.first-RC.first;
+                diff2 = nextRC.second-RC.second;
+                if(!( abs(diff1)==abs(diff2) )) {throw "Invalid Move !";}
+                tr = sign(diff1);
+                tc = sign(diff2);
+                current_r = RC.first + tr;
+                current_c = RC.second + tc;
+                do{
+                    setCell(current_r,current_c, Cell::empty);
+                    current_r = current_r + tr;
+                    current_c = current_c + tc;
+                }while (current_r != nextRC.first);
 
-                cells[RCtoIndex( (RC.first+nextRC.first)/2, (RC.second+nextRC.second)/2 )] = Cell::empty;
                 RC = nextRC;
             }
         }
@@ -324,6 +343,11 @@ Convertissors, checkers and getters
         if( (piece == Cell::w && endRC.first==0)  || (piece == Cell::b && endRC.first==nRows-1) ){
             cells[end] = Cell::promote(piece);
         }
+    }
+
+    int CBoardState::sign(const int x){
+        if (x==0) return 0;
+        return (x>0) ? 1 : -1;
     }
 
 }

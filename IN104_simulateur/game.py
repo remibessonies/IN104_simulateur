@@ -90,7 +90,6 @@ class Game:
 
             # Check whether the game is ended
             possibleMoves = self.gameState.findPossibleMoves()
-            possibleStates = self.gameState.findNextStates()
             if not possibleMoves:
                 result = '0-1' if player is self.player1 else '1-0'
                 self.status['success'] = True

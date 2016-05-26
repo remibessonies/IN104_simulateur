@@ -13,7 +13,6 @@ cdef extern from "CBoardState.h" namespace "game":
         CBoardState(int, int, bool, bool, bool) except +
         CBoardState(CBoardState&) except +
 
-        vector[char] getCells()
         void reverse()
         string toString()
 
@@ -21,8 +20,11 @@ cdef extern from "CBoardState.h" namespace "game":
         bool isValidRC(int, int)
         int RCtoIndex(int, int)
         pair[int,int] indexToRC(int)
+        
         char getCell(int, int)
+        vector[char] getCells()
         void setCell(int, char)
+        void setCell(int, int, char)
 
         vector[CCaptureMove*] tryJumpFrom(int)
         vector[CSimpleMove*] tryMoveFrom(int)

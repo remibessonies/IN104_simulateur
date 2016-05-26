@@ -504,7 +504,7 @@ struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move {
 };
 
 
-/* "boardState.pxd":33
+/* "boardState.pxd":35
  * 
  * 
  * cdef class BoardState:             # <<<<<<<<<<<<<<
@@ -3010,7 +3010,7 @@ PyMODINIT_FUNC PyInit_gameState(void)
   /*--- Type import code ---*/
   __pyx_ptype_16IN104_simulateur_3cpp_4move_Move = __Pyx_ImportType("IN104_simulateur.cpp.move", "Move", sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move = (struct __pyx_vtabstruct_16IN104_simulateur_3cpp_4move_Move*)__Pyx_GetVtable(__pyx_ptype_16IN104_simulateur_3cpp_4move_Move->tp_dict); if (unlikely(!__pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState = __Pyx_ImportType("IN104_simulateur.cpp.boardState", "BoardState", sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState)) {__pyx_filename = __pyx_f[3]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState = __Pyx_ImportType("IN104_simulateur.cpp.boardState", "BoardState", sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState)) {__pyx_filename = __pyx_f[3]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
   /*--- Execution code ---*/

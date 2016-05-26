@@ -68,9 +68,11 @@ cdef class BoardState:
     def getCell(self, int r,int c):
         return self.cBoardState.getCell(r, c)
 
-    def setCell(self, int i, cell):
-        cdef char c = cell
-        self.cBoardState.setCell(i, c)
+    def setCell_i(self, int i, char cell):
+        self.cBoardState.setCell(i, cell)
+
+    def setCell_rc(self, int r, int c, char cell):
+        self.cBoardState.setCell(r, c, cell)
 
 
     '''

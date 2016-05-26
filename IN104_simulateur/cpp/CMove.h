@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #include <list>
 #include <sstream>
 #include <string>
@@ -9,19 +9,19 @@ namespace game{
         bool isCap;
         std::string separator;
         std::list<int> cells;
-    public:      
+    public:
         int len() const;
         std::list<int> getCells() const;
-        bool isCapture() const; 
-        std::string toPDN(); 
+        bool isCapture() const;
+        std::string toPDN() const; 
     };
-    
+
     class CSimpleMove: public CMove{
     public:
         CSimpleMove();
         CSimpleMove(const int cell1, const int cell2);
     };
-    
+
     class CCaptureMove: public CMove{
     public:
         CCaptureMove();
