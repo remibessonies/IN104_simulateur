@@ -10,12 +10,7 @@
         "include_dirs": [
             "."
         ],
-        "language": "c++",
-        "sources": [
-            "IN104_simulateur/cpp/CBoardState.cpp",
-            "IN104_simulateur/cpp/CCell.cpp",
-            "IN104_simulateur/cpp/CMove.cpp"
-        ]
+        "language": "c++"
     }
 }
 END: Cython Metadata */
@@ -949,7 +944,7 @@ static PyObject *__pyx_tp_new_16IN104_simulateur_3cpp_10boardState_BoardState(Py
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 
-/* "IN104_simulateur/cpp/boardState.pyx":14
+/* "IN104_simulateur/cpp/boardState.pyx":12
  * 
  *     property debug:
  *         def __get__(self): return self.debug             # <<<<<<<<<<<<<<
@@ -986,7 +981,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5deb
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":15
+/* "IN104_simulateur/cpp/boardState.pyx":13
  *     property debug:
  *         def __get__(self): return self.debug
  *         def __set__(self, bool b): self.debug = b             # <<<<<<<<<<<<<<
@@ -1005,7 +1000,7 @@ static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_3__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_b); {
-    __pyx_v_b = __Pyx_PyObject_IsTrue(__pyx_arg_b); if (unlikely((__pyx_v_b == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 15; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_b = __Pyx_PyObject_IsTrue(__pyx_arg_b); if (unlikely((__pyx_v_b == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 13; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1028,7 +1023,7 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_2__
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_b); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 15; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_b); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 13; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->debug);
@@ -1048,7 +1043,7 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5debug_2__
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":18
+/* "IN104_simulateur/cpp/boardState.pyx":16
  * 
  *     property nRows:
  *         def __get__(self): return self.cBoardState.nRows             # <<<<<<<<<<<<<<
@@ -1078,7 +1073,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRo
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 16; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1095,7 +1090,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5nRo
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":21
+/* "IN104_simulateur/cpp/boardState.pyx":19
  * 
  *     property nCells:
  *         def __get__(self): return self.cBoardState.nCells             # <<<<<<<<<<<<<<
@@ -1125,7 +1120,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCe
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nCells); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nCells); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1142,7 +1137,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6nCe
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":24
+/* "IN104_simulateur/cpp/boardState.pyx":22
  * 
  *     property nPieces:
  *         def __get__(self): return self.cBoardState.nPieces             # <<<<<<<<<<<<<<
@@ -1172,7 +1167,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nPieces); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nPieces); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1189,7 +1184,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_7nPi
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":27
+/* "IN104_simulateur/cpp/boardState.pyx":25
  * 
  *     property cells:
  *         def __get__(self): return self.cBoardState.getCells()             # <<<<<<<<<<<<<<
@@ -1219,7 +1214,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5cel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_char(__pyx_v_self->cBoardState->getCells()); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_to_py_char(__pyx_v_self->cBoardState->getCells()); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 25; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1236,7 +1231,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_5cel
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":30
+/* "IN104_simulateur/cpp/boardState.pyx":28
  * 
  * 
  *     def __cinit__(self, config=None, rules=None):             # <<<<<<<<<<<<<<
@@ -1283,7 +1278,7 @@ static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_1__cinit__
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1298,7 +1293,7 @@ static int __pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_1__cinit__
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1328,7 +1323,7 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":31
+  /* "IN104_simulateur/cpp/boardState.pyx":29
  * 
  *     def __cinit__(self, config=None, rules=None):
  *         self.debug = False             # <<<<<<<<<<<<<<
@@ -1341,94 +1336,94 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(
   __Pyx_DECREF(__pyx_v_self->debug);
   __pyx_v_self->debug = Py_False;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":32
+  /* "IN104_simulateur/cpp/boardState.pyx":30
  *     def __cinit__(self, config=None, rules=None):
  *         self.debug = False
  *         if config:             # <<<<<<<<<<<<<<
  *             if not rules: raise Exception('You must rovides configuration AND rules')
  *             self.cBoardState = new CBoardState( config['nRows'],
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_config); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_config); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_1) {
 
-    /* "IN104_simulateur/cpp/boardState.pyx":33
+    /* "IN104_simulateur/cpp/boardState.pyx":31
  *         self.debug = False
  *         if config:
  *             if not rules: raise Exception('You must rovides configuration AND rules')             # <<<<<<<<<<<<<<
  *             self.cBoardState = new CBoardState( config['nRows'],
  *                                                 config['nPieces'],
  */
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_rules); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_rules); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_t_2 = ((!__pyx_t_1) != 0);
     if (__pyx_t_2) {
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_Exception, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_Exception, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
 
-    /* "IN104_simulateur/cpp/boardState.pyx":34
+    /* "IN104_simulateur/cpp/boardState.pyx":32
  *         if config:
  *             if not rules: raise Exception('You must rovides configuration AND rules')
  *             self.cBoardState = new CBoardState( config['nRows'],             # <<<<<<<<<<<<<<
  *                                                 config['nPieces'],
  *                                                 rules['menCaptureBackward'],
  */
-    __pyx_t_3 = PyObject_GetItem(__pyx_v_config, __pyx_n_s_nRows); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_config, __pyx_n_s_nRows); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":35
+    /* "IN104_simulateur/cpp/boardState.pyx":33
  *             if not rules: raise Exception('You must rovides configuration AND rules')
  *             self.cBoardState = new CBoardState( config['nRows'],
  *                                                 config['nPieces'],             # <<<<<<<<<<<<<<
  *                                                 rules['menCaptureBackward'],
  *                                                 rules['kingsCanFly'],
  */
-    __pyx_t_3 = PyObject_GetItem(__pyx_v_config, __pyx_n_s_nPieces); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_config, __pyx_n_s_nPieces); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":36
+    /* "IN104_simulateur/cpp/boardState.pyx":34
  *             self.cBoardState = new CBoardState( config['nRows'],
  *                                                 config['nPieces'],
  *                                                 rules['menCaptureBackward'],             # <<<<<<<<<<<<<<
  *                                                 rules['kingsCanFly'],
  *                                                 rules['menMustStop'])
  */
-    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_menCaptureBackward); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_menCaptureBackward); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":37
+    /* "IN104_simulateur/cpp/boardState.pyx":35
  *                                                 config['nPieces'],
  *                                                 rules['menCaptureBackward'],
  *                                                 rules['kingsCanFly'],             # <<<<<<<<<<<<<<
  *                                                 rules['menMustStop'])
  * 
  */
-    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_kingsCanFly); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_kingsCanFly); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_7 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_7 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":38
+    /* "IN104_simulateur/cpp/boardState.pyx":36
  *                                                 rules['menCaptureBackward'],
  *                                                 rules['kingsCanFly'],
  *                                                 rules['menMustStop'])             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_menMustStop); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_rules, __pyx_n_s_menMustStop); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":34
+    /* "IN104_simulateur/cpp/boardState.pyx":32
  *         if config:
  *             if not rules: raise Exception('You must rovides configuration AND rules')
  *             self.cBoardState = new CBoardState( config['nRows'],             # <<<<<<<<<<<<<<
@@ -1439,11 +1434,11 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(
       __pyx_t_9 = new game::CBoardState(__pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __pyx_v_self->cBoardState = __pyx_t_9;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":32
+    /* "IN104_simulateur/cpp/boardState.pyx":30
  *     def __cinit__(self, config=None, rules=None):
  *         self.debug = False
  *         if config:             # <<<<<<<<<<<<<<
@@ -1452,7 +1447,7 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(
  */
   }
 
-  /* "IN104_simulateur/cpp/boardState.pyx":30
+  /* "IN104_simulateur/cpp/boardState.pyx":28
  * 
  * 
  *     def __cinit__(self, config=None, rules=None):             # <<<<<<<<<<<<<<
@@ -1472,7 +1467,7 @@ static int __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState___cinit__(
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":40
+/* "IN104_simulateur/cpp/boardState.pyx":38
  *                                                 rules['menMustStop'])
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1495,7 +1490,7 @@ static void __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__deallo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":41
+  /* "IN104_simulateur/cpp/boardState.pyx":39
  * 
  *     def __dealloc__(self):
  *         del self.cBoardState             # <<<<<<<<<<<<<<
@@ -1504,7 +1499,7 @@ static void __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__deallo
  */
   delete __pyx_v_self->cBoardState;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":40
+  /* "IN104_simulateur/cpp/boardState.pyx":38
  *                                                 rules['menMustStop'])
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1516,7 +1511,7 @@ static void __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_2__deallo
   __Pyx_RefNannyFinishContext();
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":43
+/* "IN104_simulateur/cpp/boardState.pyx":41
  *         del self.cBoardState
  * 
  *     def copy(self):             # <<<<<<<<<<<<<<
@@ -1548,19 +1543,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4cop
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("copy", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":44
+  /* "IN104_simulateur/cpp/boardState.pyx":42
  * 
  *     def copy(self):
  *         copy = BoardState()             # <<<<<<<<<<<<<<
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )
  *         return copy
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 44; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_copy = ((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":45
+  /* "IN104_simulateur/cpp/boardState.pyx":43
  *     def copy(self):
  *         copy = BoardState()
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )             # <<<<<<<<<<<<<<
@@ -1571,11 +1566,11 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4cop
     __pyx_t_2 = new game::CBoardState((*__pyx_v_self->cBoardState));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 43; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __pyx_v_copy->cBoardState = __pyx_t_2;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":46
+  /* "IN104_simulateur/cpp/boardState.pyx":44
  *         copy = BoardState()
  *         copy.cBoardState = new CBoardState( deref(self.cBoardState) )
  *         return copy             # <<<<<<<<<<<<<<
@@ -1587,7 +1582,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4cop
   __pyx_r = ((PyObject *)__pyx_v_copy);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":43
+  /* "IN104_simulateur/cpp/boardState.pyx":41
  *         del self.cBoardState
  * 
  *     def copy(self):             # <<<<<<<<<<<<<<
@@ -1607,7 +1602,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_4cop
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":48
+/* "IN104_simulateur/cpp/boardState.pyx":46
  *         return copy
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -1633,7 +1628,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6rev
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reverse", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":49
+  /* "IN104_simulateur/cpp/boardState.pyx":47
  * 
  *     def reverse(self):
  *         self.cBoardState.reverse()             # <<<<<<<<<<<<<<
@@ -1642,7 +1637,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6rev
  */
   __pyx_v_self->cBoardState->reverse();
 
-  /* "IN104_simulateur/cpp/boardState.pyx":50
+  /* "IN104_simulateur/cpp/boardState.pyx":48
  *     def reverse(self):
  *         self.cBoardState.reverse()
  *         return self             # <<<<<<<<<<<<<<
@@ -1654,7 +1649,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6rev
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":48
+  /* "IN104_simulateur/cpp/boardState.pyx":46
  *         return copy
  * 
  *     def reverse(self):             # <<<<<<<<<<<<<<
@@ -1669,7 +1664,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_6rev
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":52
+/* "IN104_simulateur/cpp/boardState.pyx":50
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -1699,7 +1694,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":53
+  /* "IN104_simulateur/cpp/boardState.pyx":51
  * 
  *     def __str__(self):
  *         return self.cBoardState.toString().decode('UTF-8')             # <<<<<<<<<<<<<<
@@ -1707,13 +1702,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__s
  *     '''
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_decode_cpp_string(__pyx_v_self->cBoardState->toString(), 0, PY_SSIZE_T_MAX, NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 53; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_decode_cpp_string(__pyx_v_self->cBoardState->toString(), 0, PY_SSIZE_T_MAX, NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":52
+  /* "IN104_simulateur/cpp/boardState.pyx":50
  *         return self
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -1732,7 +1727,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_8__s
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":58
+/* "IN104_simulateur/cpp/boardState.pyx":56
  *     Checkers, converters, getters and setter
  *     '''
  *     def isValidIndex(self, int i):             # <<<<<<<<<<<<<<
@@ -1751,7 +1746,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_11is
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("isValidIndex (wrapper)", 0);
   assert(__pyx_arg_i); {
-    __pyx_v_i = __Pyx_PyInt_As_int(__pyx_arg_i); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_i = __Pyx_PyInt_As_int(__pyx_arg_i); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1775,7 +1770,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10is
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isValidIndex", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":59
+  /* "IN104_simulateur/cpp/boardState.pyx":57
  *     '''
  *     def isValidIndex(self, int i):
  *         return self.cBoardState.isValidIndex(i)             # <<<<<<<<<<<<<<
@@ -1783,13 +1778,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10is
  *     def isValidRC(self, int r, int c):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->cBoardState->isValidIndex(__pyx_v_i)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->cBoardState->isValidIndex(__pyx_v_i)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":58
+  /* "IN104_simulateur/cpp/boardState.pyx":56
  *     Checkers, converters, getters and setter
  *     '''
  *     def isValidIndex(self, int i):             # <<<<<<<<<<<<<<
@@ -1808,7 +1803,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_10is
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":61
+/* "IN104_simulateur/cpp/boardState.pyx":59
  *         return self.cBoardState.isValidIndex(i)
  * 
  *     def isValidRC(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1847,11 +1842,11 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_13is
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_c)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("isValidRC", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("isValidRC", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "isValidRC") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "isValidRC") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1859,12 +1854,12 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_13is
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
-    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("isValidRC", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("isValidRC", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.isValidRC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1886,7 +1881,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12is
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isValidRC", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":62
+  /* "IN104_simulateur/cpp/boardState.pyx":60
  * 
  *     def isValidRC(self, int r, int c):
  *         return self.cBoardState.isValidRC(r,c)             # <<<<<<<<<<<<<<
@@ -1894,13 +1889,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12is
  *     def RCtoIndex(self, int r, int c):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->cBoardState->isValidRC(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->cBoardState->isValidRC(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":61
+  /* "IN104_simulateur/cpp/boardState.pyx":59
  *         return self.cBoardState.isValidIndex(i)
  * 
  *     def isValidRC(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1919,7 +1914,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_12is
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":64
+/* "IN104_simulateur/cpp/boardState.pyx":62
  *         return self.cBoardState.isValidRC(r,c)
  * 
  *     def RCtoIndex(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -1958,11 +1953,11 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_15RC
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_c)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("RCtoIndex", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("RCtoIndex", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "RCtoIndex") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "RCtoIndex") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1970,12 +1965,12 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_15RC
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
-    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("RCtoIndex", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("RCtoIndex", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.RCtoIndex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1997,7 +1992,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RC
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("RCtoIndex", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":65
+  /* "IN104_simulateur/cpp/boardState.pyx":63
  * 
  *     def RCtoIndex(self, int r, int c):
  *         return self.cBoardState.RCtoIndex(r,c)             # <<<<<<<<<<<<<<
@@ -2005,13 +2000,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RC
  *     def indexToRC(self, int i):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->RCtoIndex(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->RCtoIndex(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 63; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":64
+  /* "IN104_simulateur/cpp/boardState.pyx":62
  *         return self.cBoardState.isValidRC(r,c)
  * 
  *     def RCtoIndex(self, int r, int c):             # <<<<<<<<<<<<<<
@@ -2030,7 +2025,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_14RC
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":67
+/* "IN104_simulateur/cpp/boardState.pyx":65
  *         return self.cBoardState.RCtoIndex(r,c)
  * 
  *     def indexToRC(self, int i):             # <<<<<<<<<<<<<<
@@ -2049,7 +2044,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_17in
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("indexToRC (wrapper)", 0);
   assert(__pyx_arg_i); {
-    __pyx_v_i = __Pyx_PyInt_As_int(__pyx_arg_i); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_i = __Pyx_PyInt_As_int(__pyx_arg_i); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2073,7 +2068,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16in
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("indexToRC", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":68
+  /* "IN104_simulateur/cpp/boardState.pyx":66
  * 
  *     def indexToRC(self, int i):
  *         return self.cBoardState.indexToRC(i)             # <<<<<<<<<<<<<<
@@ -2081,13 +2076,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16in
  *     def getCell(self, int r,int c):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_pair_to_py_int____int(__pyx_v_self->cBoardState->indexToRC(__pyx_v_i)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_pair_to_py_int____int(__pyx_v_self->cBoardState->indexToRC(__pyx_v_i)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":67
+  /* "IN104_simulateur/cpp/boardState.pyx":65
  *         return self.cBoardState.RCtoIndex(r,c)
  * 
  *     def indexToRC(self, int i):             # <<<<<<<<<<<<<<
@@ -2106,7 +2101,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_16in
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":70
+/* "IN104_simulateur/cpp/boardState.pyx":68
  *         return self.cBoardState.indexToRC(i)
  * 
  *     def getCell(self, int r,int c):             # <<<<<<<<<<<<<<
@@ -2145,11 +2140,11 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_19ge
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_c)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getCell", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("getCell", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getCell") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getCell") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2157,12 +2152,12 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_19ge
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
-    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_r = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_r == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_c = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_c == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("getCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.getCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2184,7 +2179,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18ge
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("getCell", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":71
+  /* "IN104_simulateur/cpp/boardState.pyx":69
  * 
  *     def getCell(self, int r,int c):
  *         return self.cBoardState.getCell(r, c)             # <<<<<<<<<<<<<<
@@ -2192,13 +2187,13 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18ge
  *     def setCell(self, int i, cell):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_char(__pyx_v_self->cBoardState->getCell(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_char(__pyx_v_self->cBoardState->getCell(__pyx_v_r, __pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":70
+  /* "IN104_simulateur/cpp/boardState.pyx":68
  *         return self.cBoardState.indexToRC(i)
  * 
  *     def getCell(self, int r,int c):             # <<<<<<<<<<<<<<
@@ -2217,7 +2212,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_18ge
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":73
+/* "IN104_simulateur/cpp/boardState.pyx":71
  *         return self.cBoardState.getCell(r, c)
  * 
  *     def setCell(self, int i, cell):             # <<<<<<<<<<<<<<
@@ -2256,11 +2251,11 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_21se
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_cell)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("setCell", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("setCell", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setCell") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setCell") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2268,12 +2263,12 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_21se
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_i = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_i = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_i == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
     __pyx_v_cell = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("setCell", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.setCell", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2296,17 +2291,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20se
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("setCell", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":74
+  /* "IN104_simulateur/cpp/boardState.pyx":72
  * 
  *     def setCell(self, int i, cell):
  *         cdef char c = cell             # <<<<<<<<<<<<<<
  *         self.cBoardState.setCell(i, c)
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_As_char(__pyx_v_cell); if (unlikely((__pyx_t_1 == (char)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_As_char(__pyx_v_cell); if (unlikely((__pyx_t_1 == (char)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_c = __pyx_t_1;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":75
+  /* "IN104_simulateur/cpp/boardState.pyx":73
  *     def setCell(self, int i, cell):
  *         cdef char c = cell
  *         self.cBoardState.setCell(i, c)             # <<<<<<<<<<<<<<
@@ -2315,7 +2310,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20se
  */
   __pyx_v_self->cBoardState->setCell(__pyx_v_i, __pyx_v_c);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":73
+  /* "IN104_simulateur/cpp/boardState.pyx":71
  *         return self.cBoardState.getCell(r, c)
  * 
  *     def setCell(self, int i, cell):             # <<<<<<<<<<<<<<
@@ -2335,7 +2330,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_20se
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":82
+/* "IN104_simulateur/cpp/boardState.pyx":80
  *     '''
  * 
  *     def tryMoveFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2354,7 +2349,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_23tr
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("tryMoveFrom (wrapper)", 0);
   assert(__pyx_arg_cellIndex); {
-    __pyx_v_cellIndex = __Pyx_PyInt_As_int(__pyx_arg_cellIndex); if (unlikely((__pyx_v_cellIndex == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_cellIndex = __Pyx_PyInt_As_int(__pyx_arg_cellIndex); if (unlikely((__pyx_v_cellIndex == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2383,7 +2378,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tryMoveFrom", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":83
+  /* "IN104_simulateur/cpp/boardState.pyx":81
  * 
  *     def tryMoveFrom(self, int cellIndex):
  *         cdef vector[CSimpleMove*] cmoves = self.cBoardState.tryMoveFrom(cellIndex)             # <<<<<<<<<<<<<<
@@ -2392,7 +2387,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tr
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->tryMoveFrom(__pyx_v_cellIndex);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":84
+  /* "IN104_simulateur/cpp/boardState.pyx":82
  *     def tryMoveFrom(self, int cellIndex):
  *         cdef vector[CSimpleMove*] cmoves = self.cBoardState.tryMoveFrom(cellIndex)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2400,7 +2395,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tr
  *     def tryJumpFrom(self, int cellIndex):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __pyx_v_cmoves.begin();
   for (;;) {
@@ -2408,16 +2403,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tr
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":82
+  /* "IN104_simulateur/cpp/boardState.pyx":80
  *     '''
  * 
  *     def tryMoveFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2437,7 +2432,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_22tr
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":86
+/* "IN104_simulateur/cpp/boardState.pyx":84
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def tryJumpFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2456,7 +2451,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_25tr
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("tryJumpFrom (wrapper)", 0);
   assert(__pyx_arg_cellIndex); {
-    __pyx_v_cellIndex = __Pyx_PyInt_As_int(__pyx_arg_cellIndex); if (unlikely((__pyx_v_cellIndex == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_cellIndex = __Pyx_PyInt_As_int(__pyx_arg_cellIndex); if (unlikely((__pyx_v_cellIndex == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2485,7 +2480,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tryJumpFrom", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":87
+  /* "IN104_simulateur/cpp/boardState.pyx":85
  * 
  *     def tryJumpFrom(self, int cellIndex):
  *         cdef vector[CCaptureMove*] cmoves = self.cBoardState.tryJumpFrom(cellIndex)             # <<<<<<<<<<<<<<
@@ -2494,7 +2489,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tr
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->tryJumpFrom(__pyx_v_cellIndex);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":88
+  /* "IN104_simulateur/cpp/boardState.pyx":86
  *     def tryJumpFrom(self, int cellIndex):
  *         cdef vector[CCaptureMove*] cmoves = self.cBoardState.tryJumpFrom(cellIndex)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2502,7 +2497,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tr
  *     def findPossibleMoves(self, bool white):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __pyx_v_cmoves.begin();
   for (;;) {
@@ -2510,16 +2505,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tr
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":86
+  /* "IN104_simulateur/cpp/boardState.pyx":84
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def tryJumpFrom(self, int cellIndex):             # <<<<<<<<<<<<<<
@@ -2539,7 +2534,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_24tr
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":90
+/* "IN104_simulateur/cpp/boardState.pyx":88
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def findPossibleMoves(self, bool white):             # <<<<<<<<<<<<<<
@@ -2558,7 +2553,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_27fi
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("findPossibleMoves (wrapper)", 0);
   assert(__pyx_arg_white); {
-    __pyx_v_white = __Pyx_PyObject_IsTrue(__pyx_arg_white); if (unlikely((__pyx_v_white == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_white = __Pyx_PyObject_IsTrue(__pyx_arg_white); if (unlikely((__pyx_v_white == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2587,7 +2582,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26fi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("findPossibleMoves", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":91
+  /* "IN104_simulateur/cpp/boardState.pyx":89
  * 
  *     def findPossibleMoves(self, bool white):
  *         cdef vector[CMove*] cmoves = self.cBoardState.findPossibleMoves(white)             # <<<<<<<<<<<<<<
@@ -2596,7 +2591,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26fi
  */
   __pyx_v_cmoves = __pyx_v_self->cBoardState->findPossibleMoves(__pyx_v_white);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":92
+  /* "IN104_simulateur/cpp/boardState.pyx":90
  *     def findPossibleMoves(self, bool white):
  *         cdef vector[CMove*] cmoves = self.cBoardState.findPossibleMoves(white)
  *         return [Move.wrap(m) for m in cmoves]             # <<<<<<<<<<<<<<
@@ -2604,7 +2599,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26fi
  *     def doMove(self, Move move):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __pyx_v_cmoves.begin();
   for (;;) {
@@ -2612,16 +2607,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26fi
     __pyx_t_3 = *__pyx_t_2;
     ++__pyx_t_2;
     __pyx_v_m = __pyx_t_3;
-    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __pyx_vtabptr_16IN104_simulateur_3cpp_4move_Move->wrap(__pyx_v_m); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":90
+  /* "IN104_simulateur/cpp/boardState.pyx":88
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def findPossibleMoves(self, bool white):             # <<<<<<<<<<<<<<
@@ -2641,7 +2636,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_26fi
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":94
+/* "IN104_simulateur/cpp/boardState.pyx":92
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def doMove(self, Move move):             # <<<<<<<<<<<<<<
@@ -2658,7 +2653,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_29do
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("doMove (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_move), __pyx_ptype_16IN104_simulateur_3cpp_4move_Move, 1, "move", 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_r = __pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28doMove(((struct __pyx_obj_16IN104_simulateur_3cpp_10boardState_BoardState *)__pyx_v_self), ((struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move *)__pyx_v_move));
 
   /* function exit code */
@@ -2680,7 +2675,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28do
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("doMove", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":95
+  /* "IN104_simulateur/cpp/boardState.pyx":93
  * 
  *     def doMove(self, Move move):
  *         cdef CMove* c = move.cMove             # <<<<<<<<<<<<<<
@@ -2690,7 +2685,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28do
   __pyx_t_1 = __pyx_v_move->cMove;
   __pyx_v_c = __pyx_t_1;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":96
+  /* "IN104_simulateur/cpp/boardState.pyx":94
  *     def doMove(self, Move move):
  *         cdef CMove* c = move.cMove
  *         self.cBoardState.doMove( deref(c) )             # <<<<<<<<<<<<<<
@@ -2701,10 +2696,10 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28do
     __pyx_v_self->cBoardState->doMove((*__pyx_v_c));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "IN104_simulateur/cpp/boardState.pyx":97
+  /* "IN104_simulateur/cpp/boardState.pyx":95
  *         cdef CMove* c = move.cMove
  *         self.cBoardState.doMove( deref(c) )
  *         return self             # <<<<<<<<<<<<<<
@@ -2716,7 +2711,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28do
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":94
+  /* "IN104_simulateur/cpp/boardState.pyx":92
  *         return [Move.wrap(m) for m in cmoves]
  * 
  *     def doMove(self, Move move):             # <<<<<<<<<<<<<<
@@ -2734,7 +2729,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_28do
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":100
+/* "IN104_simulateur/cpp/boardState.pyx":98
  * 
  * 
  *     def findNextStates(self, bool white):             # <<<<<<<<<<<<<<
@@ -2753,7 +2748,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_31fi
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("findNextStates (wrapper)", 0);
   assert(__pyx_arg_white); {
-    __pyx_v_white = __Pyx_PyObject_IsTrue(__pyx_arg_white); if (unlikely((__pyx_v_white == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+    __pyx_v_white = __Pyx_PyObject_IsTrue(__pyx_arg_white); if (unlikely((__pyx_v_white == (bool)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2787,16 +2782,16 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("findNextStates", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":101
+  /* "IN104_simulateur/cpp/boardState.pyx":99
  * 
  *     def findNextStates(self, bool white):
  *         moves = self.findPossibleMoves(white)             # <<<<<<<<<<<<<<
  *         nextStates = []
  *         for m in moves:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_findPossibleMoves); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_findPossibleMoves); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_white); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_white); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2809,17 +2804,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
     __Pyx_GIVEREF(__pyx_t_3);
     PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_3);
     __pyx_t_3 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -2827,19 +2822,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
   __pyx_v_moves = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":102
+  /* "IN104_simulateur/cpp/boardState.pyx":100
  *     def findNextStates(self, bool white):
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []             # <<<<<<<<<<<<<<
  *         for m in moves:
  *             nextStates.append( self.copy().doMove(m) )
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_nextStates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":103
+  /* "IN104_simulateur/cpp/boardState.pyx":101
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []
  *         for m in moves:             # <<<<<<<<<<<<<<
@@ -2850,26 +2845,26 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
     __pyx_t_1 = __pyx_v_moves; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_moves); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_moves); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -2879,7 +2874,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -2888,14 +2883,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
     __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":104
+    /* "IN104_simulateur/cpp/boardState.pyx":102
  *         nextStates = []
  *         for m in moves:
  *             nextStates.append( self.copy().doMove(m) )             # <<<<<<<<<<<<<<
  *         return nextStates
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_copy); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
@@ -2908,14 +2903,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
       }
     }
     if (__pyx_t_4) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_doMove); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_doMove); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -2929,24 +2924,24 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_m); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_m); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
     } else {
-      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_5); __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_v_m);
       __Pyx_GIVEREF(__pyx_v_m);
       PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_m);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_nextStates, __pyx_t_2); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_nextStates, __pyx_t_2); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":103
+    /* "IN104_simulateur/cpp/boardState.pyx":101
  *         moves = self.findPossibleMoves(white)
  *         nextStates = []
  *         for m in moves:             # <<<<<<<<<<<<<<
@@ -2956,7 +2951,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":105
+  /* "IN104_simulateur/cpp/boardState.pyx":103
  *         for m in moves:
  *             nextStates.append( self.copy().doMove(m) )
  *         return nextStates             # <<<<<<<<<<<<<<
@@ -2968,7 +2963,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
   __pyx_r = __pyx_v_nextStates;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":100
+  /* "IN104_simulateur/cpp/boardState.pyx":98
  * 
  * 
  *     def findNextStates(self, bool white):             # <<<<<<<<<<<<<<
@@ -2994,7 +2989,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_30fi
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":112
+/* "IN104_simulateur/cpp/boardState.pyx":110
  *     Visualization methods
  *     '''
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3034,7 +3029,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33to
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toDisplay") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toDisplay") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3047,7 +3042,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_33to
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("toDisplay", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("toDisplay", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.toDisplay", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3087,7 +3082,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("toDisplay", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":116
+  /* "IN104_simulateur/cpp/boardState.pyx":114
  *         If showBard is True, then a board with cell indices is shown next to the state'''
  * 
  *         formater = '{0:3d}'             # <<<<<<<<<<<<<<
@@ -3097,68 +3092,68 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
   __Pyx_INCREF(__pyx_kp_s_0_3d);
   __pyx_v_formater = __pyx_kp_s_0_3d;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":117
+  /* "IN104_simulateur/cpp/boardState.pyx":115
  * 
  *         formater = '{0:3d}'
  *         nRows = self.cBoardState.nRows             # <<<<<<<<<<<<<<
  * 
  *         s = ","+('---'*nRows)+","
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_nRows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":119
+  /* "IN104_simulateur/cpp/boardState.pyx":117
  *         nRows = self.cBoardState.nRows
  * 
  *         s = ","+('---'*nRows)+","             # <<<<<<<<<<<<<<
  *         if showBoard:
  *             s+= "    ,"+('---'*nRows)+","
  */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":120
+  /* "IN104_simulateur/cpp/boardState.pyx":118
  * 
  *         s = ","+('---'*nRows)+","
  *         if showBoard:             # <<<<<<<<<<<<<<
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"
  */
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 118; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_3) {
 
-    /* "IN104_simulateur/cpp/boardState.pyx":121
+    /* "IN104_simulateur/cpp/boardState.pyx":119
  *         s = ","+('---'*nRows)+","
  *         if showBoard:
  *             s+= "    ,"+('---'*nRows)+","             # <<<<<<<<<<<<<<
  *         s +="\n"
  *         for r in range(nRows):
  */
-    __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_Add(__pyx_kp_s__4, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_Add(__pyx_kp_s__4, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":120
+    /* "IN104_simulateur/cpp/boardState.pyx":118
  * 
  *         s = ","+('---'*nRows)+","
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3167,40 +3162,40 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
  */
   }
 
-  /* "IN104_simulateur/cpp/boardState.pyx":122
+  /* "IN104_simulateur/cpp/boardState.pyx":120
  *         if showBoard:
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"             # <<<<<<<<<<<<<<
  *         for r in range(nRows):
  *             s+='|'
  */
-  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":123
+  /* "IN104_simulateur/cpp/boardState.pyx":121
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
  *             s+='|'
  *             for c in range(nRows):
  */
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_nRows);
   __Pyx_GIVEREF(__pyx_v_nRows);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_nRows);
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3208,17 +3203,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -3228,7 +3223,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -3237,40 +3232,40 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":124
+    /* "IN104_simulateur/cpp/boardState.pyx":122
  *         s +="\n"
  *         for r in range(nRows):
  *             s+='|'             # <<<<<<<<<<<<<<
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  */
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":125
+    /* "IN104_simulateur/cpp/boardState.pyx":123
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
  *                 if c%2 != r%2:
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '
  */
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_nRows);
     __Pyx_GIVEREF(__pyx_v_nRows);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_nRows);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
       __pyx_t_1 = __pyx_t_6; __Pyx_INCREF(__pyx_t_1); __pyx_t_7 = 0;
       __pyx_t_8 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     for (;;) {
@@ -3278,17 +3273,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         } else {
           if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         }
@@ -3298,7 +3293,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
           break;
         }
@@ -3307,32 +3302,32 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":126
+      /* "IN104_simulateur/cpp/boardState.pyx":124
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '
  *                 else:
  */
-      __pyx_t_6 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_9 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_10 = PyObject_RichCompare(__pyx_t_6, __pyx_t_9, Py_NE); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = PyObject_RichCompare(__pyx_t_6, __pyx_t_9, Py_NE); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       if (__pyx_t_3) {
 
-        /* "IN104_simulateur/cpp/boardState.pyx":127
+        /* "IN104_simulateur/cpp/boardState.pyx":125
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '             # <<<<<<<<<<<<<<
  *                 else:
  *                     s+='   '
  */
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getCell); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getCell); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_6 = NULL;
         __pyx_t_11 = 0;
@@ -3346,7 +3341,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
             __pyx_t_11 = 1;
           }
         }
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_6) {
           __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -3357,39 +3352,39 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
         __Pyx_INCREF(__pyx_v_c);
         __Pyx_GIVEREF(__pyx_v_c);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_11, __pyx_v_c);
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_10);
         PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_10);
         __pyx_t_10 = 0;
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_chr, __pyx_t_9, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_chr, __pyx_t_9, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_10);
         PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_10);
         __pyx_t_10 = 0;
-        __pyx_t_10 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_9, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_9, NULL); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyNumber_Add(__pyx_kp_s__7, __pyx_t_10); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = PyNumber_Add(__pyx_kp_s__7, __pyx_t_10); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_10 = PyNumber_Add(__pyx_t_9, __pyx_kp_s__7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = PyNumber_Add(__pyx_t_9, __pyx_kp_s__7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_10); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_10); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "IN104_simulateur/cpp/boardState.pyx":126
+        /* "IN104_simulateur/cpp/boardState.pyx":124
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3399,7 +3394,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
         goto __pyx_L8;
       }
 
-      /* "IN104_simulateur/cpp/boardState.pyx":129
+      /* "IN104_simulateur/cpp/boardState.pyx":127
  *                     s+=' '+str(chr(self.getCell(r,c)))+' '
  *                 else:
  *                     s+='   '             # <<<<<<<<<<<<<<
@@ -3407,14 +3402,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
  *             if showBoard:
  */
       /*else*/ {
-        __pyx_t_9 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_9);
         __pyx_t_9 = 0;
       }
       __pyx_L8:;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":125
+      /* "IN104_simulateur/cpp/boardState.pyx":123
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3424,62 +3419,62 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":130
+    /* "IN104_simulateur/cpp/boardState.pyx":128
  *                 else:
  *                     s+='   '
  *             s+='|'             # <<<<<<<<<<<<<<
  *             if showBoard:
  *                 s+='    |'
  */
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":131
+    /* "IN104_simulateur/cpp/boardState.pyx":129
  *                     s+='   '
  *             s+='|'
  *             if showBoard:             # <<<<<<<<<<<<<<
  *                 s+='    |'
  *                 for c in range(nRows):
  */
-    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     if (__pyx_t_3) {
 
-      /* "IN104_simulateur/cpp/boardState.pyx":132
+      /* "IN104_simulateur/cpp/boardState.pyx":130
  *             s+='|'
  *             if showBoard:
  *                 s+='    |'             # <<<<<<<<<<<<<<
  *                 for c in range(nRows):
  *                     if c%2 != r%2:
  */
-      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__9); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__9); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":133
+      /* "IN104_simulateur/cpp/boardState.pyx":131
  *             if showBoard:
  *                 s+='    |'
  *                 for c in range(nRows):             # <<<<<<<<<<<<<<
  *                     if c%2 != r%2:
  *                         s+=formater.format(self.RCtoIndex(r,c))
  */
-      __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_nRows);
       __Pyx_GIVEREF(__pyx_v_nRows);
       PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_nRows);
-      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (likely(PyList_CheckExact(__pyx_t_9)) || PyTuple_CheckExact(__pyx_t_9)) {
         __pyx_t_1 = __pyx_t_9; __Pyx_INCREF(__pyx_t_1); __pyx_t_7 = 0;
         __pyx_t_8 = NULL;
       } else {
-        __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       for (;;) {
@@ -3487,17 +3482,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
           if (likely(PyList_CheckExact(__pyx_t_1))) {
             if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_9 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_9); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_9 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_9); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_9 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_9 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_9);
             #endif
           } else {
             if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_9 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_9); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_9 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_9); __pyx_t_7++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_9 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_9 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_9);
             #endif
           }
@@ -3507,7 +3502,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             }
             break;
           }
@@ -3516,34 +3511,34 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
         __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "IN104_simulateur/cpp/boardState.pyx":134
+        /* "IN104_simulateur/cpp/boardState.pyx":132
  *                 s+='    |'
  *                 for c in range(nRows):
  *                     if c%2 != r%2:             # <<<<<<<<<<<<<<
  *                         s+=formater.format(self.RCtoIndex(r,c))
  *                     else:
  */
-        __pyx_t_9 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_10 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_12 = PyObject_RichCompare(__pyx_t_9, __pyx_t_10, Py_NE); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_12 = PyObject_RichCompare(__pyx_t_9, __pyx_t_10, Py_NE); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         if (__pyx_t_3) {
 
-          /* "IN104_simulateur/cpp/boardState.pyx":135
+          /* "IN104_simulateur/cpp/boardState.pyx":133
  *                 for c in range(nRows):
  *                     if c%2 != r%2:
  *                         s+=formater.format(self.RCtoIndex(r,c))             # <<<<<<<<<<<<<<
  *                     else:
  *                         s+='   '
  */
-          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_formater, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_formater, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_RCtoIndex); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_RCtoIndex); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_6);
           __pyx_t_13 = NULL;
           __pyx_t_11 = 0;
@@ -3557,7 +3552,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
               __pyx_t_11 = 1;
             }
           }
-          __pyx_t_14 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_14 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_14);
           if (__pyx_t_13) {
             __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13); __pyx_t_13 = NULL;
@@ -3568,7 +3563,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
           __Pyx_INCREF(__pyx_v_c);
           __Pyx_GIVEREF(__pyx_v_c);
           PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_11, __pyx_v_c);
-          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_14, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_14, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -3583,28 +3578,28 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
             }
           }
           if (!__pyx_t_6) {
-            __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_GOTREF(__pyx_t_12);
           } else {
-            __pyx_t_14 = PyTuple_New(1+1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_14 = PyTuple_New(1+1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_14);
             __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_6); __pyx_t_6 = NULL;
             __Pyx_GIVEREF(__pyx_t_9);
             PyTuple_SET_ITEM(__pyx_t_14, 0+1, __pyx_t_9);
             __pyx_t_9 = 0;
-            __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_14, NULL); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_14, NULL); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_12);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           }
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          __pyx_t_10 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_12); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_10 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_12); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
           __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_10);
           __pyx_t_10 = 0;
 
-          /* "IN104_simulateur/cpp/boardState.pyx":134
+          /* "IN104_simulateur/cpp/boardState.pyx":132
  *                 s+='    |'
  *                 for c in range(nRows):
  *                     if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -3614,7 +3609,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
           goto __pyx_L12;
         }
 
-        /* "IN104_simulateur/cpp/boardState.pyx":137
+        /* "IN104_simulateur/cpp/boardState.pyx":135
  *                         s+=formater.format(self.RCtoIndex(r,c))
  *                     else:
  *                         s+='   '             # <<<<<<<<<<<<<<
@@ -3622,14 +3617,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
  * 
  */
         /*else*/ {
-          __pyx_t_10 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_10 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_10);
           __pyx_t_10 = 0;
         }
         __pyx_L12:;
 
-        /* "IN104_simulateur/cpp/boardState.pyx":133
+        /* "IN104_simulateur/cpp/boardState.pyx":131
  *             if showBoard:
  *                 s+='    |'
  *                 for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -3639,19 +3634,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":138
+      /* "IN104_simulateur/cpp/boardState.pyx":136
  *                     else:
  *                         s+='   '
  *                 s+='|'             # <<<<<<<<<<<<<<
  * 
  *             s+='\n'
  */
-      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 138; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":131
+      /* "IN104_simulateur/cpp/boardState.pyx":129
  *                     s+='   '
  *             s+='|'
  *             if showBoard:             # <<<<<<<<<<<<<<
@@ -3660,19 +3655,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
  */
     }
 
-    /* "IN104_simulateur/cpp/boardState.pyx":140
+    /* "IN104_simulateur/cpp/boardState.pyx":138
  *                 s+='|'
  * 
  *             s+='\n'             # <<<<<<<<<<<<<<
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:
  */
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__5); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 140; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__5); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 138; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":123
+    /* "IN104_simulateur/cpp/boardState.pyx":121
  *             s+= "    ,"+('---'*nRows)+","
  *         s +="\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -3682,59 +3677,59 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":141
+  /* "IN104_simulateur/cpp/boardState.pyx":139
  * 
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"             # <<<<<<<<<<<<<<
  *         if showBoard:
  *             s+= "    '"+('---'*nRows)+"'"
  */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Add(__pyx_kp_s__10, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Add(__pyx_kp_s__10, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__10); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__10); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":142
+  /* "IN104_simulateur/cpp/boardState.pyx":140
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:             # <<<<<<<<<<<<<<
  *             s+= "    '"+('---'*nRows)+"'"
  *         return s
  */
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 142; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_showBoard); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 140; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_3) {
 
-    /* "IN104_simulateur/cpp/boardState.pyx":143
+    /* "IN104_simulateur/cpp/boardState.pyx":141
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:
  *             s+= "    '"+('---'*nRows)+"'"             # <<<<<<<<<<<<<<
  *         return s
  * 
  */
-    __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_Add(__pyx_kp_s__11, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_Add(__pyx_kp_s__11, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__10); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__10); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":142
+    /* "IN104_simulateur/cpp/boardState.pyx":140
  *             s+='\n'
  *         s+= "'"+('---'*nRows)+"'"
  *         if showBoard:             # <<<<<<<<<<<<<<
@@ -3743,7 +3738,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
  */
   }
 
-  /* "IN104_simulateur/cpp/boardState.pyx":144
+  /* "IN104_simulateur/cpp/boardState.pyx":142
  *         if showBoard:
  *             s+= "    '"+('---'*nRows)+"'"
  *         return s             # <<<<<<<<<<<<<<
@@ -3755,7 +3750,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
   __pyx_r = __pyx_v_s;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":112
+  /* "IN104_simulateur/cpp/boardState.pyx":110
  *     Visualization methods
  *     '''
  *     def toDisplay(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3786,7 +3781,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_32to
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":146
+/* "IN104_simulateur/cpp/boardState.pyx":144
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3825,7 +3820,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_35di
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "display") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "display") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 144; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3838,7 +3833,7 @@ static PyObject *__pyx_pw_16IN104_simulateur_3cpp_10boardState_10BoardState_35di
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("display", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("display", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 144; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("IN104_simulateur.cpp.boardState.BoardState.display", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3863,14 +3858,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34di
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("display", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":147
+  /* "IN104_simulateur/cpp/boardState.pyx":145
  * 
  *     def display(self, showBoard = False):
  *         print(self.toDisplay(showBoard))             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_toDisplay); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3883,24 +3878,24 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34di
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_showBoard); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_v_showBoard);
     __Pyx_GIVEREF(__pyx_v_showBoard);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_showBoard);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":146
+  /* "IN104_simulateur/cpp/boardState.pyx":144
  *         return s
  * 
  *     def display(self, showBoard = False):             # <<<<<<<<<<<<<<
@@ -3924,7 +3919,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_34di
   return __pyx_r;
 }
 
-/* "IN104_simulateur/cpp/boardState.pyx":150
+/* "IN104_simulateur/cpp/boardState.pyx":148
  * 
  * 
  *     def viewBoard(self):             # <<<<<<<<<<<<<<
@@ -3972,7 +3967,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("viewBoard", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":151
+  /* "IN104_simulateur/cpp/boardState.pyx":149
  * 
  *     def viewBoard(self):
  *         formater = '{0:3d}'             # <<<<<<<<<<<<<<
@@ -3982,58 +3977,58 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
   __Pyx_INCREF(__pyx_kp_s_0_3d);
   __pyx_v_formater = __pyx_kp_s_0_3d;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":152
+  /* "IN104_simulateur/cpp/boardState.pyx":150
  *     def viewBoard(self):
  *         formater = '{0:3d}'
  *         nRows = self.cBoardState.nRows             # <<<<<<<<<<<<<<
  * 
  *         s = ","+('---'*nRows)+",\n"
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 152; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cBoardState->nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_nRows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":154
+  /* "IN104_simulateur/cpp/boardState.pyx":152
  *         nRows = self.cBoardState.nRows
  * 
  *         s = ","+('---'*nRows)+",\n"             # <<<<<<<<<<<<<<
  *         for r in range(nRows):
  *             s+='|'
  */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 152; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 152; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__12); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__12); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 152; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":155
+  /* "IN104_simulateur/cpp/boardState.pyx":153
  * 
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
  *             s+='|'
  *             for c in range(nRows):
  */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_nRows);
   __Pyx_GIVEREF(__pyx_v_nRows);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_nRows);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_1 = __pyx_t_2; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -4041,17 +4036,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -4061,7 +4056,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -4070,40 +4065,40 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":156
+    /* "IN104_simulateur/cpp/boardState.pyx":154
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):
  *             s+='|'             # <<<<<<<<<<<<<<
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  */
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__6); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":157
+    /* "IN104_simulateur/cpp/boardState.pyx":155
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
  *                 if c%2 != r%2:
  *                     s+=formater.format(self.RCtoIndex(r,c))
  */
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_nRows);
     __Pyx_GIVEREF(__pyx_v_nRows);
     PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_nRows);
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
       __pyx_t_2 = __pyx_t_5; __Pyx_INCREF(__pyx_t_2); __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     for (;;) {
@@ -4111,17 +4106,17 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
         if (likely(PyList_CheckExact(__pyx_t_2))) {
           if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         } else {
           if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         }
@@ -4131,7 +4126,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
           break;
         }
@@ -4140,34 +4135,34 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":158
+      /* "IN104_simulateur/cpp/boardState.pyx":156
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
  *                     s+=formater.format(self.RCtoIndex(r,c))
  *                 else:
  */
-      __pyx_t_5 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyInt_RemainderObjC(__pyx_v_c, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_PyInt_RemainderObjC(__pyx_v_r, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = PyObject_RichCompare(__pyx_t_5, __pyx_t_8, Py_NE); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PyObject_RichCompare(__pyx_t_5, __pyx_t_8, Py_NE); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_10) {
 
-        /* "IN104_simulateur/cpp/boardState.pyx":159
+        /* "IN104_simulateur/cpp/boardState.pyx":157
  *             for c in range(nRows):
  *                 if c%2 != r%2:
  *                     s+=formater.format(self.RCtoIndex(r,c))             # <<<<<<<<<<<<<<
  *                 else:
  *                     s+='   '
  */
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_formater, __pyx_n_s_format); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_formater, __pyx_n_s_format); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_RCtoIndex); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_RCtoIndex); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_11);
         __pyx_t_12 = NULL;
         __pyx_t_13 = 0;
@@ -4181,7 +4176,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
             __pyx_t_13 = 1;
           }
         }
-        __pyx_t_14 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_14 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_14);
         if (__pyx_t_12) {
           __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -4192,7 +4187,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
         __Pyx_INCREF(__pyx_v_c);
         __Pyx_GIVEREF(__pyx_v_c);
         PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_13, __pyx_v_c);
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -4207,28 +4202,28 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
           }
         }
         if (!__pyx_t_11) {
-          __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_9);
         } else {
-          __pyx_t_14 = PyTuple_New(1+1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_14 = PyTuple_New(1+1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_11); __pyx_t_11 = NULL;
           __Pyx_GIVEREF(__pyx_t_5);
           PyTuple_SET_ITEM(__pyx_t_14, 0+1, __pyx_t_5);
           __pyx_t_5 = 0;
-          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_14, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_14, NULL); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         }
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_9); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_9); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "IN104_simulateur/cpp/boardState.pyx":158
+        /* "IN104_simulateur/cpp/boardState.pyx":156
  *             s+='|'
  *             for c in range(nRows):
  *                 if c%2 != r%2:             # <<<<<<<<<<<<<<
@@ -4238,7 +4233,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
         goto __pyx_L7;
       }
 
-      /* "IN104_simulateur/cpp/boardState.pyx":161
+      /* "IN104_simulateur/cpp/boardState.pyx":159
  *                     s+=formater.format(self.RCtoIndex(r,c))
  *                 else:
  *                     s+='   '             # <<<<<<<<<<<<<<
@@ -4246,14 +4241,14 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
  *         s+= "'"+('---'*nRows)+"'\n"
  */
       /*else*/ {
-        __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 161; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__8); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_8);
         __pyx_t_8 = 0;
       }
       __pyx_L7:;
 
-      /* "IN104_simulateur/cpp/boardState.pyx":157
+      /* "IN104_simulateur/cpp/boardState.pyx":155
  *         for r in range(nRows):
  *             s+='|'
  *             for c in range(nRows):             # <<<<<<<<<<<<<<
@@ -4263,19 +4258,19 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":162
+    /* "IN104_simulateur/cpp/boardState.pyx":160
  *                 else:
  *                     s+='   '
  *             s+='|\n'             # <<<<<<<<<<<<<<
  *         s+= "'"+('---'*nRows)+"'\n"
  *         return s
  */
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__13); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_kp_s__13); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 160; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "IN104_simulateur/cpp/boardState.pyx":155
+    /* "IN104_simulateur/cpp/boardState.pyx":153
  * 
  *         s = ","+('---'*nRows)+",\n"
  *         for r in range(nRows):             # <<<<<<<<<<<<<<
@@ -4285,27 +4280,27 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":163
+  /* "IN104_simulateur/cpp/boardState.pyx":161
  *                     s+='   '
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"             # <<<<<<<<<<<<<<
  *         return s
  */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__3, __pyx_v_nRows); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 161; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__10, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__10, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 161; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__14); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__14); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 161; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_s, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 161; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":164
+  /* "IN104_simulateur/cpp/boardState.pyx":162
  *             s+='|\n'
  *         s+= "'"+('---'*nRows)+"'\n"
  *         return s             # <<<<<<<<<<<<<<
@@ -4315,7 +4310,7 @@ static PyObject *__pyx_pf_16IN104_simulateur_3cpp_10boardState_10BoardState_36vi
   __pyx_r = __pyx_v_s;
   goto __pyx_L0;
 
-  /* "IN104_simulateur/cpp/boardState.pyx":150
+  /* "IN104_simulateur/cpp/boardState.pyx":148
  * 
  * 
  *     def viewBoard(self):             # <<<<<<<<<<<<<<
@@ -4963,9 +4958,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_Exception = __Pyx_GetBuiltinName(__pyx_n_s_Exception); if (!__pyx_builtin_Exception) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_Exception = __Pyx_GetBuiltinName(__pyx_n_s_Exception); if (!__pyx_builtin_Exception) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4975,14 +4970,14 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "IN104_simulateur/cpp/boardState.pyx":33
+  /* "IN104_simulateur/cpp/boardState.pyx":31
  *         self.debug = False
  *         if config:
  *             if not rules: raise Exception('You must rovides configuration AND rules')             # <<<<<<<<<<<<<<
  *             self.cBoardState = new CBoardState( config['nRows'],
  *                                                 config['nPieces'],
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_You_must_rovides_configuration_A); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_You_must_rovides_configuration_A); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
   __Pyx_RefNannyFinishContext();
@@ -5086,9 +5081,9 @@ PyMODINIT_FUNC PyInit_boardState(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyType_Ready(&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 5; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "BoardState", (PyObject *)&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyObject_SetAttrString(__pyx_m, "BoardState", (PyObject *)&__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 5; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_ptype_16IN104_simulateur_3cpp_10boardState_BoardState = &__pyx_type_16IN104_simulateur_3cpp_10boardState_BoardState;
   /*--- Type import code ---*/
   __pyx_ptype_16IN104_simulateur_3cpp_4move_Move = __Pyx_ImportType("IN104_simulateur.cpp.move", "Move", sizeof(struct __pyx_obj_16IN104_simulateur_3cpp_4move_Move), 1); if (unlikely(!__pyx_ptype_16IN104_simulateur_3cpp_4move_Move)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -5101,9 +5096,9 @@ PyMODINIT_FUNC PyInit_boardState(void)
   #endif
 
   /* "IN104_simulateur/cpp/boardState.pyx":1
- * # distutils: language = c++             # <<<<<<<<<<<<<<
- * # distutils: sources = IN104_simulateur/cpp/CBoardState.cpp IN104_simulateur/cpp/CCell.cpp IN104_simulateur/cpp/CMove.cpp
- * from cython.operator cimport dereference as deref, preincrement as inc
+ * from cython.operator cimport dereference as deref, preincrement as inc             # <<<<<<<<<<<<<<
+ * 
+ * from .boardState cimport *
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);

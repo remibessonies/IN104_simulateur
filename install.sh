@@ -16,9 +16,7 @@ for opt in "$@"; do
     esac
 done
 
-if test $USE_CYTHON; then
-    rm -r build    
-fi
+rm -r build
 
 eval $installCommand
 unset USE_CYTHON

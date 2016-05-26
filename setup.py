@@ -7,20 +7,25 @@ from distutils.extension import Extension
 USE_CYTHON = bool(os.getenv('USE_CYTHON'))
 ext = '.pyx' if USE_CYTHON else '.cpp'
 
+C_sources = ['IN104_simulateur/cpp/CBoardState.cpp', 'IN104_simulateur/cpp/CCell.cpp', 'IN104_simulateur/cpp/CMove.cpp']
+
 extensions = [
     Extension(
         name="IN104_simulateur.cpp.gameState",
-        sources=["IN104_simulateur/cpp/gameState"+ext],
+        language='c++',
+        sources=["IN104_simulateur/cpp/gameState"+ext]+C_sources,
         include_dirs = ["."]
     ),
     Extension(
         name="IN104_simulateur.cpp.boardState",
-        sources=["IN104_simulateur/cpp/boardState"+ext],
+        language='c++',
+        sources=["IN104_simulateur/cpp/boardState"+ext]+C_sources,
         include_dirs = ["."]
     ),
     Extension(
         name="IN104_simulateur.cpp.move",
-        sources=["IN104_simulateur/cpp/move"+ext],
+        language='c++',
+        sources=["IN104_simulateur/cpp/move"+ext]+C_sources,
         include_dirs = ["."]
     )
 ]

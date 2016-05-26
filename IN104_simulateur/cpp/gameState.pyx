@@ -1,5 +1,3 @@
-# distutils: language = c++
-# distutils: sources = IN104_simulateur/cpp/CBoardState.cpp IN104_simulateur/cpp/CCell.cpp IN104_simulateur/cpp/CMove.cpp
 from cython.operator cimport dereference as deref, preincrement as inc
 from libcpp cimport bool
 from libcpp.string cimport string

@@ -1,5 +1,3 @@
-# distutils: language = c++
-# distutils: sources = IN104_simulateur/cpp/CMove.cpp
 from cython.operator cimport dereference as deref, preincrement as inc
 
 from .move cimport *
