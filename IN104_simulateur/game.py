@@ -112,7 +112,8 @@ class Game:
             except Exception as e:
                 self.status['playerError'] = playerNumber
                 self.status['errorID'] = 'Unknown'
-                self.addToLog(e.message, 0)
+                try:  self.addToLog(e.message, 0)
+                except: pass
                 return
 
             # check whether the answer is valid

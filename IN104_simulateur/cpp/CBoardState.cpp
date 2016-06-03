@@ -313,7 +313,6 @@ Convertissors, checkers and getters
         int diff1,diff2,tr,tc,current_r,current_c;
 
         if(move.isCapture()){
-            std::cout << "dealing with" << move.toPDN() << std::endl;
             std::pair<int,int> RC = indexToRC(start);
             std::pair<int,int> nextRC;
             for (std::list<int>::iterator it = ++mCells.begin(); it != mCells.end(); ++it){
