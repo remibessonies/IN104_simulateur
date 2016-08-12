@@ -3,7 +3,7 @@ import gc
 
 from .move import Move
 from .gameState import GameState
-from .player import Player, TimeOutException
+from .stream_player import StreamPlayer, TimeOutException
 
 class Game:
     '''A Game instance runs a game between two ias. It manages the game's progress and checks players actions.
@@ -41,7 +41,7 @@ class Game:
         for key in Game.defaultRules:
             if key not in rules: rules[key] = Game.defaultRules[key]
 
-        assert config['nRows']%2==0, 'The number of rows ust be a multiple of 2'
+        assert config['nRows']%2==0, 'The number of rows must be a multiple of 2'
         assert config['nPieces']>0, 'The number of pieces must be positive'
         assert rules['noCaptureMax']>0 , 'The number of maximum successive non-capturing moves before Draw must be positive'
 
@@ -51,37 +51,42 @@ class Game:
         self.config = config
         self.rules = rules
 
-    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, rules = {}, Nlimit = None):
+    def __init__(self, processus1, timeLimit1, processus2, timeLimit2, config = {}, rules = {}, Nlimit = None):
         self.checkConfig(config, Nlimit, rules)
         self.gameState = GameState(self.config, self.rules)
         self.whiteStarts = self.config['whiteStarts']
         self.noCaptureMax = self.rules['noCaptureMax']
-        self.player1 = Player(self.whiteStarts, ia1, timeLimit1)
-        self.player2 = Player(not self.whiteStarts, ia2, timeLimit2)
+        self.player1 = StreamPlayer(processus1, self.whiteStarts, timeLimit1)
+        self.player2 = StreamPlayer(processus2, not self.whiteStarts, timeLimit2)
 
         self.displayLevel = 0
         self.pause = 0
         self.log = ""
         self.status = {'success':False, 'draw':False, 'winner':None, 'playerError':None, 'errorID':None}
 
-    def init_logs(self):
+
+    def runGame(self):
+        # shortcut variables to access faster white and black players
+        (whitePlayer,blackPlayer) = (self.player1,self.player2) if self.player1.isWhite else (self.player2,self.player1)
+        (color1, color2)          = ('white', 'black')          if self.player1.isWhite else ('black', 'white')
+
+        # init logs
         self.addToLog("Beginning of the game")
         self.addToLog(str(self.player1)+ ' (starts) has '+str(self.player1.timeLimit)+' secs/turn to play')
         self.addToLog(str(self.player2)+ ' has '+str(self.player1.timeLimit)+' secs/turn to play')
         self.logState()
+        
+        # initialization phase
+        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1])
+        rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
+        self.player1.initialize(game_message, rules_message, timeout=2)
+        self.player2.initialize(game_message, rules_message, timeout=2)
 
-    def runGame(self):
-        # setup
-        self.init_logs()
         pdnMoves = ""
         result = None
         startTime = time.ctime()
         time.sleep(self.pause)
         t = time.time() + self.pause
-
-        # shortcut variables to acces faster white and black players
-        whitePlayer = self.player1 if self.player1.isWhite else self.player2
-        blackPlayer = self.player2 if self.player1.isWhite else self.player1
 
 
         for n in range(self.Nlimit):
