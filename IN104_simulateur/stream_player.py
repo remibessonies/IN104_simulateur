@@ -3,6 +3,7 @@ import time
 import math
 import sys
 import os
+from .gameState import GameState
 
 # Register an handler for the timeout
 def timeOutHandler(signum, frame):
@@ -45,7 +46,8 @@ class StreamPlayer:
         self.sendline(game_message)
         self.sendline(rules_message)
         self.sendline("PLAYER "+('white' if self.isWhite else 'black'))
-        (self.name, self.alwaysSeeAsWhite) = self.receiveline(timeout = timeout)
+        (self.name, alwaysSeeAsWhite) = self.receiveline(timeout = timeout).split(' ')
+        self.alwaysSeeAsWhite = True if alwaysSeeAsWhite.lower()=='true' else False
 
 
     def play(self, gameState):
@@ -54,8 +56,9 @@ class StreamPlayer:
 
         self.sendline('PLAY '+str(gamestate)+' '+self.timeLimit)
         t1 = time.time()
-        chosenState = self.receiveline()
+        chosenStateString = self.receiveline()
         length = time.time()-t1
+        chosenState = GameState.fromString(chosenStateString, gameState)
 
         self.computingTimes.append(length)
 

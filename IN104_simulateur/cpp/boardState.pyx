@@ -37,6 +37,12 @@ cdef class BoardState:
 
     def __dealloc__(self):
         del self.cBoardState
+        
+    def fromString(string, model_boardState):
+        board = model_boardState.copy()
+        for i in range(model_boardState.nCells):
+            board.setCell(i,string[i])
+        return board
 
     def copy(self):
         copy = BoardState()
