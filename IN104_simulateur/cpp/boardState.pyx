@@ -1,6 +1,7 @@
 from cython.operator cimport dereference as deref, preincrement as inc
 
 from .boardState cimport *
+import sys
 
 cdef class BoardState:
     '''
@@ -38,10 +39,11 @@ cdef class BoardState:
     def __dealloc__(self):
         del self.cBoardState
         
-    def fromString(string, model_boardState):
+    @staticmethod
+    def fromString(strin, model_boardState):
         board = model_boardState.copy()
         for i in range(model_boardState.nCells):
-            board.setCell(i,string[i])
+            board.setCell_i(i,ord(strin[i]))
         return board
 
     def copy(self):

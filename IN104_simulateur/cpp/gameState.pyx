@@ -30,15 +30,16 @@ cdef class GameState:
             self.isWhiteTurn = config['whiteStarts']
             self.noCaptureCounter = 0
     
-    def fromString(string, model_gameState):
+    @staticmethod
+    def fromString(strin, model_gameState):
         state = GameState()
         bools = {'W':True, 'B':False}
-        state.isWhiteTurn = bools[string[0]]
+        state.isWhiteTurn = bools[strin[0]]
         validCells=['b','B','w','W','.']
         i=0
-        while string[i+1] in validCells: i=i+1
-        state.boardState = BoardState.fromString(string[1:i+1], model_gameState.boardState)
-        state.noCaptureCounter = int(string[i+1:])
+        while strin[i+1] in validCells: i=i+1
+        state.boardState = BoardState.fromString(strin[1:i+1], model_gameState.boardState)
+        state.noCaptureCounter = int(strin[i+1:])
         return state           
 
     def copy(self):

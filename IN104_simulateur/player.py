@@ -10,7 +10,7 @@ def timeOutHandler(signum, frame):
     raise TimeOutException()
 
 
-class StreamPlayer:
+class Player:
     ''' Class encapsulating the artificial intelligence, making the interface between the latter and a game
     inputs:
         - brain: the artificial intelligence. It must implement
@@ -28,7 +28,8 @@ class StreamPlayer:
         self.discard_stdout = False
 
     def sendline(self, message):
-        print(message, file=self.processus.stdin)
+        self.processus.stdin.write(message.encode()+b'\n')
+        self.processus.stdin.flush()
 
     def receiveline(self, timeout):
         if timeout>0:
@@ -53,7 +54,7 @@ class StreamPlayer:
         reverse = (not self.isWhite) and self.alwaysSeeAsWhite
         if reverse: gameState.reverse()
 
-        self.sendline('PLAY '+str(gamestate)+' '+self.timeLimit)
+        self.sendline('PLAY {0} {1}'.format(gamestate, self.timeLimit) )
         t1 = time.time()
         chosenStateString = self.receiveline()
         length = time.time()-t1

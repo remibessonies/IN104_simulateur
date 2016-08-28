@@ -3,7 +3,7 @@ import gc
 
 from .move import Move
 from .gameState import GameState
-from .stream_player import StreamPlayer, TimeOutException
+from .player import Player, TimeOutException
 
 class Game:
     '''A Game instance runs a game between two ias. It manages the game's progress and checks players actions.
@@ -56,8 +56,8 @@ class Game:
         self.gameState = GameState(self.config, self.rules)
         self.whiteStarts = self.config['whiteStarts']
         self.noCaptureMax = self.rules['noCaptureMax']
-        self.player1 = StreamPlayer(processus1, self.whiteStarts, timeLimit1)
-        self.player2 = StreamPlayer(processus2, not self.whiteStarts, timeLimit2)
+        self.player1 = Player(processus1, self.whiteStarts, timeLimit1)
+        self.player2 = Player(processus2, not self.whiteStarts, timeLimit2)
 
         self.displayLevel = 0
         self.pause = 0
