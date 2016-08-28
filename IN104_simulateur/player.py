@@ -3,16 +3,14 @@ import time
 import math
 import sys
 import os
-from .deadline import Deadline
+from .gameState import GameState
 
 # Register an handler for the timeout
-def playTimeOutHandler(signum, frame):
-    raise TimeOutException("Player takes too long to make a decision.")
-
-signal.signal(signal.SIGALRM, playTimeOutHandler)
+def timeOutHandler(signum, frame):
+    raise TimeOutException()
 
 
-class Player:
+class StreamPlayer:
     ''' Class encapsulating the artificial intelligence, making the interface between the latter and a game
     inputs:
         - brain: the artificial intelligence. It must implement
@@ -21,40 +19,45 @@ class Player:
         - isWhite: true if the player is the white one
     '''
 
-    def __init__(self, isWhite, brain, timeLimit):
+    def __init__(self, processus, isWhite, timeLimit):        
+        self.processus = processus
         self.isWhite = isWhite
-        assert brain, "Player needs a brain !"
-        self.brain = brain
         self.timeLimit = timeLimit
         self.computingTimes = [] # store the computing time for each move
         self.showTime = False
         self.discard_stdout = False
-        try:
-            self.alwaysSeeAsWhite = self.brain.alwaysSeeAsWhite
-        except:
-            self.alwaysSeeAsWhite = True
 
+    def sendline(self, message):
+        print(message, file=self.processus.stdin)
+
+    def receiveline(self, timeout):
+        if timeout>0:
+            # signals only take an integer amount of seconds, so I have to ceil the time limit
+            signal.signal(signal.SIGALRM, timeOutHandler)
+            signal.alarm(math.ceil(timeout))
+        try:
+            return self.processus.stdout.readline().decode()
+        except TimeOutException:
+            raise
+        finally:
+            signal.alarm(0)
+
+    def initialize(self, game_message, rules_message, timeout):
+        self.sendline(game_message)
+        self.sendline(rules_message)
+        self.sendline("PLAYER "+('white' if self.isWhite else 'black'))
+        (self.name, alwaysSeeAsWhite) = self.receiveline(timeout = timeout).split(' ')
+        self.alwaysSeeAsWhite = alwaysSeeAsWhite.lower()=='true'
 
     def play(self, gameState):
         reverse = (not self.isWhite) and self.alwaysSeeAsWhite
         if reverse: gameState.reverse()
 
-        if self.timeLimit and self.timeLimit>0:
-            # signals only take an integer amount of seconds, so I have to ceil the time limit
-            signal.alarm(math.ceil(self.timeLimit+0.01))
-
-        try:
-            if self.discard_stdout: sys.stdout = open(os.devnull, "w")
-            t1 = time.time()
-            deadline = Deadline(t1+self.timeLimit) if self.timeLimit else None
-            chosenState = self.brain.play(gameState, deadline)
-            length = time.time()-t1
-        except Exception as e:
-            raise e
-        finally:
-            sys.stdout = sys.__stdout__
-
-        signal.alarm(0)
+        self.sendline('PLAY '+str(gamestate)+' '+self.timeLimit)
+        t1 = time.time()
+        chosenStateString = self.receiveline()
+        length = time.time()-t1
+        chosenState = GameState.fromString(chosenStateString, gameState)
 
         self.computingTimes.append(length)
 
@@ -66,9 +69,9 @@ class Player:
         if reverse: chosenState.reverse()
         return str(chosenState)
 
-
     def name(self):
-        return str(self.brain)
+        try: return self.name
+        except: return "no name yet"
 
     def __str__(self):
         return ("White" if self.isWhite else "Black")+' ('+self.name()+')'
@@ -76,5 +79,5 @@ class Player:
 
 # Unhandled exception leading to the game interuption
 class TimeOutException(Exception):
-    def __init__(self, message):
-        self.message = message
+    def __init__(self):
+        pass

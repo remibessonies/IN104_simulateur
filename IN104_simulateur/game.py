@@ -77,7 +77,7 @@ class Game:
         self.logState()
         
         # initialization phase
-        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1])
+        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1)
         rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
         self.player1.initialize(game_message, rules_message, timeout=2)
         self.player2.initialize(game_message, rules_message, timeout=2)
