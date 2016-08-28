@@ -26,6 +26,15 @@ class Player:
         self.computingTimes = [] # store the computing time for each move
         self.showTime = False
         self.discard_stdout = False
+        self._name = None
+        
+    @property
+    def name(self):
+        return self._name if self._name is not None else "no name yet"
+    @name.setter
+    def name(self,name):
+        assert isinstance(name,str), "name must be a string"
+        self._name = name
 
     def sendline(self, message):
         self.processus.stdin.write(message.encode()+b'\n')
@@ -37,7 +46,7 @@ class Player:
             signal.signal(signal.SIGALRM, timeOutHandler)
             signal.alarm(math.ceil(timeout))
         try:
-            return self.processus.stdout.readline().decode()
+            return self.processus.stdout.readline().decode().strip()
         except TimeOutException:
             raise
         finally:
@@ -47,17 +56,22 @@ class Player:
         self.sendline(game_message)
         self.sendline(rules_message)
         self.sendline("PLAYER "+('white' if self.isWhite else 'black'))
-        (self.name, alwaysSeeAsWhite) = self.receiveline(timeout = timeout).split(' ')
+        message = self.receiveline(timeout = timeout)
+        title, name, alwaysSeeAsWhite = message.split(' ')
+        if title.lower() != 'intro' : raise Exception("Unexpected message in initialization: "+message)
+        self.name = name
         self.alwaysSeeAsWhite = alwaysSeeAsWhite.lower()=='true'
 
     def play(self, gameState):
         reverse = (not self.isWhite) and self.alwaysSeeAsWhite
         if reverse: gameState.reverse()
 
-        self.sendline('PLAY {0} {1}'.format(gamestate, self.timeLimit) )
+        self.sendline('PLAY {0} {1}'.format(gameState, self.timeLimit) )
         t1 = time.time()
-        chosenStateString = self.receiveline()
+        message = self.receiveline(timeout = math.ceil(1.1*self.timeLimit))
         length = time.time()-t1
+        title, chosenStateString = message.split(' ')
+        if title.lower() != 'decision' : raise Exception("Unexpected message in play: "+message)        
         chosenState = GameState.fromString(chosenStateString, gameState)
 
         self.computingTimes.append(length)
@@ -70,12 +84,8 @@ class Player:
         if reverse: chosenState.reverse()
         return str(chosenState)
 
-    def name(self):
-        try: return self.name
-        except: return "no name yet"
-
     def __str__(self):
-        return ("White" if self.isWhite else "Black")+' ('+self.name()+')'
+        return ("White" if self.isWhite else "Black")+' ('+self.name+')'
 
 
 # Unhandled exception leading to the game interuption

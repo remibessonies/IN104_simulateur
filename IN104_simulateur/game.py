@@ -58,6 +58,13 @@ class Game:
         self.noCaptureMax = self.rules['noCaptureMax']
         self.player1 = Player(processus1, self.whiteStarts, timeLimit1)
         self.player2 = Player(processus2, not self.whiteStarts, timeLimit2)
+        
+        # initialization phase
+        color1= 'white' if self.player1.isWhite else 'black'
+        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1)
+        rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
+        self.player1.initialize(game_message, rules_message, timeout=2)
+        self.player2.initialize(game_message, rules_message, timeout=2)
 
         self.displayLevel = 0
         self.pause = 0
@@ -68,19 +75,12 @@ class Game:
     def runGame(self):
         # shortcut variables to access faster white and black players
         (whitePlayer,blackPlayer) = (self.player1,self.player2) if self.player1.isWhite else (self.player2,self.player1)
-        (color1, color2)          = ('white', 'black')          if self.player1.isWhite else ('black', 'white')
 
         # init logs
         self.addToLog("Beginning of the game")
         self.addToLog(str(self.player1)+ ' (starts) has '+str(self.player1.timeLimit)+' secs/turn to play')
         self.addToLog(str(self.player2)+ ' has '+str(self.player1.timeLimit)+' secs/turn to play')
         self.logState()
-        
-        # initialization phase
-        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1)
-        rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
-        self.player1.initialize(game_message, rules_message, timeout=2)
-        self.player2.initialize(game_message, rules_message, timeout=2)
 
         pdnMoves = ""
         result = None
@@ -119,6 +119,7 @@ class Game:
                 self.status['errorID'] = 'Unknown'
                 try:  self.addToLog(e.message, 0)
                 except: pass
+                raise
                 return
 
             # check whether the answer is valid
@@ -200,8 +201,8 @@ class Game:
         pdn += gameType
         pdn += '[Date "'+startTime+'"]\n'
         pdn += '[Round "?"]\n'
-        pdn += '[White "'+whitePlayer.name()+'"]\n[WhiteType "Program"]\n'
-        pdn += '[Black "'+blackPlayer.name()+'"]\n[BlackType "Program"]\n'
+        pdn += '[White "'+whitePlayer.name+'"]\n[WhiteType "Program"]\n'
+        pdn += '[Black "'+blackPlayer.name+'"]\n[BlackType "Program"]\n'
 
         pdn += '[Result "'+result+'"]'
         if result=='1-0':
