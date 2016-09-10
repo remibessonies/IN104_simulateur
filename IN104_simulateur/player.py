@@ -40,7 +40,7 @@ class Player:
         self.processus.stdin.write(message.encode()+b'\n')
         self.processus.stdin.flush()
 
-    def receiveline(self, timeout):
+    def recvline(self, timeout):
         if timeout>0:
             # signals only take an integer amount of seconds, so I have to ceil the time limit
             signal.signal(signal.SIGALRM, timeOutHandler)
@@ -56,7 +56,7 @@ class Player:
         self.sendline(game_message)
         self.sendline(rules_message)
         self.sendline("PLAYER "+('white' if self.isWhite else 'black'))
-        message = self.receiveline(timeout = timeout)
+        message = self.recvline(timeout = timeout)
         title, name, alwaysSeeAsWhite = message.split(' ')
         if title.lower() != 'intro' : raise Exception("Unexpected message in initialization: "+message)
         self.name = name
@@ -68,7 +68,7 @@ class Player:
 
         self.sendline('PLAY {0} {1}'.format(gameState, self.timeLimit) )
         t1 = time.time()
-        message = self.receiveline(timeout = math.ceil(1.1*self.timeLimit))
+        message = self.recvline(timeout = math.ceil(1.1*self.timeLimit))
         length = time.time()-t1
         title, chosenStateString = message.split(' ')
         if title.lower() != 'decision' : raise Exception("Unexpected message in play: "+message)        

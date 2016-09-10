@@ -13,7 +13,6 @@ class Game:
         - ia2: the other artificial intelligence
         - config: configuration dictionary for the game
         - rules: a dictionary of boolean defining pieces available moves
-        - Nlimit: (default 150) the maximum number of simulation iterations
 
     outputs:
         - pdn: the Portable Draught Notation summary of the game
@@ -35,7 +34,7 @@ class Game:
 
     defaultRules = CheckersRules
 
-    def checkConfig(self, config, Nlimit, rules):
+    def checkConfig(self, config, rules):
         for key in Game.defaultConfig:
             if key not in config: config[key] = Game.defaultConfig[key]
         for key in Game.defaultRules:
@@ -44,27 +43,15 @@ class Game:
         assert config['nRows']%2==0, 'The number of rows must be a multiple of 2'
         assert config['nPieces']>0, 'The number of pieces must be positive'
         assert rules['noCaptureMax']>0 , 'The number of maximum successive non-capturing moves before Draw must be positive'
-
-        if not Nlimit: Nlimit = 2*config['nPieces']*rules['noCaptureMax']
-        assert Nlimit>0, 'The number of maximum simulation steps must be positive'
-        self.Nlimit = Nlimit
+        self.Nlimit = 2*config['nPieces']*rules['noCaptureMax']
         self.config = config
         self.rules = rules
 
-    def __init__(self, processus1, timeLimit1, processus2, timeLimit2, config = {}, rules = {}, Nlimit = None):
-        self.checkConfig(config, Nlimit, rules)
+    def __init__(self, processus1, timeLimit1, processus2, timeLimit2, config = {}, rules = {}):
+        self.checkConfig(config, rules)
         self.gameState = GameState(self.config, self.rules)
-        self.whiteStarts = self.config['whiteStarts']
-        self.noCaptureMax = self.rules['noCaptureMax']
-        self.player1 = Player(processus1, self.whiteStarts, timeLimit1)
-        self.player2 = Player(processus2, not self.whiteStarts, timeLimit2)
-        
-        # initialization phase
-        color1= 'white' if self.player1.isWhite else 'black'
-        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], color1)
-        rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
-        self.player1.initialize(game_message, rules_message, timeout=2)
-        self.player2.initialize(game_message, rules_message, timeout=2)
+        self.player1 = Player(processus1, self.config['whiteStarts'], timeLimit1)
+        self.player2 = Player(processus2, not self.config['whiteStarts'], timeLimit2)
 
         self.displayLevel = 0
         self.pause = 0
@@ -72,7 +59,13 @@ class Game:
         self.status = {'success':False, 'draw':False, 'winner':None, 'playerError':None, 'errorID':None}
 
 
-    def runGame(self):
+    def runGame(self):        
+        # initialization phase
+        game_message = 'GAME {0} {1} {2}'.format(self.config['nRows'], self.config['nPieces'], 'white' if self.player1.isWhite else 'black')
+        rules_message = 'RULES {0} {1} {2} {3}'.format(self.rules['menCaptureBackward'], self.rules['menMustStop'], self.rules['kingsCanFly'], self.rules['noCaptureMax'])
+        self.player1.initialize(game_message, rules_message, timeout=2)
+        self.player2.initialize(game_message, rules_message, timeout=2)
+        
         # shortcut variables to access faster white and black players
         (whitePlayer,blackPlayer) = (self.player1,self.player2) if self.player1.isWhite else (self.player2,self.player1)
 
@@ -143,7 +136,7 @@ class Game:
             pdnMoves += move.toPDN()+" "
 
             # Check if it is a Draw
-            if self.gameState.noCaptureCounter >= self.noCaptureMax:
+            if self.gameState.noCaptureCounter >= self.rules['noCaptureMax']:
                 result = '1/2-1/2'
                 self.status['success'] = True
                 self.status['draw'] = True
@@ -195,9 +188,9 @@ class Game:
         pdn += '[Site "ENSTA ParisTech, Palaiseau, FRA"]\n'
 
         gameType  = '[GameType “21,'
-        gameType += 'W' if self.whiteStarts else 'B'
+        gameType += 'W' if self.config['whiteStarts'] else 'B'
         gameType += (','+str(self.gameState.boardState.nRows))*2+','
-        gameType += 'N2,0”] {Whites begin}\n' if self.whiteStarts else 'N1,0”] {Blacks begin}\n'
+        gameType += 'N2,0”] {Whites begin}\n' if self.config['whiteStarts'] else 'N1,0”] {Blacks begin}\n'
         pdn += gameType
         pdn += '[Date "'+startTime+'"]\n'
         pdn += '[Round "?"]\n'
