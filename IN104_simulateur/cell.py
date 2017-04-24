@@ -6,23 +6,23 @@ b = 98
 B = 66
 
 def isWhite(c):
-    return c == Cell.w or c == Cell.W
+    return c == w or c == W
 
 def isBlack(c):
-    return c == Cell.b or c == Cell.B
+    return c == b or c == B
 
 def isMan(c):
-    return c == Cell.w or c == Cell.b
+    return c == w or c == b
 
 def isKing(c):
-    return c == Cell.W or c == Cell.B
+    return c == W or c == B
 
 def invertColor(c):
-    if c == Cell.empty: return Cell.empty
-    return v + 42*(1-v%2) - 21
+    if c == empty: return empty
+    return c + 42*(1-c%2) - 21
 
 def promoted(c):
-    assert(Cell.isMan(c))
+    assert(isMan(c))
     return c-32
 
 def toString(c):
