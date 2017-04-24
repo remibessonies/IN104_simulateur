@@ -13,8 +13,10 @@ class ManualBrain:
 
     def play(self, gameState, timeLimit):
         possibleMoves = gameState.findPossibleMoves()
+        print(gameState.toDisplay(True))
         print("Authorized moves : ")
         for m in possibleMoves: print(m.toPDN())
+        
         string = ""
         while True:
             try:
