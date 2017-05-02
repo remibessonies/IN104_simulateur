@@ -10,10 +10,11 @@ class ManualBrain:
         print("Please enter your name")
         self.name = sys.stdin.readline()[0:-1] 
         self.computingTimes = []
-        self.alwaysWhite = False
+        self.alwaysSeeAsWhite = False
     
     def play(self, gameState, timeLimit):
         possibleMoves = gameState.getStateMoveDict()
+        print(gameState.toDisplay(True))
         print("Authorized moves : ")
         for m in possibleMoves.values(): print(m.toPDN())
         string = ""
