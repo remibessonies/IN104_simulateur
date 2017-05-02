@@ -12,4 +12,6 @@ for opt in "$@"; do
     esac
 done
 
+rm -r build
+
 eval $installCommand
