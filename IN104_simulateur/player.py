@@ -9,7 +9,8 @@ from .deadline import Deadline
 def playTimeOutHandler(signum, frame):
     raise TimeOutException("Player takes too long to make a decision.")
 
-signal.signal(signal.SIGALRM, playTimeOutHandler)
+USE_SIGNAL = hasattr(signal, 'SIGALRM')
+if USE_SIGNAL: signal.signal(signal.SIGALRM, playTimeOutHandler)
 
 
 class Player:
@@ -39,7 +40,7 @@ class Player:
         reverse = (not self.isWhite) and self.alwaysSeeAsWhite
         if reverse: gameState.reverse()
 
-        if self.timeLimit and self.timeLimit>0:
+        if USE_SIGNAL and self.timeLimit and self.timeLimit>0:
             # signals only take an integer amount of seconds, so I have to ceil the time limit
             signal.alarm(math.ceil(self.timeLimit+0.01))
 
@@ -54,7 +55,7 @@ class Player:
         finally:
             sys.stdout = sys.__stdout__
 
-        signal.alarm(0)
+        if USE_SIGNAL: signal.alarm(0)
 
         self.computingTimes.append(length)
 

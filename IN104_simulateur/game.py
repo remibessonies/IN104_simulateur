@@ -51,7 +51,9 @@ class Game:
         self.config = config
         self.rules = rules
 
-    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = {}, rules = {}, Nlimit = None):
+    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = None, rules = None, Nlimit = None):
+        config = config or {}
+        rules = rules or {}
         self.checkConfig(config, Nlimit, rules)
         self.gameState = GameState(self.config, self.rules)
         self.whiteStarts = self.config['whiteStarts']
