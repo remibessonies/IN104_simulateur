@@ -13,7 +13,6 @@ class Game:
         - ia2: the other artificial intelligence
         - config: configuration dictionary for the game
         - rules: a dictionary of boolean defining pieces available moves
-        - Nlimit: (default 150) the maximum number of simulation iterations
 
     outputs:
         - pdn: the Portable Draught Notation summary of the game
@@ -35,7 +34,7 @@ class Game:
 
     defaultRules = CheckersRules
 
-    def checkConfig(self, config, Nlimit, rules):
+    def checkConfig(self, config, rules):
         for key in Game.defaultConfig:
             if key not in config: config[key] = Game.defaultConfig[key]
         for key in Game.defaultRules:
@@ -45,16 +44,14 @@ class Game:
         assert config['nPieces']>0, 'The number of pieces must be positive'
         assert rules['noCaptureMax']>0 , 'The number of maximum successive non-capturing moves before Draw must be positive'
 
-        if not Nlimit: Nlimit = 2*config['nPieces']*rules['noCaptureMax']
-        assert Nlimit>0, 'The number of maximum simulation steps must be positive'
-        self.Nlimit = Nlimit
+        self.Nlimit = 2*config['nPieces']*rules['noCaptureMax']
         self.config = config
         self.rules = rules
 
-    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = None, rules = None, Nlimit = None):
+    def __init__(self, ia1, timeLimit1, ia2, timeLimit2, config = None, rules = None):
         config = config or {}
         rules = rules or {}
-        self.checkConfig(config, Nlimit, rules)
+        self.checkConfig(config, rules)
         self.gameState = GameState(self.config, self.rules)
         self.whiteStarts = self.config['whiteStarts']
         self.noCaptureMax = self.rules['noCaptureMax']
@@ -75,6 +72,7 @@ class Game:
     def runGame(self):
         # setup
         self.init_logs()
+        self.pdn = None
         pdnMoves = ""
         result = None
         startTime = time.ctime()
@@ -116,7 +114,7 @@ class Game:
                 self.status['errorID'] = 'Unknown'
                 try:  self.addToLog(e.message, 0)
                 except: pass
-                return
+                raise e
 
             # check whether the answer is valid
             move = None
