@@ -11,12 +11,6 @@ C_sources = ['IN104_simulateur/cpp/CBoardState.cpp', 'IN104_simulateur/cpp/CCell
 
 extensions = [
     Extension(
-        name="IN104_simulateur.cpp.gameState",
-        language='c++',
-        sources=["IN104_simulateur/cpp/gameState"+ext]+C_sources,
-        include_dirs = ["."]
-    ),
-    Extension(
         name="IN104_simulateur.cpp.boardState",
         language='c++',
         sources=["IN104_simulateur/cpp/boardState"+ext]+C_sources,
