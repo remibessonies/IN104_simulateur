@@ -1,4 +1,6 @@
 *~
+*.pyc
+__pycache__
 *.so
-*__pycache__*
-build/*
+build
+*.egg-info
