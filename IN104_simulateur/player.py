@@ -3,7 +3,6 @@ import time
 import math
 import sys
 import os
-from .deadline import Deadline
 
 # Register an handler for the timeout
 def playTimeOutHandler(signum, frame):
@@ -22,9 +21,10 @@ class Player:
         - isWhite: true if the player is the white one
     '''
 
-    def __init__(self, isWhite, brain, timeLimit):
+    def __init__(self, isWhite, brain, timeLimit=None):
         self.isWhite = isWhite
         assert brain, "Player needs a brain !"
+        assert timeLimit is None or float(timeLimit) == timeLimit
         self.brain = brain
         self.timeLimit = timeLimit
         self.computingTimes = [] # store the computing time for each move
@@ -47,8 +47,7 @@ class Player:
         try:
             if self.discard_stdout: sys.stdout = open(os.devnull, "w")
             t1 = time.time()
-            deadline = Deadline(t1+self.timeLimit) if self.timeLimit else None
-            chosenState = self.brain.play(gameState, deadline)
+            chosenState = self.brain.play(gameState, self.timeLimit)
             length = time.time()-t1
         except Exception as e:
             raise e
@@ -60,7 +59,7 @@ class Player:
         self.computingTimes.append(length)
 
         if self.timeLimit and length>(self.timeLimit+0.01):
-            raise TimeOutException(str(self)+' took too much time to make a decision : '+str(length)+' sec')
+            raise TimeOutException(str(self)+' took too much time ('+str(length)+' s) to make a decision. Authorized time : '+str(self.timeLimit))
         if self.showTime:
             print(str(self)+" took "+'{:.3f}'.format(length)+"s to make a decision")
 
